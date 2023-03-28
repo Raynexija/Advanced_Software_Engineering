@@ -1,5 +1,8 @@
 package de.dhbw.ka;
 
+import de.dhbw.ka.exception.AbilityScoreLimitException;
+import de.dhbw.ka.exception.BaseAbilityScoreOutOfBoundsException;
+
 public final class AbilityScore {
 
     protected final int score;
@@ -10,7 +13,7 @@ public final class AbilityScore {
 
     public AbilityScore(int baseScore, int racialBonus, int additionalBonus) {
         if (baseScore < 3 || baseScore > 18) {
-            throw new IllegalArgumentException("Base Ability Score must be between 3 and 18");
+            throw new BaseAbilityScoreOutOfBoundsException("Base Ability Score must be between 3 and 18");
         }
         this.baseScore = baseScore;
         this.racialBonus = racialBonus;
@@ -22,7 +25,7 @@ public final class AbilityScore {
             this.modifier = (score - 11) / 2;
         }
         if (this.score > 20) {
-            throw new IllegalArgumentException("Ability Score must not exceed 20");
+            throw new AbilityScoreLimitException("Ability Score must not exceed 20");
         }
     }
 

@@ -24,7 +24,7 @@ public enum Skills {
 
     public final AbilityScores ability;
 
-    private Skills(AbilityScores ability) {
+    Skills(AbilityScores ability) {
         this.ability = ability;
     }
 }

@@ -1,6 +1,7 @@
 package de.dhbw.ka;
 
 import de.dhbw.ka.characterClasses.CharacterClass;
+import de.dhbw.ka.exception.AbilityScoreLimitException;
 import de.dhbw.ka.races.Human;
 import de.dhbw.ka.races.Race;
 
@@ -14,12 +15,12 @@ public class Character {
     protected String name;
     protected Race race;
     protected CharacterClass characterClass;
-    protected int level;
-    protected int armorClass;
-    protected int initiative;
-    protected int speed;
-    protected int hitPoints;
-    protected String hitDice;
+
+    private int level;
+    private int armorClass;
+    private int initiative;
+    private int speed;
+    private int hitPoints;
 
     private List<AbilityScores> abilityProficiencies = new ArrayList<>();
     private List<Skills> skillProficiencies = new ArrayList<>();
@@ -43,7 +44,24 @@ public class Character {
         this.abilityScores.put(CHARISMA, new AbilityScore(baseCharisma, this.race.getRacialBonus(CHARISMA), 0));
     }
 
-    public void setAbilityScore(AbilityScores abilityScore, int value) {
+    public void addEquipment(String item) {
+        this.equipment.add(item);
+    }
+
+    public List<String> getEquipment() {
+        return this.equipment;
+    }
+
+    public void addLanguage(String language) {
+        this.languages.add(language);
+    }
+
+    public void addSkillProficiency(Skills skill) {
+        this.skillProficiencies.add(skill);
+    }
+
+
+    public void setFlatAbilityScore(AbilityScores abilityScore, int value) {
         this.abilityScores.put(abilityScore, new AbilityScore(value, 0, 0));
     }
 
@@ -53,14 +71,14 @@ public class Character {
             this.abilityScores.put(abilityScore, new AbilityScore(ability.getBaseScore(),
                     this.race.getRacialBonus(abilityScore),
                     ability.getAdditionalBonus() + bonus));
-        } catch (IllegalArgumentException e) {
+        } catch (AbilityScoreLimitException e) {
             System.out.println("Ability Score must not exceed 20");
         }
     }
 
     public int skillCheckModifier(Skills skill) {
         if (skillProficiencies.contains(skill)) {
-            return abilityScores.get(skill.ability).modifier + 2;
+            return abilityScores.get(skill.ability).modifier + this.characterClass.getProficiencyBonus(this.level);
         } else {
             return abilityScores.get(skill.ability).modifier;
         }
@@ -68,7 +86,7 @@ public class Character {
 
     public int savingThrowModifier(AbilityScores abilityScore) {
         if (abilityProficiencies.contains(abilityScore)) {
-            return this.abilityScores.get(abilityScore).modifier + 2;
+            return this.abilityScores.get(abilityScore).modifier + this.characterClass.getProficiencyBonus(this.level);
         } else {
             return this.abilityScores.get(abilityScore).modifier;
         }
@@ -80,5 +98,45 @@ public class Character {
 
     public AbilityScore getAbilityScore(AbilityScores abilityScore) {
         return this.abilityScores.get(abilityScore);
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public int getArmorClass() {
+        return armorClass;
+    }
+
+    public void setArmorClass(int armorClass) {
+        this.armorClass = armorClass;
+    }
+
+    public int getInitiative() {
+        return initiative;
+    }
+
+    public void setInitiative(int initiative) {
+        this.initiative = initiative;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public int getHitPoints() {
+        return hitPoints;
+    }
+
+    public void setHitPoints(int hitPoints) {
+        this.hitPoints = hitPoints;
     }
 }
