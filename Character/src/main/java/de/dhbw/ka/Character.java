@@ -1,78 +1,84 @@
 package de.dhbw.ka;
 
 import de.dhbw.ka.characterClasses.CharacterClass;
+import de.dhbw.ka.races.Human;
 import de.dhbw.ka.races.Race;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import static de.dhbw.ka.AbilityScores.*;
 
 public class Character {
     protected String name;
     protected Race race;
     protected CharacterClass characterClass;
+    protected int level;
+    protected int armorClass;
+    protected int initiative;
+    protected int speed;
+    protected int hitPoints;
+    protected String hitDice;
 
-    protected AbilityScore strength;
-    protected AbilityScore dexterity;
-    protected AbilityScore constitution;
-    protected AbilityScore intelligence;
-    protected AbilityScore wisdom;
-    protected AbilityScore charisma;
+    private List<AbilityScores> abilityProficiencies = new ArrayList<>();
+    private List<Skills> skillProficiencies = new ArrayList<>();
+
+    protected List<String> languages = new ArrayList<>();
+    protected List<String> equipment = new ArrayList<>();
+    private HashMap<AbilityScores, AbilityScore> abilityScores = new HashMap<>();
 
     public Character() {
-        setAbilityScores(10, 10, 10, 10, 10, 10);
+        this.languages.add("Common");
+        this.race = new Human();
+        setInitialAbilityScores(15, 10, 10, 10, 10, 10);
     }
 
-    private void setAbilityScores(int baseStrength, int baseDexterity, int baseConstitution, int baseIntelligence, int baseWisdom, int baseCharisma) {
-        this.strength = new AbilityScore(baseStrength, this.race.getRacialBonus(AbilityScores.STRENGTH));
-        this.dexterity = new AbilityScore(baseDexterity, this.race.getRacialBonus(AbilityScores.DEXTERITY));
-        this.constitution = new AbilityScore(baseConstitution, this.race.getRacialBonus(AbilityScores.CONSTITUTION));
-        this.intelligence = new AbilityScore(baseIntelligence, this.race.getRacialBonus(AbilityScores.INTELLIGENCE));
-        this.wisdom = new AbilityScore(baseWisdom, this.race.getRacialBonus(AbilityScores.WISDOM));
-        this.charisma = new AbilityScore(baseCharisma, this.race.getRacialBonus(AbilityScores.CHARISMA));
+    private void setInitialAbilityScores(int baseStrength, int baseDexterity, int baseConstitution, int baseIntelligence, int baseWisdom, int baseCharisma) {
+        this.abilityScores.put(STRENGTH, new AbilityScore(baseStrength, this.race.getRacialBonus(STRENGTH), 0));
+        this.abilityScores.put(DEXTERITY, new AbilityScore(baseDexterity, this.race.getRacialBonus(DEXTERITY), 0));
+        this.abilityScores.put(CONSTITUTION, new AbilityScore(baseConstitution, this.race.getRacialBonus(CONSTITUTION), 0));
+        this.abilityScores.put(INTELLIGENCE, new AbilityScore(baseIntelligence, this.race.getRacialBonus(INTELLIGENCE), 0));
+        this.abilityScores.put(WISDOM, new AbilityScore(baseWisdom, this.race.getRacialBonus(WISDOM), 0));
+        this.abilityScores.put(CHARISMA, new AbilityScore(baseCharisma, this.race.getRacialBonus(CHARISMA), 0));
     }
 
-    public int savingSavingThrowModifier(AbilityScores abilityScore) {
-        switch (abilityScore) {
-            case STRENGTH:
-                if (this.characterClass.isProficient(abilityScore.STRENGTH))
-                    return this.strength.modifier + 2;
-                else
-                    return this.strength.modifier;
-            case DEXTERITY:
-                if (this.characterClass.isProficient(abilityScore.DEXTERITY))
-                    return this.dexterity.modifier + 2;
-                else
-                    return this.dexterity.modifier;
-            case CONSTITUTION:
-                if (this.characterClass.isProficient(abilityScore.CONSTITUTION))
-                    return this.constitution.modifier + 2;
-                else
-                    return this.constitution.modifier;
-            case INTELLIGENCE:
-                if (this.characterClass.isProficient(abilityScore.INTELLIGENCE))
-                    return this.intelligence.modifier + 2;
-                else
-                    return this.intelligence.modifier;
-            case WISDOM:
-                if (this.characterClass.isProficient(abilityScore.WISDOM))
-                    return this.wisdom.modifier + 2;
-                else
-                    return this.wisdom.modifier;
-            case CHARISMA:
-                if (this.characterClass.isProficient(abilityScore.CHARISMA))
-                    return this.charisma.modifier + 2;
-                else
-                    return this.charisma.modifier;
+    public void setAbilityScore(AbilityScores abilityScore, int value) {
+        this.abilityScores.put(abilityScore, new AbilityScore(value, 0, 0));
+    }
+
+    public void addAbilityBonus(AbilityScores abilityScore, int bonus) {
+        AbilityScore ability = this.abilityScores.get(abilityScore);
+        try {
+            this.abilityScores.put(abilityScore, new AbilityScore(ability.getBaseScore(),
+                    this.race.getRacialBonus(abilityScore),
+                    ability.getAdditionalBonus() + bonus));
+        } catch (IllegalArgumentException e) {
+            System.out.println("Ability Score must not exceed 20");
         }
-        throw new IllegalArgumentException("Illegal Ability Score");
     }
 
-    @Override
-    public String toString() {
-        return "Character{" +
-                "Strength=" + strength +
-                ", Dexterity=" + dexterity +
-                ", Constitution=" + constitution +
-                ", Intelligence=" + intelligence +
-                ", Wisdom=" + wisdom +
-                ", Charisma=" + charisma +
-                '}';
+    public int skillCheckModifier(Skills skill) {
+        if (skillProficiencies.contains(skill)) {
+            return abilityScores.get(skill.ability).modifier + 2;
+        } else {
+            return abilityScores.get(skill.ability).modifier;
+        }
+    }
+
+    public int savingThrowModifier(AbilityScores abilityScore) {
+        if (abilityProficiencies.contains(abilityScore)) {
+            return this.abilityScores.get(abilityScore).modifier + 2;
+        } else {
+            return this.abilityScores.get(abilityScore).modifier;
+        }
+    }
+
+    public int abilityCheckModifier(AbilityScores abilityScore) {
+        return this.abilityScores.get(abilityScore).modifier;
+    }
+
+    public AbilityScore getAbilityScore(AbilityScores abilityScore) {
+        return this.abilityScores.get(abilityScore);
     }
 }

@@ -4,21 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/AbilityScore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/AbilityScores.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/characterClasses/CharacterClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/characterClasses/Fighter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/races/Human.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/races/Race.java" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="start od character development">
+      <change afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Skills.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Character/src/test/java/de/dhbw/ka/test/AbilityScoreTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Character/src/test/java/de/dhbw/ka/test/CharacterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Character/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/AbilityScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/AbilityScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -54,11 +47,11 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "inlay.hints",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.AbilityScoreTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="Character" />
@@ -68,6 +61,66 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="de.dhbw.ka.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.Main" />
+      <module name="Character" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.dhbw.ka.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AbilityScoreTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Character" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.dhbw.ka.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.AbilityScoreTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AbilityScoreTest.boundaryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Character" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.dhbw.ka.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.AbilityScoreTest" />
+      <option name="METHOD_NAME" value="boundaryTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AbilityScoreTest.modifierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Character" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.dhbw.ka.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.AbilityScoreTest" />
+      <option name="METHOD_NAME" value="modifierTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -85,6 +138,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AbilityScoreTest" />
+        <item itemvalue="JUnit.AbilityScoreTest.boundaryTest" />
+        <item itemvalue="JUnit.AbilityScoreTest.modifierTest" />
+        <item itemvalue="Application.de.dhbw.ka.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -99,7 +156,9 @@
       <updated>1667035619447</updated>
       <workItem from="1678112679881" duration="49000" />
       <workItem from="1678112788657" duration="65000" />
-      <workItem from="1678112862684" duration="8988000" />
+      <workItem from="1678112862684" duration="9660000" />
+      <workItem from="1679315612434" duration="4804000" />
+      <workItem from="1679985300350" duration="6692000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>
@@ -129,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667041097128</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="start od character development">
+      <created>1678129060523</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678129060524</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +214,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="start od character development" />
+    <option name="LAST_COMMIT_MESSAGE" value="start od character development" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
