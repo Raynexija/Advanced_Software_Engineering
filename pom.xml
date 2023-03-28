@@ -10,6 +10,9 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>Character</module>
+        <module>Plugins</module>
+        <module>Application</module>
+        <module>Adapter</module>
     </modules>
 
     <properties>
