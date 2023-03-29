@@ -44,6 +44,20 @@ public class Character {
         this.abilityScores.put(CHARISMA, new AbilityScore(baseCharisma, this.race.getRacialBonus(CHARISMA), 0));
     }
 
+    public void setRace(Race race) {
+        this.race = race;
+        this.speed = race.getWalkingSpeed();
+    }
+
+    public void setClass(CharacterClass characterClass) {
+        this.characterClass = characterClass;
+        this.abilityProficiencies.addAll(characterClass.getAbilityProficiencies());
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public void addEquipment(String item) {
         this.equipment.add(item);
     }

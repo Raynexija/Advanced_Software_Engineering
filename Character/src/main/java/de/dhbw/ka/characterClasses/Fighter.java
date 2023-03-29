@@ -2,13 +2,17 @@ package de.dhbw.ka.characterClasses;
 
 import de.dhbw.ka.AbilityScores;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Fighter extends CharacterClass {
     protected String hitDice= "1d10";
+
     @Override
-    public boolean isProficient(AbilityScores abilityScore) {
-        if (abilityScore == AbilityScores.STRENGTH || abilityScore == AbilityScores.CONSTITUTION)
-            return true;
-        else
-            return false;
+    public List<AbilityScores> getAbilityProficiencies () {
+        List<AbilityScores> proficiencies = new ArrayList<>();
+        proficiencies.add(AbilityScores.STRENGTH);
+        proficiencies.add(AbilityScores.CONSTITUTION);
+        return proficiencies;
     }
 }

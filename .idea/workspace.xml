@@ -5,17 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="remove main class">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/CharacterBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/exception/AbilityScoreLimitException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/exception/BaseAbilityScoreOutOfBoundsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/AbilityScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/AbilityScore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Skills.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Skills.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/characterClasses/CharacterClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/characterClasses/CharacterClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/characterClasses/Fighter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/characterClasses/Fighter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/test/java/de/dhbw/ka/test/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/test/java/de/dhbw/ka/test/CharacterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/races/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/races/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/races/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/races/Race.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,13 +33,6 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="2GnsKbrYjPuZ8wKRpEkbOsyH2Vf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -52,6 +41,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "openjdk-18",
@@ -59,7 +50,8 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "inlay.hints",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -142,17 +134,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType">
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <option name="filePath" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CharacterTest" />
@@ -176,6 +157,7 @@
       <workItem from="1678112862684" duration="9660000" />
       <workItem from="1679315612434" duration="4804000" />
       <workItem from="1679985300350" duration="15500000" />
+      <workItem from="1680081662195" duration="2538000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>
