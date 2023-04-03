@@ -8,7 +8,13 @@
         <artifactId>Advanced_Software_Engineering</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
+    <dependencies>
+        <dependency>
+            <groupId>de.dhbw.ka</groupId>
+            <artifactId>Adapter</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
     <artifactId>Plugins</artifactId>
 
     <properties>
