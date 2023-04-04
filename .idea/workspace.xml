@@ -5,13 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="remove main class">
+      <change afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/CreateCharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/characterClasses/CharacterClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/characterClasses/CharacterClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/characterClasses/Fighter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/characterClasses/Fighter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/races/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/races/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/races/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/races/Race.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/CharacterBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Character/src/test/java/de/dhbw/ka/test/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/test/java/de/dhbw/ka/test/CharacterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -39,70 +43,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "openjdk-18",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "inlay.hints",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-18&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;inlay.hints&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="JUnit.CharacterTest">
-    <configuration name="AbilityScoreTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Character" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.AbilityScoreTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AbilityScoreTest.boundaryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Character" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.AbilityScoreTest" />
-      <option name="METHOD_NAME" value="boundaryTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AbilityScoreTest.modifierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Character" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.AbilityScoreTest" />
-      <option name="METHOD_NAME" value="modifierTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CharacterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Character" />
       <extension name="coverage">
@@ -118,7 +75,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CharacterTest.testSetAbilityScore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CharacterTest.testEquipment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Character" />
       <extension name="coverage">
         <pattern>
@@ -128,7 +85,55 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.CharacterTest" />
-      <option name="METHOD_NAME" value="testSetAbilityScore" />
+      <option name="METHOD_NAME" value="testEquipment" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CharacterTest.testHitPoints" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Character" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.dhbw.ka.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.CharacterTest" />
+      <option name="METHOD_NAME" value="testHitPoints" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CharacterTest.testLanguages" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Character" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.dhbw.ka.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.CharacterTest" />
+      <option name="METHOD_NAME" value="testLanguages" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CharacterTest.testRace" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Character" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.dhbw.ka.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.CharacterTest" />
+      <option name="METHOD_NAME" value="testRace" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -137,10 +142,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CharacterTest" />
-        <item itemvalue="JUnit.CharacterTest.testSetAbilityScore" />
-        <item itemvalue="JUnit.AbilityScoreTest" />
-        <item itemvalue="JUnit.AbilityScoreTest.boundaryTest" />
-        <item itemvalue="JUnit.AbilityScoreTest.modifierTest" />
+        <item itemvalue="JUnit.CharacterTest.testEquipment" />
+        <item itemvalue="JUnit.CharacterTest.testLanguages" />
+        <item itemvalue="JUnit.CharacterTest.testHitPoints" />
+        <item itemvalue="JUnit.CharacterTest.testRace" />
       </list>
     </recent_temporary>
   </component>
@@ -158,6 +163,7 @@
       <workItem from="1679315612434" duration="4804000" />
       <workItem from="1679985300350" duration="15500000" />
       <workItem from="1680081662195" duration="2538000" />
+      <workItem from="1680588326761" duration="7967000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>
@@ -226,7 +232,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
