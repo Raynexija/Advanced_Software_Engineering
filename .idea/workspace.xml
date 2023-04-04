@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="remove main class">
-      <change afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/CreateCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="feat: implemented Builder Pattern for Character creation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/AbilityScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/AbilityScore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/CharacterBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/CreateCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/CreateCharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Character/src/test/java/de/dhbw/ka/test/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/test/java/de/dhbw/ka/test/CharacterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="plugin/console-output" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -75,7 +74,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CharacterTest.testEquipment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CharacterTest.testAbilityBonus" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Character" />
       <extension name="coverage">
         <pattern>
@@ -85,13 +84,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.CharacterTest" />
-      <option name="METHOD_NAME" value="testEquipment" />
+      <option name="METHOD_NAME" value="testAbilityBonus" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CharacterTest.testHitPoints" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CharacterTest.testCharacterClass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Character" />
       <extension name="coverage">
         <pattern>
@@ -101,13 +100,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.CharacterTest" />
-      <option name="METHOD_NAME" value="testHitPoints" />
+      <option name="METHOD_NAME" value="testCharacterClass" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CharacterTest.testLanguages" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CharacterTest.testFlatAbilityModifier" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Character" />
       <extension name="coverage">
         <pattern>
@@ -117,13 +116,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.CharacterTest" />
-      <option name="METHOD_NAME" value="testLanguages" />
+      <option name="METHOD_NAME" value="testFlatAbilityModifier" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CharacterTest.testRace" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CharacterTest.testSpeed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Character" />
       <extension name="coverage">
         <pattern>
@@ -133,7 +132,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.CharacterTest" />
-      <option name="METHOD_NAME" value="testRace" />
+      <option name="METHOD_NAME" value="testSpeed" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -142,10 +141,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CharacterTest" />
-        <item itemvalue="JUnit.CharacterTest.testEquipment" />
-        <item itemvalue="JUnit.CharacterTest.testLanguages" />
-        <item itemvalue="JUnit.CharacterTest.testHitPoints" />
-        <item itemvalue="JUnit.CharacterTest.testRace" />
+        <item itemvalue="JUnit.CharacterTest.testCharacterClass" />
+        <item itemvalue="JUnit.CharacterTest.testSpeed" />
+        <item itemvalue="JUnit.CharacterTest.testFlatAbilityModifier" />
+        <item itemvalue="JUnit.CharacterTest.testAbilityBonus" />
       </list>
     </recent_temporary>
   </component>
@@ -163,7 +162,7 @@
       <workItem from="1679315612434" duration="4804000" />
       <workItem from="1679985300350" duration="15500000" />
       <workItem from="1680081662195" duration="2538000" />
-      <workItem from="1680588326761" duration="7967000" />
+      <workItem from="1680588326761" duration="10303000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>
@@ -221,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679992510552</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feat: implemented Builder Pattern for Character creation">
+      <created>1680596401875</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1680596401875</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +262,8 @@
     <MESSAGE value="AbilityScore is now implemented and test covered" />
     <MESSAGE value="Project structure" />
     <MESSAGE value="remove main class" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove main class" />
+    <MESSAGE value="feat: implemented Builder Pattern for Character creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: implemented Builder Pattern for Character creation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

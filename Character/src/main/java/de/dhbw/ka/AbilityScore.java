@@ -9,7 +9,7 @@ public final class AbilityScore {
     protected final int modifier;
     private final int baseScore;
     private final int racialBonus;
-    private final int additionalBonus;
+    private final int additionalBonus ;
 
     public AbilityScore(int baseScore, int racialBonus, int additionalBonus) {
         if (baseScore < 3 || baseScore > 18) {

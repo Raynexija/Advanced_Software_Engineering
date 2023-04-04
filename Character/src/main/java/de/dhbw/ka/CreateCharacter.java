@@ -6,7 +6,6 @@ import de.dhbw.ka.races.Race;
 import java.util.ArrayList;
 import java.util.List;
 
-//class to build a character using the builder pattern
 public final class CreateCharacter {
 
     //required parameters
@@ -26,9 +25,9 @@ public final class CreateCharacter {
 
 
     //optional parameters
-    private int armorClass;
-    private int initiativeBonus;
-    private int speed;
+    private int armorClass = 10;
+    private int initiativeBonus = 0;
+    private int speed = 0;
 
     private List<Skills> skillProficiencies = new ArrayList<>();
 
@@ -111,11 +110,6 @@ public final class CreateCharacter {
             return this;
         }
 
-        public BuildableCharacter walkingSpeed(int speed) {
-            CreateCharacter.this.speed = speed;
-            return this;
-        }
-
         public BuildableCharacter speaking(String[] language) {
             CreateCharacter.this.languages.addAll(List.of(language));
             return this;
@@ -149,6 +143,10 @@ public final class CreateCharacter {
 
         character.setArmorClass(this.armorClass);
         character.setInitiativeBonus(this.initiativeBonus);
+
+        if (this.speed == 0) {
+            this.speed = this.race.getWalkingSpeed();
+        }
         character.setSpeed(this.speed);
 
         for (String equipment : this.equipment) {

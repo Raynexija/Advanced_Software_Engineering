@@ -2,11 +2,9 @@ package de.dhbw.ka;
 
 import de.dhbw.ka.characterClasses.CharacterClass;
 import de.dhbw.ka.exception.AbilityScoreLimitException;
-import de.dhbw.ka.races.Human;
 import de.dhbw.ka.races.Race;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
@@ -31,7 +29,8 @@ public class Character {
     private HashMap<AbilityScores, AbilityScore> abilityScores = new HashMap<>();
 
     public Character(Race race, CharacterClass characterClass, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
-        this.race = race;
+        setRace(race);
+        setClass(characterClass);
         this.characterClass = characterClass;
         this.languages.add("Common");
         setInitialAbilityScores(strength, dexterity, constitution, intelligence, wisdom, charisma);
@@ -46,12 +45,12 @@ public class Character {
         this.abilityScores.put(CHARISMA, new AbilityScore(baseCharisma, this.race.getRacialBonus(CHARISMA), 0));
     }
 
-    public void setRace(Race race) {
+    private void setRace(Race race) {
         this.race = race;
         this.speed = race.getWalkingSpeed();
     }
 
-    public void setClass(CharacterClass characterClass) {
+    private void setClass(CharacterClass characterClass) {
         this.characterClass = characterClass;
         this.abilityProficiencies.addAll(characterClass.getAbilityProficiencies());
     }

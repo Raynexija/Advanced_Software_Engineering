@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import de.dhbw.ka.AbilityScores;
 import de.dhbw.ka.Character;
 import de.dhbw.ka.CreateCharacter;
+import de.dhbw.ka.Skills;
 import de.dhbw.ka.characterClasses.Fighter;
 import de.dhbw.ka.races.Human;
 import de.dhbw.ka.races.Race;
@@ -16,10 +17,11 @@ import java.util.List;
 public class CharacterTest {
 
     private Race testRace = new Human();
+    private Fighter testClass = new Fighter();
 
     private Character character = CreateCharacter.named("Test")
             .ofRace(testRace)
-            .isA(new Fighter())
+            .isA(testClass)
             .withStrength(15)
             .withDexterity(14)
             .withConstitution(13)
@@ -38,6 +40,16 @@ public class CharacterTest {
     }
 
     @Test
+    public void testRace() {
+        assertEquals(testRace, character.getRace());
+    }
+
+    @Test
+    public void testCharacterClass() {
+        assertEquals(testClass, character.getCharacterClass());
+    }
+
+    @Test
     public void testAbilityScore() {
         assertEquals(16, character.getAbilityScore(AbilityScores.STRENGTH).getScore());
         assertEquals(3, character.getAbilityScore(AbilityScores.STRENGTH).getModifier());
@@ -46,11 +58,6 @@ public class CharacterTest {
     @Test
     public void testHitPoints() {
         assertEquals(10, character.getHitPoints());
-    }
-
-    @Test
-    public void testRace() {
-        assertEquals(testRace, character.getRace());
     }
 
     @Test
@@ -72,5 +79,47 @@ public class CharacterTest {
         expectedEquipment.remove("Dagger");
         assertEquals(expectedEquipment.size(), character.getEquipment().size());
         assertEquals(expectedEquipment, character.getEquipment());
+    }
+
+    @Test
+    public void testLevel() {
+        assertEquals(1, character.getLevel());
+    }
+
+    @Test
+    public void testAbilityModifier() {
+        assertEquals(3, character.abilityCheckModifier(AbilityScores.STRENGTH));
+    }
+
+    @Test
+    public void testSavingThrowModifier() {
+        assertEquals(5, character.savingThrowModifier(AbilityScores.STRENGTH));
+        assertEquals(2, character.savingThrowModifier(AbilityScores.DEXTERITY));
+    }
+
+    @Test
+    public void testSkillModifier() {
+        assertEquals(1, character.skillCheckModifier(Skills.Investigation));
+    }
+
+    @Test
+    public void testFlatAbilityModifier() {
+        assertEquals(1, character.abilityCheckModifier(AbilityScores.INTELLIGENCE));
+
+        character.setFlatAbilityScore(AbilityScores.INTELLIGENCE, 17);
+        assertEquals(3, character.abilityCheckModifier(AbilityScores.INTELLIGENCE));
+    }
+
+    @Test
+    public void testAbilityBonus() {
+        assertEquals(0, character.abilityCheckModifier(AbilityScores.WISDOM));
+
+        character.addAbilityBonus(AbilityScores.WISDOM, 2);
+        assertEquals(1, character.abilityCheckModifier(AbilityScores.WISDOM));
+    }
+
+    @Test
+    public void testSpeed() {
+        assertEquals(30, character.getSpeed());
     }
 }
