@@ -45,6 +45,15 @@ public class ConsoleInputOutputTest {
     }
 
     @Test
+    void testRequestConfirmation(){
+        String request = "Are you sure, that you want to proceed?";
+        console.setInputStream(new ByteArrayInputStream("y\n".getBytes()));
+        boolean actual = console.requestConfirmation(request);
+        boolean expected = true;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     void testPrintWarning() {
         String warning = "This is a warning message";
         String expected = "\u001B[38;5;208m[WARNING] \u001B[0m\tThis is a warning message\n";
@@ -58,6 +67,15 @@ public class ConsoleInputOutputTest {
         String error = "This is an error message";
         String expected = "\u001B[31m[ERROR]   \u001B[0m\tThis is an error message\n";
         console.printError(error);
+        String actual = outputStream.toString();
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void testPrintList() {
+        String[] list = {"Item 1", "Item 2", "Item 3"};
+        String expected = "Item 1\nItem 2\nItem 3\n";
+        console.printList(list);
         String actual = outputStream.toString();
         Assertions.assertEquals(expected, actual);
     }

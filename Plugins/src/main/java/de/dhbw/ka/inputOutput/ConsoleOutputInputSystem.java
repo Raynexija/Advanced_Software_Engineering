@@ -80,6 +80,13 @@ public class ConsoleOutputInputSystem implements OutputInputSystem {
     }
 
     @Override
+    public void printList(String[] list) {
+        for (String item : list) {
+            printLine(item);
+        }
+    }
+
+    @Override
     public <T> T requestTextSelection(String request, T[] options) {
         printLine(request);
         for (int i = 0; i < options.length; i++) {
@@ -123,5 +130,25 @@ public class ConsoleOutputInputSystem implements OutputInputSystem {
             inputScanner.next();
         }
         return inputScanner.nextInt();
+    }
+
+    @Override
+    public boolean requestConfirmation(String request) {
+        Scanner inputScanner = new Scanner(inputStream);
+        StringBuilder outputBuilder = new StringBuilder();
+        outputBuilder.append(request);
+        outputBuilder.append(" [y/n]");
+        print(outputBuilder.toString());
+        while (true) {
+            String input = inputScanner.next();
+            if (input.equals("y")) {
+                return true;
+            } else if (input.equals("n")) {
+                return false;
+            } else {
+                print("Invalid input. ");
+                print(outputBuilder.toString());
+            }
+        }
     }
 }
