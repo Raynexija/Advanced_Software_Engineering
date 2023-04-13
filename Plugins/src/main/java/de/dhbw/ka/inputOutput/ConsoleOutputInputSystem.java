@@ -1,12 +1,14 @@
 package de.dhbw.ka.inputOutput;
 
+import de.dhbw.ka.TextBasedOutputInputSystem;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.Scanner;
 
 
-public class ConsoleOutputInputSystem implements OutputInputSystem {
+public class ConsoleOutputInputSystem implements TextBasedOutputInputSystem {
     enum ColorCodes {
         RESET("\u001B[0m"),
         BLACK("\u001B[30m"),

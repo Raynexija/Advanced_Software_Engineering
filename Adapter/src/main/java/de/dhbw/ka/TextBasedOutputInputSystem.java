@@ -1,6 +1,6 @@
-package de.dhbw.ka.inputOutput;
+package de.dhbw.ka;
 
-public interface OutputInputSystem {
+public interface TextBasedOutputInputSystem {
     void printWarning(String warning);
     void printError(String error);
     void printList(String[] list);
