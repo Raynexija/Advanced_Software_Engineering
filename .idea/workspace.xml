@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="refactor: &#10;- moved files to comply with dependency pattern&#10;- pom.xml to execute all submodule junit tests">
-      <change afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Output.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapter/src/main/java/de/dhbw/ka/TextBasedInputAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Adapter/src/main/java/de/dhbw/ka/TextBasedOutputAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/InputService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/OutputService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Adapter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapter/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapter/src/main/java/de/dhbw/ka/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapter/src/main/java/de/dhbw/ka/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/src/main/java/de/dhbw/ka/inputOutput/ConsoleOutputInputSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/src/main/java/de/dhbw/ka/inputOutput/ConsoleOutputInputSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/src/main/java/de/dhbw/ka/inputOutput/OutputInputSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/Adapter/src/main/java/de/dhbw/ka/TextBasedOutputInputSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -52,17 +51,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "com.obiscr.chatgpt.settings.ChatGPT"
+  }
+}]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean test" />
+      <command value="git " />
+      <command value="maven clean" />
+      <command value="mvn clean" />
+      <command value="tree -r" />
+      <command value="cmd" />
     </option>
   </component>
   <component name="RunManager" selected="Maven.Advanced_Software_Engineering [test]">
@@ -252,12 +257,23 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="plugin/console-output" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
