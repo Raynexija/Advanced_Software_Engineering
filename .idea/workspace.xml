@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="feat: implemented Builder Pattern for Character creation">
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="update: Character and corresponding Builder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/AbilityScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/AbilityScore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/CreateCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/CreateCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/test/java/de/dhbw/ka/test/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/test/java/de/dhbw/ka/test/CharacterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +25,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="plugin/console-output" />
+        <entry key="$PROJECT_DIR$" value="plugin/builder_patter" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -162,7 +159,9 @@
       <workItem from="1679315612434" duration="4804000" />
       <workItem from="1679985300350" duration="15500000" />
       <workItem from="1680081662195" duration="2538000" />
-      <workItem from="1680588326761" duration="10303000" />
+      <workItem from="1680588326761" duration="13204000" />
+      <workItem from="1681500200595" duration="376000" />
+      <workItem from="1681554514338" duration="2306000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>
@@ -227,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680596401875</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="update: Character and corresponding Builder">
+      <created>1680598708154</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1680598708154</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +269,8 @@
     <MESSAGE value="Project structure" />
     <MESSAGE value="remove main class" />
     <MESSAGE value="feat: implemented Builder Pattern for Character creation" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implemented Builder Pattern for Character creation" />
+    <MESSAGE value="update: Character and corresponding Builder" />
+    <option name="LAST_COMMIT_MESSAGE" value="update: Character and corresponding Builder" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -21,6 +21,10 @@ public class Character {
     private int speed;
     private int hitPoints;
 
+    private int passivePerception;
+    private int passiveInvestigation;
+    private int passiveInsight;
+
     private List<AbilityScores> abilityProficiencies = new ArrayList<>();
     private List<Skills> skillProficiencies = new ArrayList<>();
 
@@ -34,6 +38,8 @@ public class Character {
         this.characterClass = characterClass;
         this.languages.add("Common");
         setInitialAbilityScores(strength, dexterity, constitution, intelligence, wisdom, charisma);
+        calculatePassiveSenses();
+        calculateArmorClass(10);
     }
 
     private void setInitialAbilityScores(int baseStrength, int baseDexterity, int baseConstitution, int baseIntelligence, int baseWisdom, int baseCharisma) {
@@ -43,6 +49,27 @@ public class Character {
         this.abilityScores.put(INTELLIGENCE, new AbilityScore(baseIntelligence, this.race.getRacialBonus(INTELLIGENCE), 0));
         this.abilityScores.put(WISDOM, new AbilityScore(baseWisdom, this.race.getRacialBonus(WISDOM), 0));
         this.abilityScores.put(CHARISMA, new AbilityScore(baseCharisma, this.race.getRacialBonus(CHARISMA), 0));
+    }
+
+    public void calculateArmorClass(int baseAmor) {
+        this.armorClass = baseAmor + this.abilityScores.get(DEXTERITY).getModifier();
+    }
+
+    public void calculatePassiveSenses() {
+        if (this.skillProficiencies.contains(Skills.Perception))
+            this.passivePerception = 10 + this.abilityScores.get(WISDOM).getModifier() + this.characterClass.getProficiencyBonus(this.level);
+        else
+            this.passivePerception = 10 + this.abilityScores.get(WISDOM).getModifier();
+
+        if (this.skillProficiencies.contains(Skills.Investigation))
+            this.passiveInvestigation = 10 + this.abilityScores.get(INTELLIGENCE).getModifier() + this.characterClass.getProficiencyBonus(this.level);
+        else
+            this.passiveInvestigation = 10 + this.abilityScores.get(INTELLIGENCE).getModifier();
+
+        if (this.skillProficiencies.contains(Skills.Insight))
+            this.passiveInsight = 10 + this.abilityScores.get(WISDOM).getModifier() + this.characterClass.getProficiencyBonus(this.level);
+        else
+            this.passiveInsight = 10 + this.abilityScores.get(WISDOM).getModifier();
     }
 
     private void setRace(Race race) {
