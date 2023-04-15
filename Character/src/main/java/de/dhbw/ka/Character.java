@@ -2,7 +2,6 @@ package de.dhbw.ka;
 
 import de.dhbw.ka.characterClasses.CharacterClass;
 import de.dhbw.ka.exception.AbilityScoreLimitException;
-import de.dhbw.ka.races.Human;
 import de.dhbw.ka.races.Race;
 
 import java.util.ArrayList;
@@ -12,27 +11,35 @@ import java.util.List;
 import static de.dhbw.ka.AbilityScores.*;
 
 public class Character {
-    protected String name;
-    protected Race race;
-    protected CharacterClass characterClass;
+    private String name;
+    private Race race;
+    private CharacterClass characterClass;
 
     private int level;
     private int armorClass;
-    private int initiative;
+    private int initiativeBonus;
     private int speed;
     private int hitPoints;
+
+    private int passivePerception;
+    private int passiveInvestigation;
+    private int passiveInsight;
 
     private List<AbilityScores> abilityProficiencies = new ArrayList<>();
     private List<Skills> skillProficiencies = new ArrayList<>();
 
-    protected List<String> languages = new ArrayList<>();
-    protected List<String> equipment = new ArrayList<>();
+    private List<String> languages = new ArrayList<>();
+    private List<String> equipment = new ArrayList<>();
     private HashMap<AbilityScores, AbilityScore> abilityScores = new HashMap<>();
 
-    public Character() {
+    public Character(Race race, CharacterClass characterClass, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
+        setRace(race);
+        setClass(characterClass);
+        this.characterClass = characterClass;
         this.languages.add("Common");
-        this.race = new Human();
-        setInitialAbilityScores(15, 10, 10, 10, 10, 10);
+        setInitialAbilityScores(strength, dexterity, constitution, intelligence, wisdom, charisma);
+        calculatePassiveSenses();
+        calculateArmorClass(10);
     }
 
     private void setInitialAbilityScores(int baseStrength, int baseDexterity, int baseConstitution, int baseIntelligence, int baseWisdom, int baseCharisma) {
@@ -44,12 +51,33 @@ public class Character {
         this.abilityScores.put(CHARISMA, new AbilityScore(baseCharisma, this.race.getRacialBonus(CHARISMA), 0));
     }
 
-    public void setRace(Race race) {
+    public void calculateArmorClass(int baseAmor) {
+        this.armorClass = baseAmor + this.abilityScores.get(DEXTERITY).getModifier();
+    }
+
+    public void calculatePassiveSenses() {
+        if (this.skillProficiencies.contains(Skills.Perception))
+            this.passivePerception = 10 + this.abilityScores.get(WISDOM).getModifier() + this.characterClass.getProficiencyBonus(this.level);
+        else
+            this.passivePerception = 10 + this.abilityScores.get(WISDOM).getModifier();
+
+        if (this.skillProficiencies.contains(Skills.Investigation))
+            this.passiveInvestigation = 10 + this.abilityScores.get(INTELLIGENCE).getModifier() + this.characterClass.getProficiencyBonus(this.level);
+        else
+            this.passiveInvestigation = 10 + this.abilityScores.get(INTELLIGENCE).getModifier();
+
+        if (this.skillProficiencies.contains(Skills.Insight))
+            this.passiveInsight = 10 + this.abilityScores.get(WISDOM).getModifier() + this.characterClass.getProficiencyBonus(this.level);
+        else
+            this.passiveInsight = 10 + this.abilityScores.get(WISDOM).getModifier();
+    }
+
+    private void setRace(Race race) {
         this.race = race;
         this.speed = race.getWalkingSpeed();
     }
 
-    public void setClass(CharacterClass characterClass) {
+    private void setClass(CharacterClass characterClass) {
         this.characterClass = characterClass;
         this.abilityProficiencies.addAll(characterClass.getAbilityProficiencies());
     }
@@ -60,6 +88,11 @@ public class Character {
 
     public void addEquipment(String item) {
         this.equipment.add(item);
+        this.equipment.sort(String::compareTo);
+    }
+
+    public void removeEquipment(String item) {
+        this.equipment.remove(item);
     }
 
     public List<String> getEquipment() {
@@ -68,6 +101,7 @@ public class Character {
 
     public void addLanguage(String language) {
         this.languages.add(language);
+        this.languages.sort(String::compareTo);
     }
 
     public void addSkillProficiency(Skills skill) {
@@ -130,12 +164,12 @@ public class Character {
         this.armorClass = armorClass;
     }
 
-    public int getInitiative() {
-        return initiative;
+    public int getInitiativeBonus() {
+        return initiativeBonus;
     }
 
-    public void setInitiative(int initiative) {
-        this.initiative = initiative;
+    public void setInitiativeBonus(int initiative) {
+        this.initiativeBonus = initiative;
     }
 
     public int getSpeed() {
@@ -152,5 +186,21 @@ public class Character {
 
     public void setHitPoints(int hitPoints) {
         this.hitPoints = hitPoints;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public Race getRace() {
+        return race;
+    }
+
+    public CharacterClass getCharacterClass() {
+        return characterClass;
+    }
+
+    public List<String> getLanguages() {
+        return languages;
     }
 }
