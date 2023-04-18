@@ -1,6 +1,8 @@
 package de.dhbw.ka;
 
-public class TextBasedInputAdapter implements InputService{
+import de.dhbw.ka.interfaces.InputService;
+
+public class TextBasedInputAdapter implements InputService {
     private final TextBasedOutputInputSystem textBasedOutputInputSystem;
 
     public TextBasedInputAdapter(TextBasedOutputInputSystem textBasedOutputInputSystem) {

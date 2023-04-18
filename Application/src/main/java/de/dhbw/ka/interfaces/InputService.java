@@ -1,4 +1,4 @@
-package de.dhbw.ka;
+package de.dhbw.ka.interfaces;
 
 public interface InputService {
     String requestString(String prompt);

@@ -1,4 +1,4 @@
-package de.dhbw.ka;
+package de.dhbw.ka.interfaces;
 
 public interface OutputService {
     void displayError(String errorMessage);
