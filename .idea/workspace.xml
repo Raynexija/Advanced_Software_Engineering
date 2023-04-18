@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="refactor: &#10;- moved files to comply with dependency pattern&#10;- pom.xml to execute all submodule junit tests">
-      <change afterPath="$PROJECT_DIR$/Adapter/src/main/java/de/dhbw/ka/TextBasedInputAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Adapter/src/main/java/de/dhbw/ka/TextBasedOutputAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/InputService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/OutputService.java" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: calculation for passive senses and armor class">
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Adapter/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,11 +54,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "com.obiscr.chatgpt.settings.ChatGPT"
+    "settings.editor.selected.configurable": "com.obiscr.chatgpt.settings.ChatGPT",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunAnythingCache">
@@ -187,6 +185,7 @@
       <workItem from="1681205921414" duration="6186000" />
       <workItem from="1681371454592" duration="201000" />
       <workItem from="1681371700932" duration="3399000" />
+      <workItem from="1681829761833" duration="1729000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>

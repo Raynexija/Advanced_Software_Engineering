@@ -39,9 +39,19 @@ public class Character {
         this.languages.add("Common");
         setInitialAbilityScores(strength, dexterity, constitution, intelligence, wisdom, charisma);
         calculatePassiveSenses();
-        calculateArmorClass(10);
+        setArmorClass(10);
     }
 
+    /**
+     * Method to set the initial ability scores of the character, including racial bonuses
+     *
+     * @param baseStrength
+     * @param baseDexterity
+     * @param baseConstitution
+     * @param baseIntelligence
+     * @param baseWisdom
+     * @param baseCharisma
+     */
     private void setInitialAbilityScores(int baseStrength, int baseDexterity, int baseConstitution, int baseIntelligence, int baseWisdom, int baseCharisma) {
         this.abilityScores.put(STRENGTH, new AbilityScore(baseStrength, this.race.getRacialBonus(STRENGTH), 0));
         this.abilityScores.put(DEXTERITY, new AbilityScore(baseDexterity, this.race.getRacialBonus(DEXTERITY), 0));
@@ -51,11 +61,31 @@ public class Character {
         this.abilityScores.put(CHARISMA, new AbilityScore(baseCharisma, this.race.getRacialBonus(CHARISMA), 0));
     }
 
-    public void calculateArmorClass(int baseAmor) {
+    /**
+     * Calculates and sets the armor class of the character, based on the base armor value and the dexterity modifier
+     *
+     * @param baseAmor the armor value given by the armor worn by the character
+     * @return the calculated armor class
+     */
+    public int setArmorClass(int baseAmor) {
         this.armorClass = baseAmor + this.abilityScores.get(DEXTERITY).getModifier();
+        return this.armorClass;
     }
 
-    public void calculatePassiveSenses() {
+    /**
+     * Set a fixed value for the armor class
+     *
+     * @param armorClass the flat value without any modifiers
+     */
+    public void setFlatArmorClass(int armorClass) {
+        this.armorClass = armorClass;
+    }
+
+    /**
+     * Calculates the passive senses of the character
+     * (passive perception, passive investigation, passive insight)
+     */
+    private void calculatePassiveSenses() {
         if (this.skillProficiencies.contains(Skills.Perception))
             this.passivePerception = 10 + this.abilityScores.get(WISDOM).getModifier() + this.characterClass.getProficiencyBonus(this.level);
         else
@@ -86,34 +116,84 @@ public class Character {
         this.name = name;
     }
 
+    /**
+     * Adds an item to the equipment list and sorts it alphabetically
+     *
+     * @param item the item to be added to the character's equipment
+     */
     public void addEquipment(String item) {
         this.equipment.add(item);
         this.equipment.sort(String::compareTo);
     }
 
+    /**
+     * Removes a given item from the equipment list
+     *
+     * @param item the item to be removed from the character's equipment
+     */
     public void removeEquipment(String item) {
         this.equipment.remove(item);
     }
 
+    /**
+     * Returns the alphabetically sorted list of equipment the character has
+     *
+     * @return the list of equipment
+     */
     public List<String> getEquipment() {
         return this.equipment;
     }
 
+    /**
+     * Adds a language the character can speak and read
+     *
+     * @param language the language to be added to the character's language list
+     */
     public void addLanguage(String language) {
         this.languages.add(language);
         this.languages.sort(String::compareTo);
     }
 
+    /**
+     * Adds a skill the character is proficient in.
+     * <p>
+     * If necessary, it then recalculates the passive senses of the character to ensure they are up-to-date.
+     *
+     * @param skill the skill which the character got proficient in
+     */
     public void addSkillProficiency(Skills skill) {
         this.skillProficiencies.add(skill);
+        if (skill == Skills.Perception || skill == Skills.Investigation || skill == Skills.Insight)
+            calculatePassiveSenses();
     }
 
 
+    /**
+     * Sets the ability score of the character to a fixed value,
+     * this can happen through an item or spell effect.
+     * <p>
+     * If necessary, it then recalculates the passive senses of the character to ensure they are up-to-date.
+     *
+     * @param abilityScore the ability score to be set
+     * @param value        the value the ability score should be set to
+     */
     public void setFlatAbilityScore(AbilityScores abilityScore, int value) {
         this.abilityScores.put(abilityScore, new AbilityScore(value, 0, 0));
+        if (abilityScore == WISDOM || abilityScore == INTELLIGENCE)
+            calculatePassiveSenses();
     }
 
-    public void addAbilityBonus(AbilityScores abilityScore, int bonus) {
+    /**
+     * Adds a bonus to the ability score of the character and returns the new value
+     * it may not exceed 20.
+     * <p>
+     * If necessary, it then recalculates the passive senses of the character to ensure they are up-to-date.
+     *
+     * @param abilityScore the ability score to be modified
+     * @param bonus        the bonus to be added to the ability score
+     * @return the new value of the ability score including the bonus
+     */
+    public int addAbilityBonus(AbilityScores abilityScore, int bonus) {
         AbilityScore ability = this.abilityScores.get(abilityScore);
         try {
             this.abilityScores.put(abilityScore, new AbilityScore(ability.getBaseScore(),
@@ -122,8 +202,17 @@ public class Character {
         } catch (AbilityScoreLimitException e) {
             System.out.println("Ability Score must not exceed 20");
         }
+        if (abilityScore == WISDOM || abilityScore == INTELLIGENCE)
+            calculatePassiveSenses();
+        return this.abilityScores.get(abilityScore).getScore();
     }
 
+    /**
+     * Returns the modifier the character has for a given skill check
+     *
+     * @param skill the skill to be checked
+     * @return the modifier for the skill check
+     */
     public int skillCheckModifier(Skills skill) {
         if (skillProficiencies.contains(skill)) {
             return abilityScores.get(skill.ability).modifier + this.characterClass.getProficiencyBonus(this.level);
@@ -132,6 +221,12 @@ public class Character {
         }
     }
 
+    /**
+     * Returns the modifier the character has for a given saving throw
+     *
+     * @param abilityScore the ability score to be checked
+     * @return the modifier for the saving throw
+     */
     public int savingThrowModifier(AbilityScores abilityScore) {
         if (abilityProficiencies.contains(abilityScore)) {
             return this.abilityScores.get(abilityScore).modifier + this.characterClass.getProficiencyBonus(this.level);
@@ -140,66 +235,139 @@ public class Character {
         }
     }
 
+    /**
+     * Returns the modifier the character has for a given ability check
+     *
+     * @param abilityScore the ability score to be checked
+     * @return the modifier for the ability check
+     */
     public int abilityCheckModifier(AbilityScores abilityScore) {
         return this.abilityScores.get(abilityScore).modifier;
     }
 
+    /**
+     * Returns a given ability score of the character
+     *
+     * @param abilityScore the ability score to be returned
+     * @return the ability score
+     */
     public AbilityScore getAbilityScore(AbilityScores abilityScore) {
         return this.abilityScores.get(abilityScore);
     }
 
+    /**
+     * Returns the current level of the character
+     *
+     * @return the level of the character
+     */
     public int getLevel() {
         return level;
     }
 
+    /**
+     * Sets the level of the character
+     *
+     * @param level the level to be set
+     */
     public void setLevel(int level) {
         this.level = level;
     }
 
+    /**
+     * Returns the current Armor Class of the character
+     *
+     * @return the armor class of the character
+     */
     public int getArmorClass() {
         return armorClass;
     }
 
-    public void setArmorClass(int armorClass) {
-        this.armorClass = armorClass;
-    }
-
+    /**
+     * Returns the initiative bonus of the character
+     *
+     * @return
+     */
     public int getInitiativeBonus() {
         return initiativeBonus;
     }
 
+    /**
+     * Sets the initiative bonus of the character
+     *
+     * @param initiative the initiative bonus to be set
+     */
     public void setInitiativeBonus(int initiative) {
         this.initiativeBonus = initiative;
     }
 
+    /**
+     * Returns the current speed of the character
+     *
+     * @return
+     */
     public int getSpeed() {
         return speed;
     }
 
+    /**
+     * Sets the speed of the character
+     *
+     * @param speed the speed to be set
+     */
     public void setSpeed(int speed) {
         this.speed = speed;
     }
 
+    /**
+     * Returns the current hit points of the character
+     *
+     * @return the hit points of the character
+     */
     public int getHitPoints() {
         return hitPoints;
     }
 
+    /**
+     * Sets the hit points of the character
+     *
+     * @param hitPoints the hit points to be set
+     */
     public void setHitPoints(int hitPoints) {
         this.hitPoints = hitPoints;
     }
 
+    /**
+     * Returns the current hit dice of the character
+     *
+     * @return the hit dice of the character
+     */
     public String getName() {
         return this.name;
     }
 
+    /**
+     * Returns the Race of the character
+     *
+     * @return the Character's race
+     */
     public Race getRace() {
         return race;
     }
 
+    /**
+     * Returns the Class of the character
+     *
+     * @return the Character's class
+     */
     public CharacterClass getCharacterClass() {
         return characterClass;
     }
 
+    /**
+     * Returns a list of all the languages the character can speak
+     *
+     * @return a list of languages the character can speak
+     */
     public List<String> getLanguages() {
         return languages;
     }
