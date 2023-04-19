@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: calculation for passive senses and armor class">
+      <change afterPath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/test/rng/RandomNumberGeneratorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="plugin/builder_patter" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,7 +59,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "com.obiscr.chatgpt.settings.ChatGPT",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -73,62 +73,66 @@
       <command value="cmd" />
     </option>
   </component>
-  <component name="RunManager" selected="Maven.Advanced_Software_Engineering [test]">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.Main" />
-      <module name="Plugins" />
+  <component name="RunManager" selected="JUnit.RandomNumberGeneratorTest">
+    <configuration name="RandomNumberGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Application" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.*" />
+          <option name="PATTERN" value="de.dhbw.ka.test.rng.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CharacterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Character" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.CharacterTest" />
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.rng" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.rng.RandomNumberGeneratorTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CharacterTest.testSetAbilityScore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Character" />
+    <configuration name="RandomNumberGeneratorTest.testGenerate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Application" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.*" />
+          <option name="PATTERN" value="de.dhbw.ka.test.rng.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.CharacterTest" />
-      <option name="METHOD_NAME" value="testSetAbilityScore" />
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.rng" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.rng.RandomNumberGeneratorTest" />
+      <option name="METHOD_NAME" value="testGenerate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConsoleInputOutputTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Plugins" />
+    <configuration name="RandomNumberGeneratorTest.testInterface" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Application" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.inputOutput.*" />
+          <option name="PATTERN" value="de.dhbw.ka.test.rng.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.inputOutput" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.inputOutput.ConsoleInputOutputTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.rng" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.rng.RandomNumberGeneratorTest" />
+      <option name="METHOD_NAME" value="testInterface" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RandomNumberGeneratorTest.testRandomNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Plugins" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.dhbw.ka.test.rng.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.rng" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.rng.RandomNumberGeneratorTest" />
+      <option name="METHOD_NAME" value="testRandomNumber" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -160,11 +164,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RandomNumberGeneratorTest" />
+        <item itemvalue="JUnit.RandomNumberGeneratorTest.testInterface" />
+        <item itemvalue="JUnit.RandomNumberGeneratorTest.testGenerate" />
+        <item itemvalue="JUnit.RandomNumberGeneratorTest.testRandomNumber" />
         <item itemvalue="Maven.Advanced_Software_Engineering [test]" />
-        <item itemvalue="JUnit.ConsoleInputOutputTest" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.CharacterTest" />
-        <item itemvalue="JUnit.CharacterTest.testSetAbilityScore" />
       </list>
     </recent_temporary>
   </component>

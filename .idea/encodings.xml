@@ -2,9 +2,14 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/Adapter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Adapter/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Application/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Application/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Character/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Character/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Plugins/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Plugins/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
   </component>
 </project>
