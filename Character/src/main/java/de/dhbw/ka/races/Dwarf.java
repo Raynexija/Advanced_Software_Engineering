@@ -4,15 +4,18 @@ import de.dhbw.ka.AbilityScores;
 
 import java.util.List;
 
-public class Human implements Race{
-    @Override
+public class Dwarf implements Race {
     public int getRacialBonus(AbilityScores abilityScore) {
-        return 1;
+        switch (abilityScore) {
+            case CONSTITUTION:
+                return 2;
+            default:
+                return 0;
+        }
     }
 
-    @Override
-    public int getWalkingSpeed(){
-        return 30;
+    public int getWalkingSpeed() {
+        return 25;
     }
 
     @Override
