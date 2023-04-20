@@ -1,5 +1,7 @@
 package de.dhbw.ka;
 
+import de.dhbw.ka.interfaces.OutputService;
+
 public class TextBasedOutputAdapter implements OutputService {
     private final TextBasedOutputInputSystem textBasedOutputInputSystem;
 
