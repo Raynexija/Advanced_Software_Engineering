@@ -13,7 +13,7 @@ public class ConsoleInputOutputTest {
 
     @BeforeEach
     void setUp() {
-        console = new ConsoleOutputInputSystem(outputStream, System.in);
+        console = new ConsoleOutputInputSystem();
     }
 
     @Test
