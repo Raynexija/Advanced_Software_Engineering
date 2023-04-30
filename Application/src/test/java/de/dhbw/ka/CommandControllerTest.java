@@ -2,6 +2,8 @@ package de.dhbw.ka;
 
 import de.dhbw.ka.applicationStates.ApplicationStates;
 import de.dhbw.ka.commands.Command;
+import de.dhbw.ka.interfaces.InputService;
+import de.dhbw.ka.interfaces.OutputService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -22,13 +24,12 @@ public class CommandControllerTest {
     private OutputService outputService;
     @Mock
     private ApplicationStates currentState;
-    @Mock
-    private CharacterBuilder characterBuilder;
+
 
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        controller = new CommandController(inputService, outputService, characterBuilder);
+        controller = new CommandController(inputService, outputService);
     }
 
     @Test
@@ -77,7 +78,7 @@ public class CommandControllerTest {
         when(currentState.getAvailableCommands()).thenReturn(new HashSet<>() {{
             add(command);
         }});
-        doThrow(new Exception()).when(currentState).executeCommand(command, inputService, outputService, characterBuilder);
+        doThrow(new Exception()).when(currentState).executeCommand(command, inputService, outputService);
         controller.setCurrentState(currentState);
         controller.enqueueCommand(command);
         controller.executeCommands();

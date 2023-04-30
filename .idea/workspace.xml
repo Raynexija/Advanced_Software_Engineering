@@ -4,14 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: calculation for passive senses and armor class">
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/test/rng/RandomNumberGeneratorTest.java" afterDir="false" />
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="feat: added command logic">
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/CommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/CommandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationState.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationStates.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationStates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/ExitCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/RequestIntFromUserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/RequestIntFromUserCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/RequestStringFromUserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/RequestStringFromUserCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/ApplicationStatesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/ApplicationStatesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/CommandControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/CommandControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +33,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="application/commands" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -80,17 +90,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="de.dhbw.ka" />
@@ -114,22 +124,15 @@
       <command value="mvn clean test " />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.RandomNumberGeneratorTest">
-    <configuration name="RandomNumberGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Application" />
-  <component name="RunManager" selected="JUnit.CommandControllerTest">
+  <component name="RunManager" selected="JUnit.ApplicationStatesTest">
     <configuration name="ApplicationStatesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Application" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.rng.*" />
           <option name="PATTERN" value="de.dhbw.ka.commands.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.rng" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.rng.RandomNumberGeneratorTest" />
-      <option name="TEST_OBJECT" value="class" />
       <option name="PACKAGE_NAME" value="de.dhbw.ka" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.ApplicationStatesTest" />
       <option name="TEST_OBJECT" value="class" />
@@ -139,40 +142,28 @@
     </configuration>
     <configuration name="CommandControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Application" />
-    <configuration name="RandomNumberGeneratorTest.testGenerate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Application" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.rng.*" />
           <option name="PATTERN" value="de.dhbw.ka.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.rng" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.rng.RandomNumberGeneratorTest" />
-      <option name="METHOD_NAME" value="testGenerate" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="PACKAGE_NAME" value="de.dhbw.ka" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.CommandControllerTest" />
+      <option name="METHOD_NAME" value="testGenerate" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RandomNumberGeneratorTest.testInterface" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Application" />
     <configuration name="CommandControllerTest.testExecuteCommands" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Application" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.rng.*" />
           <option name="PATTERN" value="de.dhbw.ka.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.rng" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.rng.RandomNumberGeneratorTest" />
-      <option name="METHOD_NAME" value="testInterface" />
       <option name="PACKAGE_NAME" value="de.dhbw.ka" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.CommandControllerTest" />
       <option name="METHOD_NAME" value="testExecuteCommands" />
@@ -183,19 +174,12 @@
     </configuration>
     <configuration name="CommandControllerTest.testExecuteCommandsException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Application" />
-    <configuration name="RandomNumberGeneratorTest.testRandomNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Plugins" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.*" />
           <option name="PATTERN" value="de.dhbw.ka.test.rng.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.CommandControllerTest" />
-      <option name="METHOD_NAME" value="testExecuteCommandsException" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test.rng" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.rng.RandomNumberGeneratorTest" />
       <option name="METHOD_NAME" value="testRandomNumber" />
@@ -222,13 +206,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RandomNumberGeneratorTest" />
-        <item itemvalue="JUnit.RandomNumberGeneratorTest.testInterface" />
-        <item itemvalue="JUnit.RandomNumberGeneratorTest.testGenerate" />
-        <item itemvalue="JUnit.RandomNumberGeneratorTest.testRandomNumber" />
-        <item itemvalue="Maven.Advanced_Software_Engineering [test]" />
-        <item itemvalue="JUnit.CommandControllerTest" />
         <item itemvalue="JUnit.ApplicationStatesTest" />
+        <item itemvalue="JUnit.CommandControllerTest" />
         <item itemvalue="JUnit.CommandControllerTest.testExecuteCommands" />
         <item itemvalue="JUnit.CommandControllerTest.testExecuteCommandsExit" />
         <item itemvalue="JUnit.CommandControllerTest.testExecuteCommandsException" />
@@ -408,12 +387,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationStates.java</url>
-          <line>41</line>
+          <line>39</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationState.java</url>
-          <line>12</line>
+          <line>11</line>
           <properties class="de.dhbw.ka.applicationStates.ApplicationState" method="executeCommand">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

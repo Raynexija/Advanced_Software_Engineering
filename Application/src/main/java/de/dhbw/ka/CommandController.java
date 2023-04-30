@@ -3,6 +3,8 @@ package de.dhbw.ka;
 import de.dhbw.ka.applicationStates.ApplicationState;
 import de.dhbw.ka.applicationStates.ApplicationStates;
 import de.dhbw.ka.commands.Command;
+import de.dhbw.ka.interfaces.InputService;
+import de.dhbw.ka.interfaces.OutputService;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -10,15 +12,13 @@ import java.util.Queue;
 public class CommandController {
     private final InputService inputService;
     private final OutputService outputService;
-    private final CharacterBuilder characterBuilder;
     private ApplicationState currentState;
     private final Queue<Command> commandQueue;
 
 
-    public CommandController(InputService inputService, OutputService outputService, CharacterBuilder characterBuilder) {
+    public CommandController(InputService inputService, OutputService outputService) {
         this.inputService = inputService;
         this.outputService = outputService;
-        this.characterBuilder = characterBuilder;
 
         this.currentState = ApplicationStates.EXIT;
         this.commandQueue = new LinkedList<>();
@@ -36,7 +36,7 @@ public class CommandController {
         while (!commandQueue.isEmpty()) {
             Command currentCommand = commandQueue.peek();
             try {
-                currentState.executeCommand(currentCommand, inputService, outputService, characterBuilder);
+                currentState.executeCommand(currentCommand, inputService, outputService);
                 commandQueue.poll();
             } catch (Exception e) {
                 outputService.displayError(e.getMessage());

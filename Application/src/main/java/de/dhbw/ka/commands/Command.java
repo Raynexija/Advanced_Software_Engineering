@@ -1,12 +1,10 @@
 package de.dhbw.ka.commands;
 
-
-import de.dhbw.ka.CharacterBuilder;
-import de.dhbw.ka.InputService;
-import de.dhbw.ka.OutputService;
+import de.dhbw.ka.interfaces.InputService;
+import de.dhbw.ka.interfaces.OutputService;
 
 public abstract class Command {
-    public abstract void execute(InputService inputService, OutputService outputService, CharacterBuilder characterBuilder);
+    public abstract void execute(InputService inputService, OutputService outputService);
 
     // Override equals and hashCode to make sure that commands
     // are only equal if they are of the same class

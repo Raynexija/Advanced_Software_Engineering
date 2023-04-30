@@ -6,6 +6,8 @@ import de.dhbw.ka.commands.Command;
 import de.dhbw.ka.commands.ExitCommand;
 import de.dhbw.ka.commands.RequestIntFromUserCommand;
 import de.dhbw.ka.commands.RequestStringFromUserCommand;
+import de.dhbw.ka.interfaces.InputService;
+import de.dhbw.ka.interfaces.OutputService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -21,8 +23,7 @@ public class ApplicationStatesTest {
     private OutputService outputService;
     @Mock
     private InputService inputService;
-    @Mock
-    private CharacterBuilder characterBuilder;
+
 
     @BeforeEach
     void setUp() {
@@ -52,13 +53,13 @@ public class ApplicationStatesTest {
     void testExecuteCommandThrowsExceptionForInvalidCommand() {
         ApplicationState state = ApplicationStates.CHARACTER_CREATION;
         Command invalidCommand = new ExitCommand();
-        assertThrows(IllegalArgumentException.class, () -> state.executeCommand(invalidCommand, inputService,outputService ,characterBuilder ));
+        assertThrows(IllegalArgumentException.class, () -> state.executeCommand(invalidCommand, inputService,outputService));
     }
 
     @Test
     void testExecuteCommandDoesNotThrowExceptionForValidCommand() {
         ApplicationState state = ApplicationStates.CHARACTER_CREATION;
         Command validCommand = new RequestStringFromUserCommand();
-        assertDoesNotThrow(() -> state.executeCommand(validCommand,inputService,outputService ,characterBuilder ));
+        assertDoesNotThrow(() -> state.executeCommand(validCommand,inputService,outputService));
     }
 }
