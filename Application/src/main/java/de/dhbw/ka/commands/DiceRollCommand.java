@@ -23,10 +23,11 @@ public class DiceRollCommand extends Command {
     }
 
     public static String help() {
-        return "Rolls a dice of the specified type and count.\n" +
-                "Available dice types: D4, D6, D8, D10, D12, D20, D100\n" +
-                "Add -s to get the sum of all rolls\n" +
-                "Usage: roll <count> <diceType>";
+        return """
+                Rolls a dice of the specified type and count.
+                Available dice types: D4, D6, D8, D10, D12, D20, D100
+                Add -s to get the sum of all rolls
+                Usage: roll <count> <diceType>""";
     }
 
     @Override

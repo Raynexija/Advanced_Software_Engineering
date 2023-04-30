@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: dice and Application class">
-      <change afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/DiceRollCommand.java" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="feat: dice roll command">
+      <change afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/CreateCharacterCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/CommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/CommandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationStates.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationStates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/ExitCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/DiceRollCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/DiceRollCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -84,17 +81,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\DH\Advanced_Software_Engineering\Application\src\main\java\de\dhbw\ka" />
@@ -223,6 +220,7 @@
       <workItem from="1681205921414" duration="6186000" />
       <workItem from="1681371454592" duration="201000" />
       <workItem from="1681371700932" duration="3399000" />
+      <workItem from="1682880270728" duration="4784000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>
@@ -350,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682867026706</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="feat: dice roll command">
+      <created>1682880029919</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1682880029919</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -391,7 +396,8 @@
     <MESSAGE value="refactor: merged main and removed character builder from basic command" />
     <MESSAGE value="refactor: console is now a given for the console Out. &amp; Input" />
     <MESSAGE value="add: dice and Application class" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: dice and Application class" />
+    <MESSAGE value="feat: dice roll command" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: dice roll command" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

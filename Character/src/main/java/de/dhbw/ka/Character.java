@@ -371,4 +371,33 @@ public class Character {
     public List<String> getLanguages() {
         return languages;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Name: ").append(this.name).append("\n")
+                .append("Race: ").append(this.race.getClass().toString()).append("\n")
+                .append("Class: ").append(this.characterClass.getClass().toString()).append("\n")
+                .append("Level: ").append(this.level).append("\n")
+                .append("Armor Class: ").append(this.armorClass).append("\n")
+                .append("Initiative Bonus: ").append(this.initiativeBonus).append("\n")
+                .append("Speed: ").append(this.speed).append("\n")
+                .append("Hit Points: ").append(this.hitPoints).append("\n")
+                .append("Passive Perception: ").append(this.passivePerception).append("\n")
+                .append("Passive Investigation: ").append(this.passiveInvestigation).append("\n")
+                .append("Passive Insight: ").append(this.passiveInsight).append("\n")
+                .append("Ability Scores: ").append("\n")
+                .append("Strength: ").append(this.abilityScores.get(STRENGTH).getScore()).append(" (").append(this.abilityScores.get(STRENGTH).getModifier()).append(")").append("\n")
+                .append("Dexterity: ").append(this.abilityScores.get(DEXTERITY).getScore()).append(" (").append(this.abilityScores.get(DEXTERITY).getModifier()).append(")").append("\n")
+                .append("Constitution: ").append(this.abilityScores.get(CONSTITUTION).getScore()).append(" (").append(this.abilityScores.get(CONSTITUTION).getModifier()).append(")").append("\n")
+                .append("Intelligence: ").append(this.abilityScores.get(INTELLIGENCE).getScore()).append(" (").append(this.abilityScores.get(INTELLIGENCE).getModifier()).append(")").append("\n")
+                .append("Wisdom: ").append(this.abilityScores.get(WISDOM).getScore()).append(" (").append(this.abilityScores.get(WISDOM).getModifier()).append(")").append("\n")
+                .append("Charisma: ").append(this.abilityScores.get(CHARISMA).getScore()).append(" (").append(this.abilityScores.get(CHARISMA).getModifier()).append(")").append("\n")
+                .append("Ability Proficiencies: ").append(this.abilityProficiencies).append("\n")
+                .append("Skill Proficiencies: ").append(this.skillProficiencies).append("\n")
+                .append("Languages: ").append(this.languages).append("\n")
+                .append("Equipment: ").append(this.equipment).append("\n");
+        return sb.toString();
+    }
+
 }
