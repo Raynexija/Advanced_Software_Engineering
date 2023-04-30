@@ -4,21 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/test/rng/RandomNumberGeneratorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="refactor: merged main and removed character builder from basic command">
+      <change afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Dice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/CommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/CommandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationState.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationStates.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationStates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/ExitCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/RequestIntFromUserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/RequestIntFromUserCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/RequestStringFromUserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/RequestStringFromUserCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/ApplicationStatesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/ApplicationStatesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/CommandControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/CommandControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/src/main/java/de/dhbw/ka/inputOutput/ConsoleOutputInputSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/src/main/java/de/dhbw/ka/inputOutput/ConsoleOutputInputSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/src/test/java/de/dhbw/ka/test/inputOutput/ConsoleInputOutputTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/src/test/java/de/dhbw/ka/test/inputOutput/ConsoleInputOutputTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,6 +94,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\DH\Advanced_Software_Engineering\Application\src\main\java\de\dhbw\ka" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="de.dhbw.ka" />
     </key>
@@ -124,7 +119,20 @@
       <command value="mvn clean test " />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ApplicationStatesTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.Main" />
+      <module name="Application" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.dhbw.ka.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApplicationStatesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Application" />
       <extension name="coverage">
@@ -172,7 +180,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommandControllerTest.testExecuteCommandsException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RandomNumberGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Application" />
       <extension name="coverage">
         <pattern>
@@ -182,35 +190,17 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test.rng" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.rng.RandomNumberGeneratorTest" />
-      <option name="METHOD_NAME" value="testRandomNumber" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CommandControllerTest.testExecuteCommandsExit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Application" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.CommandControllerTest" />
-      <option name="METHOD_NAME" value="testExecuteCommandsExit" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.RandomNumberGeneratorTest" />
         <item itemvalue="JUnit.ApplicationStatesTest" />
         <item itemvalue="JUnit.CommandControllerTest" />
         <item itemvalue="JUnit.CommandControllerTest.testExecuteCommands" />
-        <item itemvalue="JUnit.CommandControllerTest.testExecuteCommandsExit" />
-        <item itemvalue="JUnit.CommandControllerTest.testExecuteCommandsException" />
       </list>
     </recent_temporary>
   </component>
@@ -337,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681503885808</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="refactor: merged main and removed character builder from basic command">
+      <created>1682864766783</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1682864766783</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +372,8 @@
     <MESSAGE value="feat: added i/o console functionality" />
     <MESSAGE value="refactor: &#10;- moved files to comply with dependency pattern&#10;- pom.xml to execute all submodule junit tests" />
     <MESSAGE value="feat: added command logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: added command logic" />
+    <MESSAGE value="refactor: merged main and removed character builder from basic command" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: merged main and removed character builder from basic command" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
