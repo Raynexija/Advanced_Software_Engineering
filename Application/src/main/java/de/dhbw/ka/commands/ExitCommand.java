@@ -7,6 +7,6 @@ public class ExitCommand extends Command {
     @Override
     public void execute(InputService inputService, OutputService outputService) {
         System.out.println("ExitCommand executed");
-
+        System.exit(0);
     }
 }

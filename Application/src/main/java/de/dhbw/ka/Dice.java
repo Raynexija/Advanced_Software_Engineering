@@ -10,6 +10,10 @@ public class Dice {
         this.randomNumberGenerator = randomNumberGenerator;
     }
 
+    public enum types {
+        D4, D6, D8, D10, D12, D20, D100
+    }
+
     /**
      * Rolls a die with the given max value
      *

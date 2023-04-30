@@ -1,11 +1,8 @@
 package de.dhbw.ka.applicationStates;
 
+import de.dhbw.ka.commands.*;
 import de.dhbw.ka.interfaces.InputService;
 import de.dhbw.ka.interfaces.OutputService;
-import de.dhbw.ka.commands.Command;
-import de.dhbw.ka.commands.ExitCommand;
-import de.dhbw.ka.commands.RequestIntFromUserCommand;
-import de.dhbw.ka.commands.RequestStringFromUserCommand;
 
 import java.util.Arrays;
 import java.util.HashSet;

@@ -4,7 +4,7 @@ import de.dhbw.ka.interfaces.InputService;
 import de.dhbw.ka.interfaces.OutputService;
 
 public abstract class Command {
-    public abstract void execute(InputService inputService, OutputService outputService);
+    public abstract void execute(InputService input, OutputService output);
 
     // Override equals and hashCode to make sure that commands
     // are only equal if they are of the same class

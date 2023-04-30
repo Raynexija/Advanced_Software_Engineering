@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="refactor: merged main and removed character builder from basic command">
-      <change afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Dice.java" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: dice and Application class">
+      <change afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/DiceRollCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/src/main/java/de/dhbw/ka/inputOutput/ConsoleOutputInputSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/src/main/java/de/dhbw/ka/inputOutput/ConsoleOutputInputSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/src/test/java/de/dhbw/ka/test/inputOutput/ConsoleInputOutputTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Plugins/src/test/java/de/dhbw/ka/test/inputOutput/ConsoleInputOutputTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/CommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/CommandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationStates.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationStates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/ExitCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -334,7 +336,21 @@
       <option name="project" value="LOCAL" />
       <updated>1682864766783</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="refactor: console is now a given for the console Out. &amp; Input">
+      <created>1682866946737</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1682866946737</updated>
+    </task>
+    <task id="LOCAL-00018" summary="add: dice and Application class">
+      <created>1682867026706</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1682867026706</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -373,7 +389,9 @@
     <MESSAGE value="refactor: &#10;- moved files to comply with dependency pattern&#10;- pom.xml to execute all submodule junit tests" />
     <MESSAGE value="feat: added command logic" />
     <MESSAGE value="refactor: merged main and removed character builder from basic command" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: merged main and removed character builder from basic command" />
+    <MESSAGE value="refactor: console is now a given for the console Out. &amp; Input" />
+    <MESSAGE value="add: dice and Application class" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: dice and Application class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -385,7 +403,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationStates.java</url>
-          <line>39</line>
+          <line>36</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">

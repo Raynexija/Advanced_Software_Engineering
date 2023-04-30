@@ -1,5 +1,7 @@
 package de.dhbw.ka;
 
+import de.dhbw.ka.commands.DiceRollCommand;
+import de.dhbw.ka.commands.ExitCommand;
 import de.dhbw.ka.inputOutput.ConsoleOutputInputSystem;
 import de.dhbw.ka.interfaces.InputService;
 import de.dhbw.ka.interfaces.OutputService;
@@ -9,18 +11,30 @@ import de.dhbw.ka.rng.RandomNumberGeneratorImplementation;
 
 public class Application {
 
-    private InputService input = new TextBasedInputAdapter(new ConsoleOutputInputSystem());
-    private OutputService output = new TextBasedOutputAdapter(new ConsoleOutputInputSystem());
-    private RandomNumberService randomNumberGenerator = new RandomNumberGeneratorAdapter(new RandomNumberGeneratorImplementation());
+    private final InputService input = new TextBasedInputAdapter(new ConsoleOutputInputSystem());
+    private final OutputService output = new TextBasedOutputAdapter(new ConsoleOutputInputSystem());
+    private final RandomNumberService randomNumberGenerator = new RandomNumberGeneratorAdapter(new RandomNumberGeneratorImplementation());
 
-    private Dice dice = new Dice(randomNumberGenerator);
-
-    private CommandController controller = new CommandController(input, output);
+    private final Dice dice = new Dice(randomNumberGenerator);
+    private final CommandController controller = new CommandController(input, output);
 
     public void main() {
-        int tmp = input.requestInt("Enter a number: ");
 
-        output.displayMessage("Random number between 1 and " + tmp + " : " + dice.roll(tmp));
+        while (true) {
+            String command = input.requestString("Enter a command: ").toLowerCase();
 
+            if (command.equals("exit")) {
+                controller.enqueueCommand(new ExitCommand());
+            } else if (command.startsWith("roll")) {
+                if (command.contains("-help")) {
+                    output.displayMessage(DiceRollCommand.help());
+                    continue;
+                }
+                controller.enqueueCommand(new DiceRollCommand(dice, command));
+            } else {
+                output.displayError("Unknown command");
+            }
+            controller.executeCommands();
+        }
     }
 }
