@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: calculation for passive senses and armor class">
       <change afterPath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/test/rng/RandomNumberGeneratorTest.java" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="feat: added command logic">
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationStates.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationStates.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +43,31 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="application/commands" />
+                    <option name="lastUsedInstant" value="1681474286" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1681474219" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="pur5ttrw" />
   </component>
@@ -63,6 +91,15 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="de.dhbw.ka" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="de.dhbw.ka.commands" />
+      <recent name="de.dhbw.ka" />
+    </key>
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean test" />
@@ -71,29 +108,43 @@
       <command value="mvn clean" />
       <command value="tree -r" />
       <command value="cmd" />
+      <command value="mvn clean " />
+      <command value="mvn install" />
+      <command value="mvn test" />
+      <command value="mvn clean test " />
     </option>
   </component>
   <component name="RunManager" selected="JUnit.RandomNumberGeneratorTest">
     <configuration name="RandomNumberGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Application" />
+  <component name="RunManager" selected="JUnit.CommandControllerTest">
+    <configuration name="ApplicationStatesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Application" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="de.dhbw.ka.test.rng.*" />
+          <option name="PATTERN" value="de.dhbw.ka.commands.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test.rng" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.rng.RandomNumberGeneratorTest" />
       <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="de.dhbw.ka" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.ApplicationStatesTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CommandControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Application" />
     <configuration name="RandomNumberGeneratorTest.testGenerate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Application" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="de.dhbw.ka.test.rng.*" />
+          <option name="PATTERN" value="de.dhbw.ka.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -101,34 +152,50 @@
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.rng.RandomNumberGeneratorTest" />
       <option name="METHOD_NAME" value="testGenerate" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="de.dhbw.ka" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.CommandControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="RandomNumberGeneratorTest.testInterface" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Application" />
+    <configuration name="CommandControllerTest.testExecuteCommands" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Application" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="de.dhbw.ka.test.rng.*" />
+          <option name="PATTERN" value="de.dhbw.ka.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test.rng" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.rng.RandomNumberGeneratorTest" />
       <option name="METHOD_NAME" value="testInterface" />
+      <option name="PACKAGE_NAME" value="de.dhbw.ka" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.CommandControllerTest" />
+      <option name="METHOD_NAME" value="testExecuteCommands" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CommandControllerTest.testExecuteCommandsException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Application" />
     <configuration name="RandomNumberGeneratorTest.testRandomNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Plugins" />
       <extension name="coverage">
         <pattern>
+          <option name="PATTERN" value="de.dhbw.ka.*" />
           <option name="PATTERN" value="de.dhbw.ka.test.rng.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="de.dhbw.ka" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.CommandControllerTest" />
+      <option name="METHOD_NAME" value="testExecuteCommandsException" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test.rng" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.rng.RandomNumberGeneratorTest" />
       <option name="METHOD_NAME" value="testRandomNumber" />
@@ -137,30 +204,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Advanced_Software_Engineering [test]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="test" />
-              </list>
-            </option>
-            <option name="pomFileName" value="pom.xml" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
+    <configuration name="CommandControllerTest.testExecuteCommandsExit" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Application" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.dhbw.ka.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.dhbw.ka" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.CommandControllerTest" />
+      <option name="METHOD_NAME" value="testExecuteCommandsExit" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
@@ -169,6 +227,11 @@
         <item itemvalue="JUnit.RandomNumberGeneratorTest.testGenerate" />
         <item itemvalue="JUnit.RandomNumberGeneratorTest.testRandomNumber" />
         <item itemvalue="Maven.Advanced_Software_Engineering [test]" />
+        <item itemvalue="JUnit.CommandControllerTest" />
+        <item itemvalue="JUnit.ApplicationStatesTest" />
+        <item itemvalue="JUnit.CommandControllerTest.testExecuteCommands" />
+        <item itemvalue="JUnit.CommandControllerTest.testExecuteCommandsExit" />
+        <item itemvalue="JUnit.CommandControllerTest.testExecuteCommandsException" />
       </list>
     </recent_temporary>
   </component>
@@ -189,7 +252,6 @@
       <workItem from="1681205921414" duration="6186000" />
       <workItem from="1681371454592" duration="201000" />
       <workItem from="1681371700932" duration="3399000" />
-      <workItem from="1681829761833" duration="1729000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>
@@ -254,7 +316,49 @@
       <option name="project" value="LOCAL" />
       <updated>1681294223703</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feat: added command logic">
+      <created>1681503478078</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681503478078</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: added command logic">
+      <created>1681503653397</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1681503653397</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: added command logic">
+      <created>1681503689540</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1681503689540</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: added command logic">
+      <created>1681503826931</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1681503826931</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: added command logic">
+      <created>1681503879949</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681503879949</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: added command logic">
+      <created>1681503885808</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1681503885808</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +395,38 @@
     <MESSAGE value="remove main class" />
     <MESSAGE value="feat: added i/o console functionality" />
     <MESSAGE value="refactor: &#10;- moved files to comply with dependency pattern&#10;- pom.xml to execute all submodule junit tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: &#10;- moved files to comply with dependency pattern&#10;- pom.xml to execute all submodule junit tests" />
+    <MESSAGE value="feat: added command logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: added command logic" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/.jdks/openjdk-20/lib/src.zip!/java.base/java/util/HashMap.java</url>
+          <line>573</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationStates.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationState.java</url>
+          <line>12</line>
+          <properties class="de.dhbw.ka.applicationStates.ApplicationState" method="executeCommand">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="JUnit">
+        <watch expression="command" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
