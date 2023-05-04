@@ -115,13 +115,28 @@ public final class CreateCharacter {
             return this;
         }
 
+        public BuildableCharacter speakingOne(String language) {
+            CreateCharacter.this.languages.add(language);
+            return this;
+        }
+
         public BuildableCharacter equippedWith(String[] equipment) {
             CreateCharacter.this.equipment.addAll(List.of(equipment));
             return this;
         }
 
+        public BuildableCharacter equippedWithOne(String equipment) {
+            CreateCharacter.this.equipment.add(equipment);
+            return this;
+        }
+
         public BuildableCharacter proficientIn(Skills[] skillProficiencies) {
             CreateCharacter.this.skillProficiencies.addAll(List.of(skillProficiencies));
+            return this;
+        }
+
+        public BuildableCharacter proficientInOne(Skills skillProficiencies) {
+            CreateCharacter.this.skillProficiencies.add(skillProficiencies);
             return this;
         }
 
