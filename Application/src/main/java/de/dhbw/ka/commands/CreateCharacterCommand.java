@@ -13,7 +13,7 @@ import java.util.List;
 
 public class CreateCharacterCommand extends Command {
     private List<Character> characters;
-    private String[] skills = new String[]{"Acrobatics", "Animal Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight of Hand", "Stealth", "Survival"};
+    private String[] skills = new String[]{"Acrobatics", "Animal_Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight_of_Hand", "Stealth", "Survival"};
 
     public CreateCharacterCommand(List<Character> characters) {
         this.characters = characters;
