@@ -2,7 +2,6 @@ package de.dhbw.ka.commands;
 
 import de.dhbw.ka.Character;
 import de.dhbw.ka.Dice;
-import de.dhbw.ka.Skills;
 import de.dhbw.ka.interfaces.InputService;
 import de.dhbw.ka.interfaces.OutputService;
 
