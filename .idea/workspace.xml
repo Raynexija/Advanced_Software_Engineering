@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="feat: start of create character command">
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="feat: create character command can be canceled after all necessary Parameters are set">
+      <change afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/CharacterRollCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/CreateCharacterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/CreateCharacterCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/CreateCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/CreateCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/Command.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +87,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -112,8 +114,8 @@
       <command value="cmd" />
       <command value="mvn clean " />
       <command value="mvn install" />
-      <command value="mvn test" />
       <command value="mvn clean test " />
+      <command value="mvn test" />
     </option>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -222,7 +224,9 @@
       <workItem from="1682888219628" duration="208000" />
       <workItem from="1683034875034" duration="613000" />
       <workItem from="1683114245503" duration="2793000" />
-      <workItem from="1683237754947" duration="2704000" />
+      <workItem from="1683237754947" duration="3347000" />
+      <workItem from="1683284584792" duration="2246000" />
+      <workItem from="1684097586870" duration="3049000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>
@@ -364,7 +368,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682888274545</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="feat: create character command can be canceled after all necessary Parameters are set">
+      <created>1683241045724</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1683241045724</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -407,7 +418,8 @@
     <MESSAGE value="add: dice and Application class" />
     <MESSAGE value="feat: dice roll command" />
     <MESSAGE value="feat: start of create character command" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: start of create character command" />
+    <MESSAGE value="feat: create character command can be canceled after all necessary Parameters are set" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: create character command can be canceled after all necessary Parameters are set" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
