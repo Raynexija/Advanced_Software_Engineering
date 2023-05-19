@@ -8,14 +8,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="feat: ability to roll normal while a character is selected">
-      <change afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/ModifyCharacterCommand.java" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="refactor: removed maven artifacts">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/CharacterRollCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/CharacterRollCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/CreateCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/CreateCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Adapter/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Character/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Plugins/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/character/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/character/CharacterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/rng/RandomNumberGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/rng/RandomNumberGeneratorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +109,9 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="de.dhbw.ka" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="de.dhbw.ka" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="de.dhbw.ka.commands" />
       <recent name="de.dhbw.ka" />
@@ -121,17 +127,18 @@
       <command value="cmd" />
       <command value="mvn clean " />
       <command value="mvn install" />
-      <command value="mvn clean test " />
       <command value="mvn test" />
+      <command value="mvn clean test " />
+      <command value="mvn package" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.CharacterTest.testSkillModifier">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.Main" />
-      <module name="Application" />
+      <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.*" />
+          <option name="PATTERN" value="de.dhbw.ka.domain.character.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -139,55 +146,70 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApplicationStatesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Application" />
+    <configuration name="CharacterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.commands.*" />
+          <option name="PATTERN" value="de.dhbw.ka.test.domain.character.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.ApplicationStatesTest" />
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.character" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.character.CharacterTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommandControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Application" />
+    <configuration name="CharacterTest.testSkillModifier" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.*" />
+          <option name="PATTERN" value="de.dhbw.ka.test.domain.character.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.CommandControllerTest" />
-      <option name="METHOD_NAME" value="testGenerate" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CommandControllerTest.testExecuteCommands" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Application" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.CommandControllerTest" />
-      <option name="METHOD_NAME" value="testExecuteCommands" />
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.character" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.character.CharacterTest" />
+      <option name="METHOD_NAME" value="testSkillModifier" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CommandControllerTest.testEnqueueCommand" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Advanced_Software_Engineering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.dhbw.ka.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.CommandControllerTest" />
+      <option name="METHOD_NAME" value="testEnqueueCommand" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConsoleInputOutputTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Advanced_Software_Engineering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.dhbw.ka.test.inputOutput.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.inputOutput" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.inputOutput.ConsoleInputOutputTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RandomNumberGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Application" />
+      <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="de.dhbw.ka.test.rng.*" />
@@ -203,10 +225,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CharacterTest.testSkillModifier" />
+        <item itemvalue="JUnit.CharacterTest" />
         <item itemvalue="JUnit.RandomNumberGeneratorTest" />
-        <item itemvalue="JUnit.ApplicationStatesTest" />
-        <item itemvalue="JUnit.CommandControllerTest" />
-        <item itemvalue="JUnit.CommandControllerTest.testExecuteCommands" />
+        <item itemvalue="JUnit.CommandControllerTest.testEnqueueCommand" />
+        <item itemvalue="JUnit.ConsoleInputOutputTest" />
       </list>
     </recent_temporary>
   </component>
@@ -235,7 +258,7 @@
       <workItem from="1683284584792" duration="2246000" />
       <workItem from="1684097586870" duration="3217000" />
       <workItem from="1684143429780" duration="1464000" />
-      <workItem from="1684492550565" duration="8744000" />
+      <workItem from="1684492550565" duration="16121000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>
@@ -412,7 +435,42 @@
       <option name="project" value="LOCAL" />
       <updated>1684513320599</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="feat: one can now see the roll and the modifier in addition to just the sum">
+      <created>1684517337979</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1684517337979</updated>
+    </task>
+    <task id="LOCAL-00027" summary="add: modify character command">
+      <created>1684517378848</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1684517378848</updated>
+    </task>
+    <task id="LOCAL-00028" summary="add: modify character command">
+      <created>1684517396393</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1684517396393</updated>
+    </task>
+    <task id="LOCAL-00029" summary="refactor: removed maven artifacts">
+      <created>1684519213770</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1684519213770</updated>
+    </task>
+    <task id="LOCAL-00030" summary="refactor: removed maven artifacts">
+      <created>1684519436008</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1684519436008</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -459,37 +517,10 @@
     <MESSAGE value="feat: rolls for character" />
     <MESSAGE value="refactor: moved commands to methods and added switch for determining the current case" />
     <MESSAGE value="feat: ability to roll normal while a character is selected" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: ability to roll normal while a character is selected" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://$USER_HOME$/.jdks/openjdk-20/lib/src.zip!/java.base/java/util/HashMap.java</url>
-          <line>573</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationStates.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="72" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationState.java</url>
-          <line>11</line>
-          <properties class="de.dhbw.ka.applicationStates.ApplicationState" method="executeCommand">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-    <watches-manager>
-      <configuration name="JUnit">
-        <watch expression="command" />
-      </configuration>
-    </watches-manager>
+    <MESSAGE value="feat: one can now see the roll and the modifier in addition to just the sum" />
+    <MESSAGE value="add: modify character command" />
+    <MESSAGE value="refactor: removed maven artifacts" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: removed maven artifacts" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
