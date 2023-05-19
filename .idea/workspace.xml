@@ -8,17 +8,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="refactor: removed maven artifacts">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="feat: ability to roll normal while a character is selected">
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/campaign/encounter/Creature.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/campaign/encounter/Encounter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/campaign/EncounterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapter/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/AbilityScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/AbilityScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/character/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/character/CharacterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/rng/RandomNumberGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/rng/RandomNumberGeneratorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +129,7 @@
       <command value="mvn package" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CharacterTest.testSkillModifier">
+  <component name="RunManager" selected="JUnit.EncounterTest.testCreatureAbilityScoreModifier">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.Main" />
       <module name="Advanced_Software_Engineering" />
@@ -146,7 +143,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CharacterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CharacterTest.testEquipment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
@@ -156,7 +153,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.character" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.character.CharacterTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testEquipment" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -177,59 +175,61 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommandControllerTest.testEnqueueCommand" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EncounterTest.testCreatureAbilityScore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.*" />
+          <option name="PATTERN" value="de.dhbw.ka.test.domain.campaign.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.CommandControllerTest" />
-      <option name="METHOD_NAME" value="testEnqueueCommand" />
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.EncounterTest" />
+      <option name="METHOD_NAME" value="testCreatureAbilityScore" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConsoleInputOutputTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EncounterTest.testCreatureAbilityScoreModifier" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.inputOutput.*" />
+          <option name="PATTERN" value="de.dhbw.ka.test.domain.campaign.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.inputOutput" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.inputOutput.ConsoleInputOutputTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.EncounterTest" />
+      <option name="METHOD_NAME" value="testCreatureAbilityScoreModifier" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RandomNumberGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EncounterTest.testGetParticipants" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.rng.*" />
+          <option name="PATTERN" value="de.dhbw.ka.test.domain.campaign.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.rng" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.rng.RandomNumberGeneratorTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.EncounterTest" />
+      <option name="METHOD_NAME" value="testGetParticipants" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.EncounterTest.testCreatureAbilityScoreModifier" />
+        <item itemvalue="JUnit.EncounterTest.testCreatureAbilityScore" />
+        <item itemvalue="JUnit.EncounterTest.testGetParticipants" />
+        <item itemvalue="JUnit.CharacterTest.testEquipment" />
         <item itemvalue="JUnit.CharacterTest.testSkillModifier" />
-        <item itemvalue="JUnit.CharacterTest" />
-        <item itemvalue="JUnit.RandomNumberGeneratorTest" />
-        <item itemvalue="JUnit.CommandControllerTest.testEnqueueCommand" />
-        <item itemvalue="JUnit.ConsoleInputOutputTest" />
       </list>
     </recent_temporary>
   </component>
@@ -259,6 +259,7 @@
       <workItem from="1684097586870" duration="3217000" />
       <workItem from="1684143429780" duration="1464000" />
       <workItem from="1684492550565" duration="16121000" />
+      <workItem from="1684525078225" duration="4756000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>
