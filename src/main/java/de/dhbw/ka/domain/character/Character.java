@@ -393,9 +393,20 @@ public class Character {
         return this.hitPoints;
     }
 
+    /**
+     * Checks if the character is alive
+     *
+     * @return true if the character is alive, false otherwise
+     */
+    public boolean isAlive() {
+        return this.hitPoints > 0;
+    }
+
     @Override
     public String toString() {
-        return "Name: " + this.name + "\n" +
+        String stillAlive = isAlive() ? "" : "[Dead]\n";
+        return stillAlive +
+                "Name: " + this.name + "\n" +
                 "Race: " + this.race.getClass().toString() + "\n" +
                 "Class: " + this.characterClass.getClass().toString() + "\n" +
                 "Level: " + this.level + "\n" +

@@ -61,6 +61,10 @@ public class Creature {
         return this.hitPoints;
     }
 
+    public boolean isAlive() {
+        return this.hitPoints > 0;
+    }
+
     public int armorClass() {
         return armorClass;
     }
