@@ -44,12 +44,12 @@ public class CharacterRollCommand extends Command {
         if (commandParts.length > 1) {
             parameter = commandParts[1];
         }
-        if ( parameter.equals("-a") || parameter.equals("-d")) {
-            int firstRoll = statRolls(statToRoll);
-            int secondRoll = statRolls(statToRoll);
+        if (parameter.equals("-a") || parameter.equals("-d")) {
+            String firstRoll = statRolls(statToRoll);
+            String secondRoll = statRolls(statToRoll);
             output.displayMessage("You rolled a " + firstRoll + " and a " + secondRoll + " for the " + statToRoll + " check with " + getParameterasString(parameter) + ".");
         } else {
-            int roll = statRolls(statToRoll);
+            String roll = statRolls(statToRoll);
             output.displayMessage("You rolled a " + roll + " for the " + statToRoll + " check.");
         }
     }
@@ -62,33 +62,59 @@ public class CharacterRollCommand extends Command {
         };
     }
 
-    private int statRolls(String statToRoll) {
+    private String statRolls(String statToRoll) {
+        int roll = dice.rollD20();
         return switch (statToRoll) {
-            case "strength" -> dice.rollD20() + character.abilityCheckModifier(STRENGTH);
-            case "dexterity" -> dice.rollD20() + character.abilityCheckModifier(DEXTERITY);
-            case "constitution" -> dice.rollD20() + character.abilityCheckModifier(CONSTITUTION);
-            case "intelligence" -> dice.rollD20() + character.abilityCheckModifier(INTELLIGENCE);
-            case "wisdom" -> dice.rollD20() + character.abilityCheckModifier(WISDOM);
-            case "charisma" -> dice.rollD20() + character.abilityCheckModifier(CHARISMA);
-            case "acrobatics" -> dice.rollD20() + character.skillCheckModifier(Acrobatics);
-            case "animal_handling" -> dice.rollD20() + character.skillCheckModifier(Animal_Handling);
-            case "arcana" -> dice.rollD20() + character.skillCheckModifier(Arcana);
-            case "athletics" -> dice.rollD20() + character.skillCheckModifier(Athletics);
-            case "deception" -> dice.rollD20() + character.skillCheckModifier(Deception);
-            case "history" -> dice.rollD20() + character.skillCheckModifier(History);
-            case "insight" -> dice.rollD20() + character.skillCheckModifier(Insight);
-            case "intimidation" -> dice.rollD20() + character.skillCheckModifier(Intimidation);
-            case "investigation" -> dice.rollD20() + character.skillCheckModifier(Investigation);
-            case "medicine" -> dice.rollD20() + character.skillCheckModifier(Medicine);
-            case "nature" -> dice.rollD20() + character.skillCheckModifier(Nature);
-            case "perception" -> dice.rollD20() + character.skillCheckModifier(Perception);
-            case "performance" -> dice.rollD20() + character.skillCheckModifier(Performance);
-            case "persuasion" -> dice.rollD20() + character.skillCheckModifier(Persuasion);
-            case "religion" -> dice.rollD20() + character.skillCheckModifier(Religion);
-            case "sleight_of_hand" -> dice.rollD20() + character.skillCheckModifier(Sleight_of_Hand);
-            case "stealth" -> dice.rollD20() + character.skillCheckModifier(Stealth);
-            case "survival" -> dice.rollD20() + character.skillCheckModifier(Survival);
-            case "initiative" -> dice.rollD20() + character.getInitiativeBonus();
+            case "strength" ->
+                    roll + character.abilityCheckModifier(STRENGTH) + " (" + roll + " +" + character.abilityCheckModifier(STRENGTH) + ")";
+            case "dexterity" ->
+                    roll + character.abilityCheckModifier(DEXTERITY) + " (" + roll + " +" + character.abilityCheckModifier(DEXTERITY) + ")";
+            case "constitution" ->
+                    roll + character.abilityCheckModifier(CONSTITUTION) + " (" + roll + " +" + character.abilityCheckModifier(CONSTITUTION) + ")";
+            case "intelligence" ->
+                    roll + character.abilityCheckModifier(INTELLIGENCE) + " (" + roll + " +" + character.abilityCheckModifier(INTELLIGENCE) + ")";
+            case "wisdom" ->
+                    roll + character.abilityCheckModifier(WISDOM) + " (" + roll + " +" + character.abilityCheckModifier(WISDOM) + ")";
+            case "charisma" ->
+                    roll + character.abilityCheckModifier(CHARISMA) + " (" + roll + " +" + character.abilityCheckModifier(CHARISMA) + ")";
+            case "acrobatics" ->
+                    roll + character.skillCheckModifier(Acrobatics) + " (" + roll + " +" + character.skillCheckModifier(Acrobatics) + ")";
+            case "animal_handling" ->
+                    roll + character.skillCheckModifier(Animal_Handling) + " (" + roll + " +" + character.skillCheckModifier(Animal_Handling) + ")";
+            case "arcana" ->
+                    roll + character.skillCheckModifier(Arcana) + " (" + roll + " +" + character.skillCheckModifier(Arcana) + ")";
+            case "athletics" ->
+                    roll + character.skillCheckModifier(Athletics) + " (" + roll + " +" + character.skillCheckModifier(Athletics) + ")";
+            case "deception" ->
+                    roll + character.skillCheckModifier(Deception) + " (" + roll + " +" + character.skillCheckModifier(Deception) + ")";
+            case "history" ->
+                    roll + character.skillCheckModifier(History) + " (" + roll + " +" + character.skillCheckModifier(History) + ")";
+            case "insight" ->
+                    roll + character.skillCheckModifier(Insight) + " (" + roll + " +" + character.skillCheckModifier(Insight) + ")";
+            case "intimidation" ->
+                    roll + character.skillCheckModifier(Intimidation) + " (" + roll + " +" + character.skillCheckModifier(Intimidation) + ")";
+            case "investigation" ->
+                    roll + character.skillCheckModifier(Investigation) + " (" + roll + " +" + character.skillCheckModifier(Investigation) + ")";
+            case "medicine" ->
+                    roll + character.skillCheckModifier(Medicine) + " (" + roll + " +" + character.skillCheckModifier(Medicine) + ")";
+            case "nature" ->
+                    roll + character.skillCheckModifier(Nature) + " (" + roll + " +" + character.skillCheckModifier(Nature) + ")";
+            case "perception" ->
+                    roll + character.skillCheckModifier(Perception) + " (" + roll + " +" + character.skillCheckModifier(Perception) + ")";
+            case "performance" ->
+                    roll + character.skillCheckModifier(Performance) + " (" + roll + " +" + character.skillCheckModifier(Performance) + ")";
+            case "persuasion" ->
+                    roll + character.skillCheckModifier(Persuasion) + " (" + roll + " +" + character.skillCheckModifier(Persuasion) + ")";
+            case "religion" ->
+                    roll + character.skillCheckModifier(Religion) + " (" + roll + " +" + character.skillCheckModifier(Religion) + ")";
+            case "sleight_of_hand" ->
+                    roll + character.skillCheckModifier(Sleight_of_Hand) + " (" + roll + " +" + character.skillCheckModifier(Sleight_of_Hand) + ")";
+            case "stealth" ->
+                    roll + character.skillCheckModifier(Stealth) + " (" + roll + " +" + character.skillCheckModifier(Stealth) + ")";
+            case "survival" ->
+                    roll + character.skillCheckModifier(Survival) + " (" + roll + " +" + character.skillCheckModifier(Survival) + ")";
+            case "initiative" ->
+                    roll + character.getInitiativeBonus() + " (" + roll + " +" + character.getInitiativeBonus() + ")";
             default -> throw new IllegalStateException("Unexpected value: " + statToRoll);
         };
     }
