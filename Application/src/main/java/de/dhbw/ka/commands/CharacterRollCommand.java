@@ -54,6 +54,7 @@ public class CharacterRollCommand extends Command {
         return switch (parameter) {
             case "-a" -> "advantage";
             case "-d" -> "disadvantage";
+            default -> "";
         };
     }
 
@@ -84,6 +85,7 @@ public class CharacterRollCommand extends Command {
             case "stealth" -> dice.rollD20() + character.skillCheckModifier(Stealth);
             case "survival" -> dice.rollD20() + character.skillCheckModifier(Survival);
             case "initiative" -> dice.rollD20() + character.getInitiativeBonus();
+            default -> throw new IllegalStateException("Unexpected value: " + statToRoll);
         };
     }
 }

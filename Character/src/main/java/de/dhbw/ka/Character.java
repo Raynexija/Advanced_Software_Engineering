@@ -337,9 +337,9 @@ public class Character {
     }
 
     /**
-     * Returns the current hit dice of the character
+     * Returns the name of the character
      *
-     * @return the hit dice of the character
+     * @return the name of the character
      */
     public String getName() {
         return this.name;

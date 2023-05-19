@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="feat: create character command can be canceled after all necessary Parameters are set">
-      <change afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/CharacterRollCommand.java" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="feat: rolls for character">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/Command.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/CommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/CommandController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/applicationStates/ApplicationStates.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/CharacterRollCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/CharacterRollCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/Main.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +230,9 @@
       <workItem from="1683114245503" duration="2793000" />
       <workItem from="1683237754947" duration="3347000" />
       <workItem from="1683284584792" duration="2246000" />
-      <workItem from="1684097586870" duration="3049000" />
+      <workItem from="1684097586870" duration="3217000" />
+      <workItem from="1684143429780" duration="1464000" />
+      <workItem from="1684492550565" duration="3152000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>
@@ -375,7 +381,21 @@
       <option name="project" value="LOCAL" />
       <updated>1683241045724</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="feat: rolls for character">
+      <created>1684100673346</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1684100673347</updated>
+    </task>
+    <task id="LOCAL-00023" summary="feat: rolls for character">
+      <created>1684100697815</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1684100697815</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +439,8 @@
     <MESSAGE value="feat: dice roll command" />
     <MESSAGE value="feat: start of create character command" />
     <MESSAGE value="feat: create character command can be canceled after all necessary Parameters are set" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: create character command can be canceled after all necessary Parameters are set" />
+    <MESSAGE value="feat: rolls for character" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: rolls for character" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
