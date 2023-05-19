@@ -2,12 +2,12 @@ package de.dhbw.ka;
 
 import de.dhbw.ka.applicationStates.ApplicationState;
 import de.dhbw.ka.applicationStates.ApplicationStates;
-import de.dhbw.ka.commands.Command;
-import de.dhbw.ka.commands.ExitCommand;
-import de.dhbw.ka.commands.RequestIntFromUserCommand;
-import de.dhbw.ka.commands.RequestStringFromUserCommand;
-import de.dhbw.ka.interfaces.InputService;
-import de.dhbw.ka.interfaces.OutputService;
+import de.dhbw.ka.application.commands.Command;
+import de.dhbw.ka.application.commands.ExitCommand;
+import de.dhbw.ka.application.commands.RequestIntFromUserCommand;
+import de.dhbw.ka.application.commands.RequestStringFromUserCommand;
+import de.dhbw.ka.application.interfaces.InputService;
+import de.dhbw.ka.application.interfaces.OutputService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;

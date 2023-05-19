@@ -1,9 +1,9 @@
 package de.dhbw.ka;
 
 import de.dhbw.ka.applicationStates.ApplicationStates;
-import de.dhbw.ka.commands.Command;
-import de.dhbw.ka.interfaces.InputService;
-import de.dhbw.ka.interfaces.OutputService;
+import de.dhbw.ka.application.commands.Command;
+import de.dhbw.ka.application.interfaces.InputService;
+import de.dhbw.ka.application.interfaces.OutputService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;

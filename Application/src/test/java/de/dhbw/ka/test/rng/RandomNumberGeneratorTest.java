@@ -1,8 +1,8 @@
 package de.dhbw.ka.test.rng;
 
-import de.dhbw.ka.rng.RandomNumberGenerator;
-import de.dhbw.ka.rng.RandomNumberGeneratorAdapter;
-import de.dhbw.ka.rng.RandomNumberGeneratorImplementation;
+import de.dhbw.ka.adapter.rng.RandomNumberGenerator;
+import de.dhbw.ka.adapter.rng.RandomNumberGeneratorAdapter;
+import de.dhbw.ka.adapter.rng.RandomNumberGeneratorImplementation;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
