@@ -100,7 +100,7 @@ public class CharacterTest {
 
     @Test
     public void testSkillModifier() {
-        Assertions.assertEquals(1, character.skillCheckModifier(Skills.Investigation));
+        Assertions.assertEquals(-1, character.skillCheckModifier(Skills.Performance));
     }
 
     @Test

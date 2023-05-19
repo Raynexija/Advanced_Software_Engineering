@@ -1,4 +1,6 @@
-package de.dhbw.ka.application;
+package de.dhbw.ka;
+
+import de.dhbw.ka.application.Application;
 
 public class Main {
 
