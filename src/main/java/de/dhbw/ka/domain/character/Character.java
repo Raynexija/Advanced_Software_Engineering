@@ -382,6 +382,17 @@ public class Character {
         return unproficientSkills.toArray(new String[0]);
     }
 
+    /**
+     * Subtracts damage taken from the character's hit points
+     *
+     * @param damage the damage sustained
+     * @return the remaining hit points
+     */
+    public int takeDamage(int damage) {
+        this.hitPoints -= damage;
+        return this.hitPoints;
+    }
+
     @Override
     public String toString() {
         return "Name: " + this.name + "\n" +
