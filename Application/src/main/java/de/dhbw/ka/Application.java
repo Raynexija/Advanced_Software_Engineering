@@ -1,10 +1,7 @@
 package de.dhbw.ka;
 
 import de.dhbw.ka.characterClasses.Fighter;
-import de.dhbw.ka.commands.CharacterRollCommand;
-import de.dhbw.ka.commands.CreateCharacterCommand;
-import de.dhbw.ka.commands.DiceRollCommand;
-import de.dhbw.ka.commands.ExitCommand;
+import de.dhbw.ka.commands.*;
 import de.dhbw.ka.inputOutput.ConsoleOutputInputSystem;
 import de.dhbw.ka.interfaces.InputService;
 import de.dhbw.ka.interfaces.OutputService;
@@ -14,7 +11,6 @@ import de.dhbw.ka.rng.RandomNumberGeneratorAdapter;
 import de.dhbw.ka.rng.RandomNumberGeneratorImplementation;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Application {
@@ -26,10 +22,11 @@ public class Application {
     private final Dice dice = new Dice(randomNumberGenerator);
     private final CommandController controller = new CommandController(input, output);
 
-    private List<Character> characters = new ArrayList<>();
+    private final List<Character> characters = new ArrayList<>();
     private Character currentCharacter;
     private boolean characterSelected = false;
-    private Character testChar = CreateCharacter.named("Test")
+
+    private final Character testChar = CreateCharacter.named("Test")
             .ofRace(new Human())
             .isA(new Fighter())
             .withStrength(15)
@@ -47,6 +44,7 @@ public class Application {
     public void main() {
         characters.add(testChar);
 
+        //noinspection InfiniteLoopStatement
         while (true) {
             String command = input.requestString("Enter a command: ").toLowerCase();
 
@@ -58,13 +56,32 @@ public class Application {
                 }
                 case "create_character", "cc" -> createCharacter();
                 case "list_characters", "list" -> listCharacters();
-                case "select_character" -> selectCharacter(command);
+                case "select_character", "select" -> selectCharacter(command);
                 case "selected_character", "current", "curr" -> selectedCharacter();
                 case "delete_character" -> deleteCharacter();
                 case "deselect_character" -> deselectCharacter();
+                case "modify_character", "modify" -> modifyCharacter(command);
                 default -> output.displayError("Unknown command");
             }
             controller.executeCommands();
+        }
+    }
+
+    private boolean checkCharacterSelected() {
+        if (!characterSelected) {
+            output.displayError("No character selected");
+            return false;
+        }
+        return true;
+    }
+
+    private void modifyCharacter(String command) {
+        if (checkCharacterSelected()) {
+            if (command.contains("-help")) {
+                output.displayMessage(ModifyCharacterCommand.help());
+                return;
+            }
+            controller.enqueueCommand(new ModifyCharacterCommand(command, currentCharacter));
         }
     }
 
@@ -85,7 +102,7 @@ public class Application {
             output.displayMessage(CharacterRollCommand.help());
             return;
         }
-        if (command.split(" ")[1].matches("-?\\d+")) {
+        if (command.split(" ").length > 1 && command.split(" ")[1].matches("\\d+")) {
             rollWithoutSelection(command);
             return;
         }
@@ -100,10 +117,8 @@ public class Application {
     }
 
     private void selectedCharacter() {
-        if (characterSelected) {
+        if (checkCharacterSelected()) {
             output.displayMessage(currentCharacter.toString());
-        } else {
-            output.displayError("No character selected");
         }
     }
 
@@ -123,21 +138,17 @@ public class Application {
     }
 
     private void deselectCharacter() {
-        if (characterSelected) {
+        if (checkCharacterSelected()) {
             characterSelected = false;
             output.displayMessage("Deselected character");
-        } else {
-            output.displayError("No character selected");
         }
     }
 
     private void deleteCharacter() {
-        if (characterSelected) {
+        if (checkCharacterSelected()) {
             characters.remove(currentCharacter);
             characterSelected = false;
             output.displayMessage("Deleted character");
-        } else {
-            output.displayError("No character selected");
         }
     }
 }
