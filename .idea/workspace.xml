@@ -8,47 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: modify character command">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapter/src/main/java/de/dhbw/ka/TextBasedInputAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/adapter/textBased/TextBasedInputAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapter/src/main/java/de/dhbw/ka/TextBasedOutputAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/adapter/textBased/TextBasedOutputAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapter/src/main/java/de/dhbw/ka/TextBasedOutputInputSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/adapter/textBased/TextBasedOutputInputSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapter/src/main/java/de/dhbw/ka/rng/RandomNumberGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/adapter/rng/RandomNumberGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapter/src/main/java/de/dhbw/ka/rng/RandomNumberGeneratorAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/adapter/rng/RandomNumberGeneratorAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/CommandController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/CommandController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/CharacterRollCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/CharacterRollCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/Command.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/Command.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/CreateCharacterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/CreateCharacterCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/DiceRollCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/DiceRollCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/ExitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/ExitCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/ModifyCharacterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/ModifyCharacterCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/RequestIntFromUserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/RequestIntFromUserCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/commands/RequestStringFromUserCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/RequestStringFromUserCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/interfaces/InputService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/interfaces/InputService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/interfaces/OutputService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/interfaces/OutputService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/main/java/de/dhbw/ka/interfaces/RandomNumberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/interfaces/RandomNumberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/ApplicationStatesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/ApplicationStatesTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/CommandControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/CommandControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/test/rng/RandomNumberGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/test/rng/RandomNumberGeneratorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/AbilityScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/AbilityScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/AbilityScores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/AbilityScores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/CreateCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/CreateCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/Skills.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/Skills.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/characterClasses/CharacterClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/CharacterClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/characterClasses/Fighter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Fighter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/exception/AbilityScoreLimitException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/exception/AbilityScoreLimitException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/exception/BaseAbilityScoreOutOfBoundsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/exception/BaseAbilityScoreOutOfBoundsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/races/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/main/java/de/dhbw/ka/races/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Race.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/test/java/de/dhbw/ka/test/AbilityScoreTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/character/AbilityScoreTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/src/test/java/de/dhbw/ka/test/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/character/CharacterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/src/main/java/de/dhbw/ka/inputOutput/ConsoleOutputInputSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/plugins/inputOutput/ConsoleOutputInputSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/src/main/java/de/dhbw/ka/rng/RandomNumberGeneratorImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/plugins/rng/RandomNumberGeneratorImplementation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/src/test/java/de/dhbw/ka/test/inputOutput/ConsoleInputOutputTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/inputOutput/ConsoleInputOutputTest.java" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="refactor: removed maven artifacts">
+      <change beforePath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/ApplicationStatesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/ApplicationStatesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/CommandControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/CommandControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/src/test/java/de/dhbw/ka/test/rng/RandomNumberGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/rng/RandomNumberGeneratorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feat/Raynex/commands" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -158,7 +121,7 @@
       <command value="mvn test" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ConsoleInputOutputTest">
+  <component name="RunManager" selected="JUnit.CommandControllerTest.testEnqueueCommand">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.application.Main" />
       <module name="Advanced_Software_Engineering" />
@@ -202,6 +165,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CommandControllerTest.testEnqueueCommand" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Advanced_Software_Engineering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.dhbw.ka.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.CommandControllerTest" />
+      <option name="METHOD_NAME" value="testEnqueueCommand" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ConsoleInputOutputTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
@@ -217,8 +196,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RandomNumberGeneratorTest.testRandomNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Plugins" />
+    <configuration name="RandomNumberGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="de.dhbw.ka.test.rng.*" />
@@ -227,44 +206,18 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test.rng" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.rng.RandomNumberGeneratorTest" />
-      <option name="METHOD_NAME" value="testRandomNumber" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Advanced_Software_Engineering [test]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
-      <MavenSettings>
-        <option name="myGeneralSettings" />
-        <option name="myRunnerSettings" />
-        <option name="myRunnerParameters">
-          <MavenRunnerParameters>
-            <option name="profiles">
-              <set />
-            </option>
-            <option name="goals">
-              <list>
-                <option value="test" />
-              </list>
-            </option>
-            <option name="pomFileName" value="pom.xml" />
-            <option name="profilesMap">
-              <map />
-            </option>
-            <option name="resolveToWorkspace" value="false" />
-            <option name="workingDirPath" value="$PROJECT_DIR$" />
-          </MavenRunnerParameters>
-        </option>
-      </MavenSettings>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CommandControllerTest.testEnqueueCommand" />
+        <item itemvalue="JUnit.RandomNumberGeneratorTest" />
         <item itemvalue="JUnit.ConsoleInputOutputTest" />
         <item itemvalue="JUnit.CharacterTest" />
         <item itemvalue="JUnit.AbilityScoreTest" />
-        <item itemvalue="Maven.Advanced_Software_Engineering [test]" />
-        <item itemvalue="JUnit.RandomNumberGeneratorTest.testRandomNumber" />
       </list>
     </recent_temporary>
   </component>
@@ -293,7 +246,7 @@
       <workItem from="1683284584792" duration="2246000" />
       <workItem from="1684097586870" duration="3217000" />
       <workItem from="1684143429780" duration="1464000" />
-      <workItem from="1684492550565" duration="10573000" />
+      <workItem from="1684492550565" duration="10945000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>
@@ -491,7 +444,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684517396393</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="refactor: removed maven artifacts">
+      <created>1684519213770</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1684519213770</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -540,7 +500,8 @@
     <MESSAGE value="feat: ability to roll normal while a character is selected" />
     <MESSAGE value="feat: one can now see the roll and the modifier in addition to just the sum" />
     <MESSAGE value="add: modify character command" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: modify character command" />
+    <MESSAGE value="refactor: removed maven artifacts" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: removed maven artifacts" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
