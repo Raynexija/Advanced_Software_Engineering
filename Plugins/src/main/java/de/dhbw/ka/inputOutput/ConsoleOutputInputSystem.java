@@ -36,9 +36,9 @@ public class ConsoleOutputInputSystem implements TextBasedOutputInputSystem {
     private OutputStream outputStream;
     private InputStream inputStream;
 
-    public ConsoleOutputInputSystem(OutputStream outputStream, InputStream inputStream) {
-        this.outputStream = outputStream;
-        this.inputStream = inputStream;
+    public ConsoleOutputInputSystem() {
+        this.outputStream = System.out;
+        this.inputStream = System.in;
     }
 
     public void setOutputStream(OutputStream outputStream) {
