@@ -3,6 +3,7 @@ package de.dhbw.ka;
 import de.dhbw.ka.characterClasses.CharacterClass;
 import de.dhbw.ka.exception.AbilityScoreLimitException;
 import de.dhbw.ka.races.Race;
+import de.dhbw.ka.Skills;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,12 +26,12 @@ public class Character {
     private int passiveInvestigation;
     private int passiveInsight;
 
-    private List<AbilityScores> abilityProficiencies = new ArrayList<>();
-    private List<Skills> skillProficiencies = new ArrayList<>();
+    private final List<AbilityScores> abilityProficiencies = new ArrayList<>();
+    private final List<Skills> skillProficiencies = new ArrayList<>();
 
-    private List<String> languages = new ArrayList<>();
-    private List<String> equipment = new ArrayList<>();
-    private HashMap<AbilityScores, AbilityScore> abilityScores = new HashMap<>();
+    private final List<String> languages = new ArrayList<>();
+    private final List<String> equipment = new ArrayList<>();
+    private final HashMap<AbilityScores, AbilityScore> abilityScores = new HashMap<>();
 
     public Character(Race race, CharacterClass characterClass, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
         setRace(race);
@@ -45,12 +46,12 @@ public class Character {
     /**
      * Method to set the initial ability scores of the character, including racial bonuses
      *
-     * @param baseStrength
-     * @param baseDexterity
-     * @param baseConstitution
-     * @param baseIntelligence
-     * @param baseWisdom
-     * @param baseCharisma
+     * @param baseStrength     the base strength of the character without any bonuses
+     * @param baseDexterity    the base dexterity of the character without any bonuses
+     * @param baseConstitution the base constitution of the character without any bonuses
+     * @param baseIntelligence the base intelligence of the character without any bonuses
+     * @param baseWisdom       the base wisdom of the character without any bonuses
+     * @param baseCharisma     the base charisma of the character without any bonuses
      */
     private void setInitialAbilityScores(int baseStrength, int baseDexterity, int baseConstitution, int baseIntelligence, int baseWisdom, int baseCharisma) {
         this.abilityScores.put(STRENGTH, new AbilityScore(baseStrength, this.race.getRacialBonus(STRENGTH), 0));
@@ -285,7 +286,7 @@ public class Character {
     /**
      * Returns the initiative bonus of the character
      *
-     * @return
+     * @return the initiative bonus
      */
     public int getInitiativeBonus() {
         return initiativeBonus;
@@ -303,7 +304,7 @@ public class Character {
     /**
      * Returns the current speed of the character
      *
-     * @return
+     * @return the speed of the character
      */
     public int getSpeed() {
         return speed;
@@ -372,32 +373,41 @@ public class Character {
         return languages;
     }
 
+    public String[] getUnproficientSkills() {
+        List<String> unproficientSkills = new ArrayList<>();
+        for (Skills skill : Skills.values()) {
+            if (!this.skillProficiencies.contains(skill)) {
+                unproficientSkills.add(skill.toString());
+            }
+        }
+        return unproficientSkills.toArray(new String[0]);
+    }
+
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Name: ").append(this.name).append("\n")
-                .append("Race: ").append(this.race.getClass().toString()).append("\n")
-                .append("Class: ").append(this.characterClass.getClass().toString()).append("\n")
-                .append("Level: ").append(this.level).append("\n")
-                .append("Armor Class: ").append(this.armorClass).append("\n")
-                .append("Initiative Bonus: ").append(this.initiativeBonus).append("\n")
-                .append("Speed: ").append(this.speed).append("\n")
-                .append("Hit Points: ").append(this.hitPoints).append("\n")
-                .append("Passive Perception: ").append(this.passivePerception).append("\n")
-                .append("Passive Investigation: ").append(this.passiveInvestigation).append("\n")
-                .append("Passive Insight: ").append(this.passiveInsight).append("\n")
-                .append("Ability Scores: ").append("\n")
-                .append("Strength: ").append(this.abilityScores.get(STRENGTH).getScore()).append(" (").append(this.abilityScores.get(STRENGTH).getModifier()).append(")").append("\n")
-                .append("Dexterity: ").append(this.abilityScores.get(DEXTERITY).getScore()).append(" (").append(this.abilityScores.get(DEXTERITY).getModifier()).append(")").append("\n")
-                .append("Constitution: ").append(this.abilityScores.get(CONSTITUTION).getScore()).append(" (").append(this.abilityScores.get(CONSTITUTION).getModifier()).append(")").append("\n")
-                .append("Intelligence: ").append(this.abilityScores.get(INTELLIGENCE).getScore()).append(" (").append(this.abilityScores.get(INTELLIGENCE).getModifier()).append(")").append("\n")
-                .append("Wisdom: ").append(this.abilityScores.get(WISDOM).getScore()).append(" (").append(this.abilityScores.get(WISDOM).getModifier()).append(")").append("\n")
-                .append("Charisma: ").append(this.abilityScores.get(CHARISMA).getScore()).append(" (").append(this.abilityScores.get(CHARISMA).getModifier()).append(")").append("\n")
-                .append("Ability Proficiencies: ").append(this.abilityProficiencies).append("\n")
-                .append("Skill Proficiencies: ").append(this.skillProficiencies).append("\n")
-                .append("Languages: ").append(this.languages).append("\n")
-                .append("Equipment: ").append(this.equipment).append("\n");
-        return sb.toString();
+        return "Name: " + this.name + "\n" +
+                "Race: " + this.race.getClass().toString() + "\n" +
+                "Class: " + this.characterClass.getClass().toString() + "\n" +
+                "Level: " + this.level + "\n" +
+                "Armor Class: " + this.armorClass + "\n" +
+                "Initiative Bonus: " + this.initiativeBonus + "\n" +
+                "Speed: " + this.speed + "\n" +
+                "Hit Points: " + this.hitPoints + "\n" +
+                "Passive Perception: " + this.passivePerception + "\n" +
+                "Passive Investigation: " + this.passiveInvestigation + "\n" +
+                "Passive Insight: " + this.passiveInsight + "\n" +
+                "Ability Scores: " + "\n" +
+                "Strength: " + this.abilityScores.get(STRENGTH).getScore() + " (" + this.abilityScores.get(STRENGTH).getModifier() + ")" + "\n" +
+                "Dexterity: " + this.abilityScores.get(DEXTERITY).getScore() + " (" + this.abilityScores.get(DEXTERITY).getModifier() + ")" + "\n" +
+                "Constitution: " + this.abilityScores.get(CONSTITUTION).getScore() + " (" + this.abilityScores.get(CONSTITUTION).getModifier() + ")" + "\n" +
+                "Intelligence: " + this.abilityScores.get(INTELLIGENCE).getScore() + " (" + this.abilityScores.get(INTELLIGENCE).getModifier() + ")" + "\n" +
+                "Wisdom: " + this.abilityScores.get(WISDOM).getScore() + " (" + this.abilityScores.get(WISDOM).getModifier() + ")" + "\n" +
+                "Charisma: " + this.abilityScores.get(CHARISMA).getScore() + " (" + this.abilityScores.get(CHARISMA).getModifier() + ")" + "\n" +
+                "Ability Proficiencies: " + this.abilityProficiencies + "\n" +
+                "Skill Proficiencies: " + this.skillProficiencies + "\n" +
+                "Languages: " + this.languages + "\n" +
+                "Equipment: " + this.equipment + "\n";
     }
+
 
 }

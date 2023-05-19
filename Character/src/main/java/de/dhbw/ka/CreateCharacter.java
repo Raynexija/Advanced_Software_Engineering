@@ -9,7 +9,7 @@ import java.util.List;
 public final class CreateCharacter {
 
     //required parameters
-    private String name;
+    private final String name;
     private Race race;
     private CharacterClass characterClass;
 
@@ -29,10 +29,10 @@ public final class CreateCharacter {
     private int initiativeBonus = 0;
     private int speed = 0;
 
-    private List<Skills> skillProficiencies = new ArrayList<>();
+    private final List<Skills> skillProficiencies = new ArrayList<>();
 
-    protected List<String> languages = new ArrayList<>();
-    protected List<String> equipment = new ArrayList<>();
+    private final List<String> languages = new ArrayList<>();
+    private final List<String> equipment = new ArrayList<>();
 
     private CreateCharacter(String name) {
         this.name = name;
