@@ -215,9 +215,9 @@ public class Character {
      */
     public int skillCheckModifier(Skills skill) {
         if (skillProficiencies.contains(skill)) {
-            return abilityScores.get(skill.ability).modifier + this.characterClass.getProficiencyBonus(this.level);
+            return abilityScores.get(skill.ability).getModifier() + this.characterClass.getProficiencyBonus(this.level);
         } else {
-            return abilityScores.get(skill.ability).modifier;
+            return abilityScores.get(skill.ability).getModifier();
         }
     }
 
@@ -229,9 +229,9 @@ public class Character {
      */
     public int savingThrowModifier(AbilityScores abilityScore) {
         if (abilityProficiencies.contains(abilityScore)) {
-            return this.abilityScores.get(abilityScore).modifier + this.characterClass.getProficiencyBonus(this.level);
+            return this.abilityScores.get(abilityScore).getModifier() + this.characterClass.getProficiencyBonus(this.level);
         } else {
-            return this.abilityScores.get(abilityScore).modifier;
+            return this.abilityScores.get(abilityScore).getModifier();
         }
     }
 
@@ -242,7 +242,7 @@ public class Character {
      * @return the modifier for the ability check
      */
     public int abilityCheckModifier(AbilityScores abilityScore) {
-        return this.abilityScores.get(abilityScore).modifier;
+        return this.abilityScores.get(abilityScore).getModifier();
     }
 
     /**

@@ -17,10 +17,10 @@ import java.util.List;
 
 public class CharacterTest {
 
-    private Race testRace = new Human();
-    private Fighter testClass = new Fighter();
+    private final Race testRace = new Human();
+    private final Fighter testClass = new Fighter();
 
-    private Character character = CreateCharacter.named("Test")
+    private final Character character = CreateCharacter.named("Test")
             .ofRace(testRace)
             .isA(testClass)
             .withStrength(15)
@@ -63,16 +63,14 @@ public class CharacterTest {
 
     @Test
     public void testLanguages() {
-        List<String> expectedLanguages = new ArrayList<>();
-        expectedLanguages.addAll(List.of(new String[]{"Celestial", "Common", "Elvish"}));
+        List<String> expectedLanguages = new ArrayList<>(List.of(new String[]{"Celestial", "Common", "Elvish"}));
         Assertions.assertEquals(expectedLanguages.size(), character.getLanguages().size());
         Assertions.assertEquals(expectedLanguages, character.getLanguages());
     }
 
     @Test
     public void testEquipment() {
-        List<String> expectedEquipment = new ArrayList<>();
-        expectedEquipment.addAll(List.of(new String[]{"Dagger", "Leather Armor", "Longsword"}));
+        List<String> expectedEquipment = new ArrayList<>(List.of(new String[]{"Dagger", "Leather Armor", "Longsword"}));
         Assertions.assertEquals(expectedEquipment.size(), character.getEquipment().size());
         Assertions.assertEquals(expectedEquipment, character.getEquipment());
 

@@ -5,8 +5,8 @@ import de.dhbw.ka.domain.character.exception.BaseAbilityScoreOutOfBoundsExceptio
 
 public final class AbilityScore {
 
-    protected final int score;
-    protected final int modifier;
+    private final int score;
+    private final int modifier;
     private final int baseScore;
     private final int racialBonus;
     private final int additionalBonus ;
