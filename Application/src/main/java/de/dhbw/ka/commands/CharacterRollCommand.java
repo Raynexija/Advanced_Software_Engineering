@@ -39,8 +39,12 @@ public class CharacterRollCommand extends Command {
         //switch over all possible roles for the character
         String[] commandParts = commandMessage.split(" ");
         String statToRoll = input.requestSelection("What stat do you want to roll?", availableStatForRolling);
-        String parameter = commandParts[1].toLowerCase().toLowerCase();
-        if (parameter.equals("-a") || parameter.equals("-d")) {
+
+        String parameter = "";
+        if (commandParts.length > 1) {
+            parameter = commandParts[1];
+        }
+        if ( parameter.equals("-a") || parameter.equals("-d")) {
             int firstRoll = statRolls(statToRoll);
             int secondRoll = statRolls(statToRoll);
             output.displayMessage("You rolled a " + firstRoll + " and a " + secondRoll + " for the " + statToRoll + " check with " + getParameterasString(parameter) + ".");

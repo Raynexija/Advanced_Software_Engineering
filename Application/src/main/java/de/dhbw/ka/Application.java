@@ -85,6 +85,10 @@ public class Application {
             output.displayMessage(CharacterRollCommand.help());
             return;
         }
+        if (command.split(" ")[1].matches("-?\\d+")) {
+            rollWithoutSelection(command);
+            return;
+        }
         output.displayMessage("Rolling for " + currentCharacter.getName());
         controller.enqueueCommand(new CharacterRollCommand(dice, command, currentCharacter));
     }
@@ -104,16 +108,10 @@ public class Application {
     }
 
     private void selectCharacter(String command) {
-        String[] parameter = command.split(" ");
-        if (parameter.length != 2) {
-            output.displayError("Invalid command");
-            return;
-        }
-        String name = parameter[1];
+        String name = command.split(" ")[1];
         currentCharacter = characters.stream().filter(character -> character.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
-
         if (currentCharacter == null) {
-            output.displayError("Character not found");
+            output.displayError("Character: \"" + name + "\" not found");
             return;
         }
         characterSelected = true;
