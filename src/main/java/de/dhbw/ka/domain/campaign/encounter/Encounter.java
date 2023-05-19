@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Encounter {
 
-    private List<Creature> creatures = new ArrayList<>();
-    private List<Character> playerCharacters = new ArrayList<>();
+    private final List<Creature> creatures = new ArrayList<>();
+    private final List<Character> playerCharacters = new ArrayList<>();
 
     public Encounter() {
     }
@@ -37,6 +37,14 @@ public class Encounter {
 
     public void addPlayerCharacter(Character character) {
         this.playerCharacters.add(character);
+    }
+
+    public void removeCreature(Creature creature) {
+        this.creatures.remove(creature);
+    }
+
+    public void removePlayerCharacter(Character character) {
+        this.playerCharacters.remove(character);
     }
 
     public List<Creature> getCreatures() {

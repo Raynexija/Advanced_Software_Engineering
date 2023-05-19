@@ -12,7 +12,7 @@ public class Creature {
 
     private final String name;
     private final int armorClass;
-    private final int hitPoints;
+    private int hitPoints;
     private final int initiativeModifier;
     private final HashMap<AbilityScores, CreatureAbilityScore> abilityScores = new HashMap<>();
 
@@ -54,6 +54,11 @@ public class Creature {
 
     public String name() {
         return name;
+    }
+
+    public int takeDamage(int damage) {
+        this.hitPoints -= damage;
+        return this.hitPoints;
     }
 
     public int armorClass() {

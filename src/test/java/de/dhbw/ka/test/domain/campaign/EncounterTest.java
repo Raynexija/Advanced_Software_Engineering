@@ -41,6 +41,11 @@ public class EncounterTest {
         }
     }
 
+    @Test
+    public void testCreatureTakeDamage() {
+        assertEquals(15, creature.takeDamage(10));
+        assertEquals(15, creature.hitPoints());
+    }
 
     @Test
     public void testGetParticipants() {
