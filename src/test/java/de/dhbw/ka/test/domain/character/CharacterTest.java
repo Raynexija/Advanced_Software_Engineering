@@ -9,7 +9,6 @@ import de.dhbw.ka.domain.character.Skills;
 import de.dhbw.ka.domain.character.characterClasses.Fighter;
 import de.dhbw.ka.domain.character.races.Human;
 import de.dhbw.ka.domain.character.races.Race;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -126,5 +125,10 @@ public class CharacterTest {
     @Test
     public void testSpeed() {
         assertEquals(30, character.getSpeed());
+    }
+
+    @Test
+    public void testGetArmorClass() {
+        assertEquals(12, character.getArmorClass());
     }
 }

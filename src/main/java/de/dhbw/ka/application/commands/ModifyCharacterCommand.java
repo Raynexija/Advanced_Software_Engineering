@@ -26,7 +26,7 @@ public class ModifyCharacterCommand extends Command {
         return """
                 Modifies a character.
                 When a character is selected you can modify all available stats.
-                Usage: modify 
+                Usage: modify
                 You then have to select the stat you want to modify.""";
     }
 
@@ -63,9 +63,8 @@ public class ModifyCharacterCommand extends Command {
                 output.displayMessage("You set your speed to " + speed + ".");
             }
             case "Set armor class" -> {
-                int armorClass = input.requestInt("What armor class has the armor that the character wears?");
-                character.setArmorClass(armorClass);
-                output.displayMessage("You set your armor class to " + armorClass + ".");
+                int armorClass = input.requestInt("What armor class has the armor that the character wears? (Dex will be added)");
+                output.displayMessage("The new armor class is " + character.setArmorClass(armorClass) + ".");
             }
             case "Set flat armor class" -> {
                 int flatArmorClass = input.requestInt("What flat armor class do you want to set?");
@@ -88,11 +87,11 @@ public class ModifyCharacterCommand extends Command {
                 output.displayMessage("You set your level to " + level + ".");
             }
             case "Add ability bonus" -> {
-                String[] abilities = new String[] {"Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"};
+                String[] abilities = new String[]{"Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"};
                 String ability = input.requestSelection("What ability do you want to add?", abilities);
                 int bonus = input.requestInt("What bonus do you want to add?");
-                character.addAbilityBonus(AbilityScores.valueOf(ability.toUpperCase()), bonus);
-                output.displayMessage("You added " + bonus + " to your " + ability + ".");
+                output.displayMessage("You added " + bonus + " to your " + ability + " for a new total of: " +
+                        character.addAbilityBonus(AbilityScores.valueOf(ability.toUpperCase()), bonus) + ".");
             }
         }
     }
