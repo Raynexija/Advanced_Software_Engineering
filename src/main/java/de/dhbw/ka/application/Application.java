@@ -9,6 +9,7 @@ import de.dhbw.ka.application.interfaces.OutputService;
 import de.dhbw.ka.application.interfaces.RandomNumberService;
 import de.dhbw.ka.domain.campaign.encounter.Creature;
 import de.dhbw.ka.domain.campaign.encounter.Encounter;
+import de.dhbw.ka.domain.campaign.quests.Quest;
 import de.dhbw.ka.domain.character.CreateCharacter;
 import de.dhbw.ka.domain.character.Character;
 import de.dhbw.ka.domain.character.characterClasses.Fighter;
@@ -35,6 +36,10 @@ public class Application {
     private final List<Encounter> encounters = new ArrayList<>();
     private Encounter currentEncounter;
     private boolean encounterSelected = false;
+
+    private final List<Quest> quests = new ArrayList<>();
+    private Quest currentQuest;
+    private boolean questSelected = false;
 
     //TODO: Remove test data
     private final Character testChar = CreateCharacter.named("TestChar")
