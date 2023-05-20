@@ -7,6 +7,7 @@ import de.dhbw.ka.application.commands.*;
 import de.dhbw.ka.application.interfaces.InputService;
 import de.dhbw.ka.application.interfaces.OutputService;
 import de.dhbw.ka.application.interfaces.RandomNumberService;
+import de.dhbw.ka.domain.campaign.encounter.Encounter;
 import de.dhbw.ka.domain.character.CreateCharacter;
 import de.dhbw.ka.domain.character.Character;
 import de.dhbw.ka.domain.character.characterClasses.Fighter;
@@ -29,6 +30,11 @@ public class Application {
     private final List<Character> characters = new ArrayList<>();
     private Character currentCharacter;
     private boolean characterSelected = false;
+
+    private final List<Encounter> encounters = new ArrayList<>();
+    private Encounter currentEncounter;
+    private boolean encounterSelected = false;
+
 
     private final Character testChar = CreateCharacter.named("Test")
             .ofRace(new Human())
@@ -59,16 +65,87 @@ public class Application {
                     else rollWithoutSelection(command);
                 }
                 case "create_character", "cc" -> createCharacter();
-                case "list_characters", "list" -> listCharacters();
-                case "select_character", "select" -> selectCharacter(command);
-                case "selected_character", "current", "curr" -> selectedCharacter();
+                case "list_characters", "lc" -> listCharacters();
+                case "list_encounters", "le" -> listEncounters();
+                case "select" -> select(command);
+                case "select_character", "sc" -> selectCharacter(command);
+                case "select_encounter", "se" -> selectEncounter(command);
+                case "selected", "current", "curr" -> selected();
+                case "selected_character" -> selectedCharacter();
+                case "selected_encounter" -> selectedEncounter();
                 case "delete_character" -> deleteCharacter();
-                case "deselect_character", "deselect" -> deselectCharacter();
+                case "deselect" -> deselect();
+                case "deselect_character" -> deselectCharacter();
+                case "deselect_encounter" -> deselectEncounter();
                 case "modify_character", "modify" -> modifyCharacter(command);
                 case "get_Stat", "get" -> singleStatCommand(command);
+                case "create_encounter", "ce" -> createEncounter();
                 default -> output.displayError("Unknown command");
             }
             controller.executeCommands();
+        }
+    }
+
+    private void selected() {
+        selectedCharacter();
+        selectedEncounter();
+    }
+
+    private void listEncounters() {
+        if (encounters.isEmpty()) {
+            output.displayMessage("No encounters created yet");
+            return;
+        }
+        output.displayMessage("Encounters:");
+        for (Encounter encounter : encounters) {
+            output.displayMessage(encounter.getName());
+        }
+    }
+
+    private void select(String command) {
+        String toSelect = input.requestSelection("What do you want to select?", new String[]{"character", "encounter"});
+        switch (toSelect) {
+            case "character" -> selectCharacter(command);
+            case "encounter" -> selectEncounter(command);
+        }
+    }
+
+    private void deselect() {
+        if (characterSelected) {
+            deselectCharacter();
+        } else if (encounterSelected) {
+            deselectEncounter();
+        } else {
+            output.displayError("Nothing to deselect");
+        }
+    }
+
+    private void createEncounter() {
+        controller.enqueueCommand(new CreateEncounterCommand(encounters, characters));
+    }
+
+    private void selectEncounter(String command) {
+        String name = command.split(" ")[1];
+        currentEncounter = encounters.stream().filter(encounter -> encounter.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
+        if (currentEncounter == null) {
+            output.displayError("Encounter: \"" + name + "\" not found");
+            return;
+        }
+        encounterSelected = true;
+        output.displayMessage("Selected encounter: " + currentEncounter.getName());
+    }
+
+    private void selectedEncounter() {
+        if (checkEncounterSelected()) {
+            output.displayMessage(currentEncounter.toString());
+        }
+    }
+
+    private void deselectEncounter() {
+        if (checkEncounterSelected()) {
+            currentEncounter = null;
+            encounterSelected = false;
+            output.displayMessage("Encounter deselected");
         }
     }
 
@@ -85,6 +162,14 @@ public class Application {
     private boolean checkCharacterSelected() {
         if (!characterSelected) {
             output.displayError("No character selected");
+            return false;
+        }
+        return true;
+    }
+
+    private boolean checkEncounterSelected() {
+        if (!encounterSelected) {
+            output.displayError("No encounter selected");
             return false;
         }
         return true;
@@ -154,6 +239,7 @@ public class Application {
 
     private void deselectCharacter() {
         if (checkCharacterSelected()) {
+            currentCharacter = null;
             characterSelected = false;
             output.displayMessage("Deselected character");
         }

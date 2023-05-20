@@ -28,7 +28,7 @@ public class EncounterTest {
 
     @Test
     public void testGetParticipants() {
-        Encounter encounter = new Encounter();
+        Encounter encounter = new Encounter("Test");
         encounter.addCreature(creature);
         encounter.addPlayerCharacter(character);
         String expected = """
@@ -42,7 +42,7 @@ public class EncounterTest {
 
     @Test
     public void testGetInitiative() {
-        Encounter encounter = new Encounter();
+        Encounter encounter = new Encounter("Test");
         encounter.addCreature(creature);
         encounter.addPlayerCharacter(character);
         encounter.addToInitiative(creature.name(), 10);
@@ -57,7 +57,7 @@ public class EncounterTest {
 
     @Test
     public void testRemoveFromInitiative() {
-        Encounter encounter = new Encounter();
+        Encounter encounter = new Encounter("Test");
         encounter.addCreature(creature);
         encounter.addPlayerCharacter(character);
         encounter.addToInitiative(creature.name(), 10);
@@ -72,7 +72,7 @@ public class EncounterTest {
 
     @Test
     public void testRemoveCreature() {
-        Encounter encounter = new Encounter();
+        Encounter encounter = new Encounter("Test");
         encounter.addCreature(creature);
         encounter.addPlayerCharacter(character);
         encounter.addToInitiative(creature.name(), 10);
@@ -89,7 +89,7 @@ public class EncounterTest {
 
     @Test
     public void testRemovePlayerCharacter() {
-        Encounter encounter = new Encounter();
+        Encounter encounter = new Encounter("Test");
         encounter.addCreature(creature);
         encounter.addPlayerCharacter(character);
         encounter.addToInitiative(creature.name(), 10);
@@ -106,7 +106,7 @@ public class EncounterTest {
 
     @Test
     public void testGetCreature() {
-        Encounter encounter = new Encounter();
+        Encounter encounter = new Encounter("Test");
         encounter.addCreature(creature);
         encounter.addPlayerCharacter(character);
         assertEquals(creature, encounter.getCreatures().get(0));
@@ -114,7 +114,7 @@ public class EncounterTest {
 
     @Test
     public void testGetPlayerCharacter() {
-        Encounter encounter = new Encounter();
+        Encounter encounter = new Encounter("Test");
         encounter.addCreature(creature);
         encounter.addPlayerCharacter(character);
         assertEquals(character, encounter.getPlayerCharacters().get(0));

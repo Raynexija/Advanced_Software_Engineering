@@ -8,12 +8,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: ability to heal Character and Creature">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/GetSingleCharacterStatCommand.java" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: option to get a single Stat from the selected Character">
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/CreateEncounterCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/ModifyCharacterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/ModifyCharacterCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/campaign/encounter/Encounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/campaign/encounter/Encounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/campaign/EncounterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/campaign/EncounterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -258,7 +258,7 @@
       <workItem from="1684492550565" duration="16121000" />
       <workItem from="1684525078225" duration="8099000" />
       <workItem from="1684535170093" duration="831000" />
-      <workItem from="1684571516958" duration="8378000" />
+      <workItem from="1684571516958" duration="12184000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>
@@ -540,7 +540,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684580075963</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="add: option to get a single Stat from the selected Character">
+      <created>1684581745536</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1684581745536</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,7 +577,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: added i/o console functionality" />
     <MESSAGE value="refactor: &#10;- moved files to comply with dependency pattern&#10;- pom.xml to execute all submodule junit tests" />
     <MESSAGE value="feat: added command logic" />
     <MESSAGE value="refactor: merged main and removed character builder from basic command" />
@@ -595,7 +601,8 @@
     <MESSAGE value="fixed: warnings" />
     <MESSAGE value="add: initiative order to encounter" />
     <MESSAGE value="add: ability to heal Character and Creature" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: ability to heal Character and Creature" />
+    <MESSAGE value="add: option to get a single Stat from the selected Character" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: option to get a single Stat from the selected Character" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

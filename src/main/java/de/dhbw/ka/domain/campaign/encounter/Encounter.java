@@ -9,12 +9,15 @@ import java.util.List;
 
 public class Encounter {
 
+    private final String name;
+
     private final List<Creature> creatures = new ArrayList<>();
     private final List<Character> playerCharacters = new ArrayList<>();
 
     private final HashMap<String, Integer> initiativeOrder = new HashMap<>();
 
-    public Encounter() {
+    public Encounter(String name) {
+        this.name = name;
     }
 
     /**
@@ -76,4 +79,7 @@ public class Encounter {
         return playerCharacters;
     }
 
+    public String getName() {
+        return this.name;
+    }
 }
