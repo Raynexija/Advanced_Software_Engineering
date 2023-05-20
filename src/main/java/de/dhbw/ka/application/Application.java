@@ -113,9 +113,19 @@ public class Application {
 
                 case "start_encounter", "start" -> startEncounter();
                 case "delete_character" -> deleteCharacter();
+                case "finish_quest", "finishQ" -> finishQuest();
                 default -> output.displayError("Unknown command");
             }
             controller.executeCommands();
+        }
+    }
+
+    private void finishQuest() {
+        if (checkQuestSelected()) {
+            quests.add(currentQuest.markCompleted());
+            output.displayMessage("Quest: \"" + currentQuest.name() + "\" finished and deselected");
+            output.displayMessage("Rewards for the quest:" + currentQuest.rewards().toString());
+            quests.remove(currentQuest);
         }
     }
 
@@ -211,12 +221,13 @@ public class Application {
         if (currentQuest == null) {
             output.displayError("No quest with that name");
         } else {
+            questSelected = true;
             output.displayMessage("Selected quest: " + currentQuest.name());
         }
     }
 
     private void selectQuest(String command) {
-        try{
+        try {
             String name = command.split(" ")[1];
             getQuestViaName(name);
         } catch (IndexOutOfBoundsException e) {
@@ -271,7 +282,7 @@ public class Application {
     }
 
     private void selectEncounter(String command) {
-        try{
+        try {
             String name = command.split(" ")[1];
             getEncounterViaName(name);
         } catch (ArrayIndexOutOfBoundsException e) {
@@ -391,12 +402,12 @@ public class Application {
     }
 
     private void selectCharacter(String command) {
-         try {
-             String name = command.split(" ")[1];
-             getCharacterViaName(name);
-         } catch (ArrayIndexOutOfBoundsException e) {
-             selectCharacterViaArray();
-         }
+        try {
+            String name = command.split(" ")[1];
+            getCharacterViaName(name);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            selectCharacterViaArray();
+        }
 
     }
 
