@@ -8,9 +8,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: Character now can Take Damage">
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/campaign/encounter/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/campaign/encounter/Creature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/Character.java" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: check if Character or Creature is still alive">
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/campaign/encounter/InitiativeOrderList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/ModifyCharacterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/ModifyCharacterCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/campaign/encounter/Encounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/campaign/encounter/Encounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/campaign/EncounterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/campaign/EncounterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/character/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/character/CharacterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +128,7 @@
       <command value="mvn clean test " />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CharacterTest.TestDamageTaken">
+  <component name="RunManager" selected="JUnit.CharacterTest.testGetArmorClass">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.Main" />
       <module name="Advanced_Software_Engineering" />
@@ -138,7 +142,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CharacterTest.TestDamageTaken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CharacterTest.testGetArmorClass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
@@ -148,13 +152,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.character" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.character.CharacterTest" />
-      <option name="METHOD_NAME" value="TestDamageTaken" />
+      <option name="METHOD_NAME" value="testGetArmorClass" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EncounterTest.testCreatureAbilityScore" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EncounterTest.testGetCreature" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
@@ -164,13 +168,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.EncounterTest" />
-      <option name="METHOD_NAME" value="testCreatureAbilityScore" />
+      <option name="METHOD_NAME" value="testGetCreature" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EncounterTest.testCreatureAbilityScoreModifier" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EncounterTest.testGetPlayerCharacter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
@@ -180,13 +184,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.EncounterTest" />
-      <option name="METHOD_NAME" value="testCreatureAbilityScoreModifier" />
+      <option name="METHOD_NAME" value="testGetPlayerCharacter" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EncounterTest.testCreatureTakeDamage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EncounterTest.testRemoveCreature" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
@@ -196,13 +200,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.EncounterTest" />
-      <option name="METHOD_NAME" value="testCreatureTakeDamage" />
+      <option name="METHOD_NAME" value="testRemoveCreature" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EncounterTest.testGetParticipants" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EncounterTest.testRemovePlayerCharacter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
@@ -212,7 +216,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.EncounterTest" />
-      <option name="METHOD_NAME" value="testGetParticipants" />
+      <option name="METHOD_NAME" value="testRemovePlayerCharacter" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -220,11 +224,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CharacterTest.TestDamageTaken" />
-        <item itemvalue="JUnit.EncounterTest.testCreatureTakeDamage" />
-        <item itemvalue="JUnit.EncounterTest.testCreatureAbilityScoreModifier" />
-        <item itemvalue="JUnit.EncounterTest.testCreatureAbilityScore" />
-        <item itemvalue="JUnit.EncounterTest.testGetParticipants" />
+        <item itemvalue="JUnit.CharacterTest.testGetArmorClass" />
+        <item itemvalue="JUnit.EncounterTest.testGetCreature" />
+        <item itemvalue="JUnit.EncounterTest.testGetPlayerCharacter" />
+        <item itemvalue="JUnit.EncounterTest.testRemovePlayerCharacter" />
+        <item itemvalue="JUnit.EncounterTest.testRemoveCreature" />
       </list>
     </recent_temporary>
   </component>
@@ -254,7 +258,9 @@
       <workItem from="1684097586870" duration="3217000" />
       <workItem from="1684143429780" duration="1464000" />
       <workItem from="1684492550565" duration="16121000" />
-      <workItem from="1684525078225" duration="7075000" />
+      <workItem from="1684525078225" duration="8099000" />
+      <workItem from="1684535170093" duration="831000" />
+      <workItem from="1684571516958" duration="3007000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>
@@ -508,7 +514,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684531834478</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="add: check if Character or Creature is still alive">
+      <created>1684532212102</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1684532212103</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -538,7 +551,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="start od character development" />
     <MESSAGE value="AbilityScore is now implemented and test covered" />
     <MESSAGE value="Project structure" />
     <MESSAGE value="remove main class" />
@@ -563,10 +575,18 @@
     <MESSAGE value="refactor: pom: plugin version updated" />
     <MESSAGE value="add: Creature now can Take Damage" />
     <MESSAGE value="add: Character now can Take Damage" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: Character now can Take Damage" />
+    <MESSAGE value="add: check if Character or Creature is still alive" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: check if Character or Creature is still alive" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Advanced_Software_Engineering$All_in_Advanced_Software_Engineering.ic" NAME="All in Advanced_Software_Engineering Coverage Results" MODIFIED="1684533064767" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Advanced_Software_Engineering$de_dhbw_ka_test_in_Advanced_Software_Engineering.ic" NAME="de.dhbw.ka.test in Advanced_Software_Engineering Coverage Results" MODIFIED="1684533032786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>de.dhbw.ka.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Advanced_Software_Engineering$All_in_Advanced_Software_Engineering__1_.ic" NAME="All in Advanced_Software_Engineering (1) Coverage Results" MODIFIED="1684533101103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

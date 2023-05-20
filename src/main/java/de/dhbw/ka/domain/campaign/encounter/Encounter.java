@@ -3,12 +3,16 @@ package de.dhbw.ka.domain.campaign.encounter;
 import de.dhbw.ka.domain.character.Character;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 
 public class Encounter {
 
     private final List<Creature> creatures = new ArrayList<>();
     private final List<Character> playerCharacters = new ArrayList<>();
+
+    private final HashMap<String, Integer> initiativeOrder = new HashMap<>();
 
     public Encounter() {
     }
@@ -29,6 +33,23 @@ public class Encounter {
             sb.append(character.getName()).append(": ").append(character.getHitPoints()).append("\n");
         }
         return sb.toString();
+    }
+
+    public void addToInitiative(String name, int initiative) {
+        initiativeOrder.put(name, initiative);
+    }
+
+    public void removeFromInitiative(String name) {
+        initiativeOrder.remove(name);
+    }
+
+    public List<String> getInitiativeOrder() {
+        List<String> order = new InitiativeOrderList<>();
+        order.add("Name: Initiative");
+        initiativeOrder.entrySet().stream()
+                .sorted(HashMap.Entry.comparingByValue(Comparator.reverseOrder()))
+                .forEach(entry -> order.add(entry.getKey() + ": " + entry.getValue()));
+        return order;
     }
 
     public void addCreature(Creature creature) {
