@@ -19,7 +19,8 @@ public class Character {
     private int armorClass;
     private int initiativeBonus;
     private int speed;
-    private int hitPoints;
+    private int maxHitPoints;
+    private int currentHitPoints;
 
     private int passivePerception;
     private int passiveInvestigation;
@@ -215,9 +216,9 @@ public class Character {
      */
     public int skillCheckModifier(Skills skill) {
         if (skillProficiencies.contains(skill)) {
-            return abilityScores.get(skill.ability).modifier + this.characterClass.getProficiencyBonus(this.level);
+            return abilityScores.get(skill.ability).getModifier() + this.characterClass.getProficiencyBonus(this.level);
         } else {
-            return abilityScores.get(skill.ability).modifier;
+            return abilityScores.get(skill.ability).getModifier();
         }
     }
 
@@ -229,9 +230,9 @@ public class Character {
      */
     public int savingThrowModifier(AbilityScores abilityScore) {
         if (abilityProficiencies.contains(abilityScore)) {
-            return this.abilityScores.get(abilityScore).modifier + this.characterClass.getProficiencyBonus(this.level);
+            return this.abilityScores.get(abilityScore).getModifier() + this.characterClass.getProficiencyBonus(this.level);
         } else {
-            return this.abilityScores.get(abilityScore).modifier;
+            return this.abilityScores.get(abilityScore).getModifier();
         }
     }
 
@@ -242,7 +243,7 @@ public class Character {
      * @return the modifier for the ability check
      */
     public int abilityCheckModifier(AbilityScores abilityScore) {
-        return this.abilityScores.get(abilityScore).modifier;
+        return this.abilityScores.get(abilityScore).getModifier();
     }
 
     /**
@@ -324,7 +325,17 @@ public class Character {
      * @return the hit points of the character
      */
     public int getHitPoints() {
-        return hitPoints;
+        return currentHitPoints;
+    }
+
+    /**
+     * Metod to ste MaxHitPoints, automatically sets currentHitPoints to maxHitPoints
+     *
+     * @param maxHitPoints the maxHitPoints to be set
+     */
+    public void setMaxHitPoints(int maxHitPoints) {
+        this.maxHitPoints = maxHitPoints;
+        this.currentHitPoints = maxHitPoints;
     }
 
     /**
@@ -333,7 +344,41 @@ public class Character {
      * @param hitPoints the hit points to be set
      */
     public void setHitPoints(int hitPoints) {
-        this.hitPoints = hitPoints;
+        if (hitPoints > this.maxHitPoints) {
+            this.currentHitPoints = this.maxHitPoints;
+        } else this.currentHitPoints = Math.max(hitPoints, 0);
+    }
+
+    private void modifyHitPoints(int hitPoints) {
+        if (this.currentHitPoints + hitPoints > this.maxHitPoints) {
+            this.currentHitPoints = this.maxHitPoints;
+        } else if (this.currentHitPoints + hitPoints < 0) {
+            this.currentHitPoints = 0;
+        } else {
+            this.currentHitPoints += hitPoints;
+        }
+    }
+
+    /**
+     * Subtracts damage taken from the character's hit points
+     *
+     * @param damage the damage sustained
+     * @return the remaining hit points
+     */
+    public int takeDamage(int damage) {
+        modifyHitPoints(-damage);
+        return this.currentHitPoints;
+    }
+
+    /**
+     * Heals the character by a given amount
+     *
+     * @param healing the amount of healing
+     * @return the current hit points of the character
+     */
+    public int heal(int healing) {
+        modifyHitPoints(healing);
+        return this.currentHitPoints;
     }
 
     /**
@@ -382,16 +427,27 @@ public class Character {
         return unproficientSkills.toArray(new String[0]);
     }
 
+    /**
+     * Checks if the character is alive
+     *
+     * @return true if the character is alive, false otherwise
+     */
+    public boolean isAlive() {
+        return this.currentHitPoints > 0;
+    }
+
     @Override
     public String toString() {
-        return "Name: " + this.name + "\n" +
+        String stillAlive = isAlive() ? "" : "[Dead]\n";
+        return stillAlive +
+                "Name: " + this.name + "\n" +
                 "Race: " + this.race.getClass().toString() + "\n" +
                 "Class: " + this.characterClass.getClass().toString() + "\n" +
                 "Level: " + this.level + "\n" +
                 "Armor Class: " + this.armorClass + "\n" +
                 "Initiative Bonus: " + this.initiativeBonus + "\n" +
                 "Speed: " + this.speed + "\n" +
-                "Hit Points: " + this.hitPoints + "\n" +
+                "Hit Points: (" + this.currentHitPoints + "/" + this.currentHitPoints + ")\n" +
                 "Passive Perception: " + this.passivePerception + "\n" +
                 "Passive Investigation: " + this.passiveInvestigation + "\n" +
                 "Passive Insight: " + this.passiveInsight + "\n" +
@@ -408,5 +464,15 @@ public class Character {
                 "Equipment: " + this.equipment + "\n";
     }
 
+    public int getMaxHitPoints() {
+        return this.maxHitPoints;
+    }
 
+    public List<Skills> getAllSkillProficiencies() {
+        return this.skillProficiencies;
+    }
+
+    public HashMap<AbilityScores, AbilityScore> getAllAbilityScores() {
+        return this.abilityScores;
+    }
 }

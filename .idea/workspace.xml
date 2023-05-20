@@ -8,17 +8,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="refactor: removed maven artifacts">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: Quest Object">
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/CreateQuestCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/GetStatsForQuestCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/ModifyQuestCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Adapter/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Character/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Plugins/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/character/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/character/CharacterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/rng/RandomNumberGeneratorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/rng/RandomNumberGeneratorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/GetSingleCharacterStatCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/GetSingleCharacterStatCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/GetStatsForEmcounterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/GetStatsForEncounterCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +27,7 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
+        <option value="Kotlin Class" />
         <option value="Class" />
       </list>
     </option>
@@ -128,11 +126,11 @@
       <command value="mvn clean " />
       <command value="mvn install" />
       <command value="mvn test" />
-      <command value="mvn clean test " />
       <command value="mvn package" />
+      <command value="mvn clean test " />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CharacterTest.testSkillModifier">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.Main" />
       <module name="Advanced_Software_Engineering" />
@@ -146,90 +144,92 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CharacterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QuestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.domain.character.*" />
+          <option name="PATTERN" value="de.dhbw.ka.test.domain.campaign.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.character" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.character.CharacterTest" />
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.QuestTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CharacterTest.testSkillModifier" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QuestTest.testQuestAssignedCharacters" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.domain.character.*" />
+          <option name="PATTERN" value="de.dhbw.ka.test.domain.campaign.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.character" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.character.CharacterTest" />
-      <option name="METHOD_NAME" value="testSkillModifier" />
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.QuestTest" />
+      <option name="METHOD_NAME" value="testQuestAssignedCharacters" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommandControllerTest.testEnqueueCommand" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QuestTest.testQuestCompleted" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.*" />
+          <option name="PATTERN" value="de.dhbw.ka.test.domain.campaign.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.CommandControllerTest" />
-      <option name="METHOD_NAME" value="testEnqueueCommand" />
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.QuestTest" />
+      <option name="METHOD_NAME" value="testQuestCompleted" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConsoleInputOutputTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QuestTest.testQuestEncounters" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.inputOutput.*" />
+          <option name="PATTERN" value="de.dhbw.ka.test.domain.campaign.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.inputOutput" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.inputOutput.ConsoleInputOutputTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.QuestTest" />
+      <option name="METHOD_NAME" value="testQuestEncounters" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RandomNumberGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="QuestTest.testReward" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.rng.*" />
+          <option name="PATTERN" value="de.dhbw.ka.test.domain.campaign.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.rng" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.rng.RandomNumberGeneratorTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.QuestTest" />
+      <option name="METHOD_NAME" value="testReward" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CharacterTest.testSkillModifier" />
-        <item itemvalue="JUnit.CharacterTest" />
-        <item itemvalue="JUnit.RandomNumberGeneratorTest" />
-        <item itemvalue="JUnit.CommandControllerTest.testEnqueueCommand" />
-        <item itemvalue="JUnit.ConsoleInputOutputTest" />
+        <item itemvalue="JUnit.QuestTest.testReward" />
+        <item itemvalue="JUnit.QuestTest.testQuestCompleted" />
+        <item itemvalue="JUnit.QuestTest" />
+        <item itemvalue="JUnit.QuestTest.testQuestEncounters" />
+        <item itemvalue="JUnit.QuestTest.testQuestAssignedCharacters" />
       </list>
     </recent_temporary>
   </component>
@@ -259,6 +259,10 @@
       <workItem from="1684097586870" duration="3217000" />
       <workItem from="1684143429780" duration="1464000" />
       <workItem from="1684492550565" duration="16121000" />
+      <workItem from="1684525078225" duration="8099000" />
+      <workItem from="1684535170093" duration="831000" />
+      <workItem from="1684571516958" duration="17521000" />
+      <workItem from="1684591921691" duration="9078000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>
@@ -470,7 +474,112 @@
       <option name="project" value="LOCAL" />
       <updated>1684519436008</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="refactor: changed variable visibility">
+      <created>1684529959539</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1684529959539</updated>
+    </task>
+    <task id="LOCAL-00032" summary="add: Encounter and Creature">
+      <created>1684530014561</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1684530014561</updated>
+    </task>
+    <task id="LOCAL-00033" summary="bug: test run config noe works properly">
+      <created>1684530918718</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1684530918718</updated>
+    </task>
+    <task id="LOCAL-00034" summary="refactor: pom: plugin version updated">
+      <created>1684531041703</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1684531041703</updated>
+    </task>
+    <task id="LOCAL-00035" summary="add: Creature now can Take Damage">
+      <created>1684531509691</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1684531509691</updated>
+    </task>
+    <task id="LOCAL-00036" summary="add: Character now can Take Damage">
+      <created>1684531834478</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1684531834478</updated>
+    </task>
+    <task id="LOCAL-00037" summary="add: check if Character or Creature is still alive">
+      <created>1684532212102</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1684532212103</updated>
+    </task>
+    <task id="LOCAL-00038" summary="fixed: warnings">
+      <created>1684576467770</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1684576467770</updated>
+    </task>
+    <task id="LOCAL-00039" summary="add: initiative order to encounter">
+      <created>1684576493742</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1684576493742</updated>
+    </task>
+    <task id="LOCAL-00040" summary="add: ability to heal Character and Creature">
+      <created>1684580075963</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1684580075963</updated>
+    </task>
+    <task id="LOCAL-00041" summary="add: option to get a single Stat from the selected Character">
+      <created>1684581745536</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1684581745536</updated>
+    </task>
+    <task id="LOCAL-00042" summary="add: commands to create Encounter">
+      <created>1684585555671</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1684585555671</updated>
+    </task>
+    <task id="LOCAL-00043" summary="add: commands to start Encounter">
+      <created>1684589546468</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1684589546468</updated>
+    </task>
+    <task id="LOCAL-00044" summary="add: commands to modify and get Stats for Encounter">
+      <created>1684591773795</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1684591773795</updated>
+    </task>
+    <task id="LOCAL-00045" summary="add: Quest Object">
+      <created>1684598574647</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1684598574647</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,16 +609,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initial commit" />
-    <MESSAGE value="start od character development" />
-    <MESSAGE value="AbilityScore is now implemented and test covered" />
-    <MESSAGE value="Project structure" />
-    <MESSAGE value="remove main class" />
-    <MESSAGE value="feat: added i/o console functionality" />
-    <MESSAGE value="refactor: &#10;- moved files to comply with dependency pattern&#10;- pom.xml to execute all submodule junit tests" />
-    <MESSAGE value="feat: added command logic" />
-    <MESSAGE value="refactor: merged main and removed character builder from basic command" />
-    <MESSAGE value="refactor: console is now a given for the console Out. &amp; Input" />
     <MESSAGE value="add: dice and Application class" />
     <MESSAGE value="feat: dice roll command" />
     <MESSAGE value="feat: start of create character command" />
@@ -520,10 +619,32 @@
     <MESSAGE value="feat: one can now see the roll and the modifier in addition to just the sum" />
     <MESSAGE value="add: modify character command" />
     <MESSAGE value="refactor: removed maven artifacts" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: removed maven artifacts" />
+    <MESSAGE value="refactor: changed variable visibility" />
+    <MESSAGE value="add: Encounter and Creature" />
+    <MESSAGE value="bug: test run config noe works properly" />
+    <MESSAGE value="refactor: pom: plugin version updated" />
+    <MESSAGE value="add: Creature now can Take Damage" />
+    <MESSAGE value="add: Character now can Take Damage" />
+    <MESSAGE value="add: check if Character or Creature is still alive" />
+    <MESSAGE value="fixed: warnings" />
+    <MESSAGE value="add: initiative order to encounter" />
+    <MESSAGE value="add: ability to heal Character and Creature" />
+    <MESSAGE value="add: option to get a single Stat from the selected Character" />
+    <MESSAGE value="add: commands to create Encounter" />
+    <MESSAGE value="add: commands to start Encounter" />
+    <MESSAGE value="add: commands to modify and get Stats for Encounter" />
+    <MESSAGE value="add: Quest Object" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: Quest Object" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Advanced_Software_Engineering$All_in_Advanced_Software_Engineering.ic" NAME="All in Advanced_Software_Engineering Coverage Results" MODIFIED="1684591803479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Advanced_Software_Engineering$de_dhbw_ka_test_in_Advanced_Software_Engineering.ic" NAME="de.dhbw.ka.test in Advanced_Software_Engineering Coverage Results" MODIFIED="1684533032786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>de.dhbw.ka.test.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Advanced_Software_Engineering$All_in_Advanced_Software_Engineering__1_.ic" NAME="All in Advanced_Software_Engineering (1) Coverage Results" MODIFIED="1684533101103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
