@@ -34,7 +34,7 @@ public class CreateEncounterCommand extends Command {
                     String name = input.requestString("What is the name of the creature?");
                     int maxHitPoints = input.requestInt("What is the max hit points of the creature?");
                     int armorClass = input.requestInt("What is the armor class of the creature?");
-                    int initiative = input.requestInt("What is the initiative of the creature?");
+                    int initiative = input.requestInt("What is the initiative modifier of the creature?");
                     int strength = input.requestInt("What is the strength of the creature?");
                     int dexterity = input.requestInt("What is the dexterity of the creature?");
                     int constitution = input.requestInt("What is the constitution of the creature?");

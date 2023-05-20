@@ -7,6 +7,7 @@ import de.dhbw.ka.application.commands.*;
 import de.dhbw.ka.application.interfaces.InputService;
 import de.dhbw.ka.application.interfaces.OutputService;
 import de.dhbw.ka.application.interfaces.RandomNumberService;
+import de.dhbw.ka.domain.campaign.encounter.Creature;
 import de.dhbw.ka.domain.campaign.encounter.Encounter;
 import de.dhbw.ka.domain.character.CreateCharacter;
 import de.dhbw.ka.domain.character.Character;
@@ -35,8 +36,8 @@ public class Application {
     private Encounter currentEncounter;
     private boolean encounterSelected = false;
 
-
-    private final Character testChar = CreateCharacter.named("Test")
+    //TODO: Remove test data
+    private final Character testChar = CreateCharacter.named("TestChar")
             .ofRace(new Human())
             .isA(new Fighter())
             .withStrength(15)
@@ -50,9 +51,18 @@ public class Application {
             .speaking(new String[]{"Celestial", "Elvish"})
             .equippedWith(new String[]{"Leather Armor", "Longsword", "Dagger"})
             .build();
+    private final Encounter testEncounter = new Encounter("Test");
+
 
     public void main() {
+
+        //TODO: Remove test data
         characters.add(testChar);
+        testEncounter.addPlayerCharacter(testChar);
+        testEncounter.addCreature(
+                new Creature("TestCreature", 15, 25, 0, 15, 11, 10, 1, 3, 2));
+        encounters.add(testEncounter);
+
 
         //noinspection InfiniteLoopStatement
         while (true) {
@@ -67,12 +77,12 @@ public class Application {
                 case "create_character", "cc" -> createCharacter();
                 case "list_characters", "lc" -> listCharacters();
                 case "list_encounters", "le" -> listEncounters();
-                case "select" -> select(command);
+                case "select" -> select();
                 case "select_character", "sc" -> selectCharacter(command);
                 case "select_encounter", "se" -> selectEncounter(command);
                 case "selected", "current", "curr" -> selected();
-                case "selected_character" -> selectedCharacter();
-                case "selected_encounter" -> selectedEncounter();
+                case "selected_character", "select_char" -> selectedCharacter();
+                case "selected_encounter", "select_enc" -> selectedEncounter();
                 case "delete_character" -> deleteCharacter();
                 case "deselect" -> deselect();
                 case "deselect_character" -> deselectCharacter();
@@ -80,9 +90,16 @@ public class Application {
                 case "modify_character", "modify" -> modifyCharacter(command);
                 case "get_Stat", "get" -> singleStatCommand(command);
                 case "create_encounter", "ce" -> createEncounter();
+                case "start_encounter", "start" -> startEncounter();
                 default -> output.displayError("Unknown command");
             }
             controller.executeCommands();
+        }
+    }
+
+    private void startEncounter() {
+        if (checkEncounterSelected()) {
+            controller.enqueueCommand(new RunEncounterCommand(currentEncounter, dice));
         }
     }
 
@@ -102,21 +119,20 @@ public class Application {
         }
     }
 
-    private void select(String command) {
+    private void select() {
         String toSelect = input.requestSelection("What do you want to select?", new String[]{"character", "encounter"});
         switch (toSelect) {
-            case "character" -> selectCharacter(command);
-            case "encounter" -> selectEncounter(command);
+            case "character" -> selectCharacterViaArray();
+            case "encounter" -> selectEncounterViaArray();
         }
     }
 
     private void deselect() {
-        if (characterSelected) {
+        if (checkCharacterSelected()) {
             deselectCharacter();
-        } else if (encounterSelected) {
+        }
+        if (checkEncounterSelected()) {
             deselectEncounter();
-        } else {
-            output.displayError("Nothing to deselect");
         }
     }
 
@@ -124,15 +140,27 @@ public class Application {
         controller.enqueueCommand(new CreateEncounterCommand(encounters, characters));
     }
 
-    private void selectEncounter(String command) {
-        String name = command.split(" ")[1];
+    private void selectEncounterViaArray() {
+        if (!encounters.isEmpty()) {
+            String name = input.requestSelection("Which encounter do you want to select?", encounters.stream().map(Encounter::getName).toArray(String[]::new));
+            getEncounterViaName(name);
+            return;
+        }
+        output.displayError("No encounters created yet");
+    }
+
+    private void getEncounterViaName(String name) {
         currentEncounter = encounters.stream().filter(encounter -> encounter.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
         if (currentEncounter == null) {
             output.displayError("Encounter: \"" + name + "\" not found");
-            return;
         }
         encounterSelected = true;
         output.displayMessage("Selected encounter: " + currentEncounter.getName());
+    }
+
+    private void selectEncounter(String command) {
+        String name = command.split(" ")[1];
+        getEncounterViaName(name);
     }
 
     private void selectedEncounter() {
@@ -222,15 +250,27 @@ public class Application {
         }
     }
 
-    private void selectCharacter(String command) {
-        String name = command.split(" ")[1];
+    private void selectCharacterViaArray() {
+        if (!characters.isEmpty()) {
+            String name = input.requestSelection("Which character do you want to select?", characters.stream().map(Character::getName).toArray(String[]::new));
+            getCharacterViaName(name);
+            return;
+        }
+        output.displayError("No characters created yet");
+    }
+
+    private void getCharacterViaName(String name) {
         currentCharacter = characters.stream().filter(character -> character.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
         if (currentCharacter == null) {
             output.displayError("Character: \"" + name + "\" not found");
-            return;
         }
         characterSelected = true;
         output.displayMessage("Selected character: " + currentCharacter.getName());
+    }
+
+    private void selectCharacter(String command) {
+        String name = command.split(" ")[1];
+        getCharacterViaName(name);
     }
 
     private void exit() {
