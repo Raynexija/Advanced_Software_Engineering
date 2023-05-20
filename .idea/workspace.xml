@@ -8,14 +8,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: initiative order to encounter">
-      <change afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/campaign/CreatureTest.java" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: ability to heal Character and Creature">
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/GetSingleCharacterStatCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/campaign/encounter/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/campaign/encounter/Creature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/ModifyCharacterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/ModifyCharacterCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/CreateCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/CreateCharacter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/campaign/EncounterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/campaign/EncounterTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/character/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/character/CharacterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,7 +127,7 @@
       <command value="mvn clean test " />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CreatureTest.toStringTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.Main" />
       <module name="Advanced_Software_Engineering" />
@@ -260,7 +258,7 @@
       <workItem from="1684492550565" duration="16121000" />
       <workItem from="1684525078225" duration="8099000" />
       <workItem from="1684535170093" duration="831000" />
-      <workItem from="1684571516958" duration="6697000" />
+      <workItem from="1684571516958" duration="8378000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>
@@ -535,7 +533,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684576493742</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="add: ability to heal Character and Creature">
+      <created>1684580075963</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1684580075963</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,7 +570,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove main class" />
     <MESSAGE value="feat: added i/o console functionality" />
     <MESSAGE value="refactor: &#10;- moved files to comply with dependency pattern&#10;- pom.xml to execute all submodule junit tests" />
     <MESSAGE value="feat: added command logic" />
@@ -590,7 +594,8 @@
     <MESSAGE value="add: check if Character or Creature is still alive" />
     <MESSAGE value="fixed: warnings" />
     <MESSAGE value="add: initiative order to encounter" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: initiative order to encounter" />
+    <MESSAGE value="add: ability to heal Character and Creature" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: ability to heal Character and Creature" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

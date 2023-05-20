@@ -63,11 +63,22 @@ public class Application {
                 case "select_character", "select" -> selectCharacter(command);
                 case "selected_character", "current", "curr" -> selectedCharacter();
                 case "delete_character" -> deleteCharacter();
-                case "deselect_character" -> deselectCharacter();
+                case "deselect_character", "deselect" -> deselectCharacter();
                 case "modify_character", "modify" -> modifyCharacter(command);
+                case "get_Stat", "get" -> singleStatCommand(command);
                 default -> output.displayError("Unknown command");
             }
             controller.executeCommands();
+        }
+    }
+
+    private void singleStatCommand(String command) {
+        if (checkCharacterSelected()) {
+            if (command.contains("-help")) {
+                output.displayMessage(GetSingleCharacterStatCommand.help());
+                return;
+            }
+            controller.enqueueCommand(new GetSingleCharacterStatCommand(command, currentCharacter));
         }
     }
 

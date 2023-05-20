@@ -13,7 +13,7 @@ public class ModifyCharacterCommand extends Command {
     private final Character character;
 
     public static String[] availableOptions = {
-            "Add equipment", "Remove equipment", "Add language", "addSkillProficiency", "Set speed",
+            "Add equipment", "Remove equipment", "Add language", "Add a skill proficiency", "Set speed",
             "Set armor class", "Set flat armor class", "Set initiative bonus", "Set hit points", "Set level",
             "Add ability bonus"};
 
@@ -51,7 +51,7 @@ public class ModifyCharacterCommand extends Command {
                 character.addLanguage(language);
                 output.displayMessage("You added " + language + " to your languages.");
             }
-            case "addSkillProficiency" -> {
+            case "Add a skill proficiency" -> {
                 String[] unproficientSkills = character.getUnproficientSkills();
                 String skill = input.requestSelection("What skill do you want to add?", unproficientSkills);
                 character.addSkillProficiency(Skills.valueOf(skill));

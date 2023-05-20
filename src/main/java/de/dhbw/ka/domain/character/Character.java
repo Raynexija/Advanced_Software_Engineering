@@ -464,5 +464,15 @@ public class Character {
                 "Equipment: " + this.equipment + "\n";
     }
 
+    public int getMaxHitPoints() {
+        return this.maxHitPoints;
+    }
 
+    public List<Skills> getAllSkillProficiencies() {
+        return this.skillProficiencies;
+    }
+
+    public HashMap<AbilityScores, AbilityScore> getAllAbilityScores() {
+        return this.abilityScores;
+    }
 }
