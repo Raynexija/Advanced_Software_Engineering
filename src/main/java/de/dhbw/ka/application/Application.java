@@ -80,35 +80,81 @@ public class Application {
                     else rollWithoutSelection(command);
                 }
                 case "create_character", "cc" -> createCharacter();
+                case "create_encounter", "ce" -> createEncounter();
+                case "create_quest", "cq" -> createQuest();
+
                 case "list_characters", "lc" -> listCharacters();
                 case "list_encounters", "le" -> listEncounters();
+                case "list_quests", "lq" -> listQuests();
+
                 case "select" -> select();
                 case "select_character", "sc" -> selectCharacter(command);
                 case "select_encounter", "se" -> selectEncounter(command);
+                case "Select_quest", "sq" -> selectQuest(command);
+
                 case "selected", "current", "curr" -> selected();
-                case "selected_character", "select_char" -> selectedCharacter();
-                case "selected_encounter", "select_enc" -> selectedEncounter();
-                case "delete_character" -> deleteCharacter();
+                case "selected_character", "selected_char" -> selectedCharacter();
+                case "selected_encounter", "selected_enc" -> selectedEncounter();
+                case "selected_quest", "selected_que" -> selectedQuest();
+
                 case "deselect" -> deselect();
                 case "deselect_character" -> deselectCharacter();
                 case "deselect_encounter" -> deselectEncounter();
+                case "deselect_quest" -> deselectQuest();
+
+
                 case "modify_character", "modify_char" -> modifyCharacter(command);
                 case "modify_encounter", "modify_enc" -> modifyEncounter(command);
+                case "modify_quest", "modify_que" -> modifyQuest(command);
+
                 case "get_Stat_Character", "getC" -> singleStatCommandCharacter(command);
                 case "get_Stat_Encounter", "getE" -> singleStatCommandEncounter(command);
-                case "create_encounter", "ce" -> createEncounter();
+                case "get_Stat_Quest", "getQ" -> singleStatCommandQuest(command);
+
                 case "start_encounter", "start" -> startEncounter();
+                case "delete_character" -> deleteCharacter();
                 default -> output.displayError("Unknown command");
             }
             controller.executeCommands();
         }
     }
 
+    private void singleStatCommandQuest(String command) {
+        if (command.contains("-help")) {
+            output.displayMessage(GetStatsForQuestCommand.help());
+        } else if (checkQuestSelected()) {
+            controller.enqueueCommand(new GetStatsForQuestCommand(currentQuest));
+        }
+    }
+
+    private void modifyQuest(String command) {
+        if (command.contains("-help")) {
+            output.displayMessage(ModifyQuestCommand.help());
+        } else if (checkQuestSelected()) {
+            controller.enqueueCommand(new ModifyQuestCommand(currentQuest, encounters, characters));
+        }
+    }
+
+    private void listQuests() {
+        if (quests.isEmpty()) {
+            output.displayMessage("No quests created yet");
+            return;
+        }
+        output.displayMessage("Quests:");
+        for (Quest quest : quests) {
+            output.displayMessage(quest.toString());
+        }
+    }
+
+    private void createQuest() {
+        controller.enqueueCommand(new CreateQuestCommand(quests, encounters, characters));
+    }
+
     private void singleStatCommandEncounter(String command) {
         if (command.contains("-help")) {
-            output.displayMessage(GetStatsForEmcounterCommand.help());
+            output.displayMessage(GetStatsForEncounterCommand.help());
         } else if (checkEncounterSelected()) {
-            controller.enqueueCommand(new GetStatsForEmcounterCommand(currentEncounter));
+            controller.enqueueCommand(new GetStatsForEncounterCommand(currentEncounter));
         }
     }
 
@@ -143,10 +189,44 @@ public class Application {
     }
 
     private void select() {
-        String toSelect = input.requestSelection("What do you want to select?", new String[]{"character", "encounter"});
+        String toSelect = input.requestSelection("What do you want to select?", new String[]{"character", "encounter", "quest"});
         switch (toSelect) {
             case "character" -> selectCharacterViaArray();
             case "encounter" -> selectEncounterViaArray();
+            case "quest" -> selectQuestViaArray();
+        }
+    }
+
+    private void selectQuestViaArray() {
+        if (!quests.isEmpty()) {
+            String name = input.requestSelection("Which quest do you want to select?", quests.stream().map(Quest::name).toArray(String[]::new));
+            getQuestViaName(name);
+            return;
+        }
+        output.displayError("No quests created yet");
+    }
+
+    private void getQuestViaName(String name) {
+        currentQuest = quests.stream().filter(quest -> quest.name().equalsIgnoreCase(name)).findFirst().orElse(null);
+        if (currentQuest == null) {
+            output.displayError("No quest with that name");
+        } else {
+            output.displayMessage("Selected quest: " + currentQuest.name());
+        }
+    }
+
+    private void selectQuest(String command) {
+        try{
+            String name = command.split(" ")[1];
+            getQuestViaName(name);
+        } catch (IndexOutOfBoundsException e) {
+            selectQuestViaArray();
+        }
+    }
+
+    private void selectedQuest() {
+        if (checkQuestSelected()) {
+            output.displayMessage("Selected quest: " + currentQuest.name());
         }
     }
 
@@ -157,6 +237,15 @@ public class Application {
         if (checkEncounterSelected()) {
             deselectEncounter();
         }
+        if (checkQuestSelected()) {
+            deselectQuest();
+        }
+    }
+
+    private void deselectQuest() {
+        currentQuest = null;
+        questSelected = false;
+        output.displayMessage("Deselected quest");
     }
 
     private void createEncounter() {
@@ -182,8 +271,12 @@ public class Application {
     }
 
     private void selectEncounter(String command) {
-        String name = command.split(" ")[1];
-        getEncounterViaName(name);
+        try{
+            String name = command.split(" ")[1];
+            getEncounterViaName(name);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            selectEncounterViaArray();
+        }
     }
 
     private void selectedEncounter() {
@@ -221,6 +314,14 @@ public class Application {
     private boolean checkEncounterSelected() {
         if (!encounterSelected) {
             output.displayError("No encounter selected");
+            return false;
+        }
+        return true;
+    }
+
+    private boolean checkQuestSelected() {
+        if (!questSelected) {
+            output.displayError("No quest selected");
             return false;
         }
         return true;
@@ -290,8 +391,13 @@ public class Application {
     }
 
     private void selectCharacter(String command) {
-        String name = command.split(" ")[1];
-        getCharacterViaName(name);
+         try {
+             String name = command.split(" ")[1];
+             getCharacterViaName(name);
+         } catch (ArrayIndexOutOfBoundsException e) {
+             selectCharacterViaArray();
+         }
+
     }
 
     private void exit() {

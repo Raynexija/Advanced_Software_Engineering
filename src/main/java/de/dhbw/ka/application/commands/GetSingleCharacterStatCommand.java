@@ -22,7 +22,7 @@ public class GetSingleCharacterStatCommand extends Command {
         return """
                 Gets a single stat of a character.
                 When a character is selected you can get all available stats.
-                Usage: get
+                Usage: getC
                 You then have to select the stat you want to get.""";
     }
 

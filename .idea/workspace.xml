@@ -8,10 +8,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: commands to modify and get Stats for Encounter">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/campaign/quests/Quest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/campaign/QuestTest.java" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: Quest Object">
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/CreateQuestCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/GetStatsForQuestCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/ModifyQuestCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/GetSingleCharacterStatCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/GetSingleCharacterStatCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/GetStatsForEmcounterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/GetStatsForEncounterCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +27,7 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
+        <option value="Kotlin Class" />
         <option value="Class" />
       </list>
     </option>
@@ -125,7 +130,7 @@
       <command value="mvn clean test " />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.QuestTest.testReward">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.Main" />
       <module name="Advanced_Software_Engineering" />
@@ -257,7 +262,7 @@
       <workItem from="1684525078225" duration="8099000" />
       <workItem from="1684535170093" duration="831000" />
       <workItem from="1684571516958" duration="17521000" />
-      <workItem from="1684591921691" duration="4263000" />
+      <workItem from="1684591921691" duration="9078000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>
@@ -567,7 +572,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684591773795</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="add: Quest Object">
+      <created>1684598574647</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1684598574647</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,7 +609,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: console is now a given for the console Out. &amp; Input" />
     <MESSAGE value="add: dice and Application class" />
     <MESSAGE value="feat: dice roll command" />
     <MESSAGE value="feat: start of create character command" />
@@ -622,7 +633,8 @@
     <MESSAGE value="add: commands to create Encounter" />
     <MESSAGE value="add: commands to start Encounter" />
     <MESSAGE value="add: commands to modify and get Stats for Encounter" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: commands to modify and get Stats for Encounter" />
+    <MESSAGE value="add: Quest Object" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: Quest Object" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
