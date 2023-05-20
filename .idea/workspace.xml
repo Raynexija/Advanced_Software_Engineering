@@ -8,11 +8,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: check if Character or Creature is still alive">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/campaign/encounter/InitiativeOrderList.java" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: initiative order to encounter">
+      <change afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/campaign/CreatureTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/ModifyCharacterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/ModifyCharacterCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/campaign/encounter/Encounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/campaign/encounter/Encounter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/campaign/encounter/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/campaign/encounter/Creature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/CreateCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/CreateCharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/campaign/EncounterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/campaign/EncounterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/character/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/character/CharacterTest.java" afterDir="false" />
     </list>
@@ -128,7 +129,7 @@
       <command value="mvn clean test " />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CharacterTest.testGetArmorClass">
+  <component name="RunManager" selected="JUnit.CreatureTest.toStringTest">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.Main" />
       <module name="Advanced_Software_Engineering" />
@@ -158,23 +159,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EncounterTest.testGetCreature" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CharacterTest.testHeal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.domain.campaign.*" />
+          <option name="PATTERN" value="de.dhbw.ka.test.domain.character.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.EncounterTest" />
-      <option name="METHOD_NAME" value="testGetCreature" />
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.character" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.character.CharacterTest" />
+      <option name="METHOD_NAME" value="testHeal" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EncounterTest.testGetPlayerCharacter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CreatureTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
@@ -183,14 +184,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.EncounterTest" />
-      <option name="METHOD_NAME" value="testGetPlayerCharacter" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.CreatureTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreatureTest.toStringTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Advanced_Software_Engineering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.dhbw.ka.test.domain.campaign.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.CreatureTest" />
+      <option name="METHOD_NAME" value="toStringTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EncounterTest.testRemoveCreature" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EncounterTest.testCreatureIsAlive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
@@ -200,23 +216,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.EncounterTest" />
-      <option name="METHOD_NAME" value="testRemoveCreature" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EncounterTest.testRemovePlayerCharacter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Advanced_Software_Engineering" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.domain.campaign.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.EncounterTest" />
-      <option name="METHOD_NAME" value="testRemovePlayerCharacter" />
+      <option name="METHOD_NAME" value="testCreatureIsAlive" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -224,11 +224,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CreatureTest.toStringTest" />
+        <item itemvalue="JUnit.CharacterTest.testHeal" />
+        <item itemvalue="JUnit.CreatureTest" />
+        <item itemvalue="JUnit.EncounterTest.testCreatureIsAlive" />
         <item itemvalue="JUnit.CharacterTest.testGetArmorClass" />
-        <item itemvalue="JUnit.EncounterTest.testGetCreature" />
-        <item itemvalue="JUnit.EncounterTest.testGetPlayerCharacter" />
-        <item itemvalue="JUnit.EncounterTest.testRemovePlayerCharacter" />
-        <item itemvalue="JUnit.EncounterTest.testRemoveCreature" />
       </list>
     </recent_temporary>
   </component>
@@ -260,7 +260,7 @@
       <workItem from="1684492550565" duration="16121000" />
       <workItem from="1684525078225" duration="8099000" />
       <workItem from="1684535170093" duration="831000" />
-      <workItem from="1684571516958" duration="3007000" />
+      <workItem from="1684571516958" duration="6697000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>
@@ -521,7 +521,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684532212103</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="fixed: warnings">
+      <created>1684576467770</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1684576467770</updated>
+    </task>
+    <task id="LOCAL-00039" summary="add: initiative order to encounter">
+      <created>1684576493742</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1684576493742</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -551,8 +565,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="AbilityScore is now implemented and test covered" />
-    <MESSAGE value="Project structure" />
     <MESSAGE value="remove main class" />
     <MESSAGE value="feat: added i/o console functionality" />
     <MESSAGE value="refactor: &#10;- moved files to comply with dependency pattern&#10;- pom.xml to execute all submodule junit tests" />
@@ -576,7 +588,9 @@
     <MESSAGE value="add: Creature now can Take Damage" />
     <MESSAGE value="add: Character now can Take Damage" />
     <MESSAGE value="add: check if Character or Creature is still alive" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: check if Character or Creature is still alive" />
+    <MESSAGE value="fixed: warnings" />
+    <MESSAGE value="add: initiative order to encounter" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: initiative order to encounter" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

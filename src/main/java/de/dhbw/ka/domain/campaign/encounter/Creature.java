@@ -12,14 +12,16 @@ public class Creature {
 
     private final String name;
     private final int armorClass;
-    private int hitPoints;
+    private final int maxHitPoints;
+    private int currentHitPoints;
     private final int initiativeModifier;
     private final HashMap<AbilityScores, CreatureAbilityScore> abilityScores = new HashMap<>();
 
-    public Creature(String name, int armorClass, int hitPoints, int initiativeModifier, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
+    public Creature(String name, int armorClass, int maxHitPoints, int initiativeModifier, int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma) {
         this.name = name;
         this.armorClass = armorClass;
-        this.hitPoints = hitPoints;
+        this.maxHitPoints = maxHitPoints;
+        this.currentHitPoints = maxHitPoints;
         this.initiativeModifier = initiativeModifier;
         this.abilityScores.put(STRENGTH, new CreatureAbilityScore(strength));
         this.abilityScores.put(DEXTERITY, new CreatureAbilityScore(dexterity));
@@ -56,13 +58,28 @@ public class Creature {
         return name;
     }
 
+    private void modifyHitPoints(int hitPoints) {
+        if (this.currentHitPoints + hitPoints > this.maxHitPoints) {
+            this.currentHitPoints = this.maxHitPoints;
+        } else if (this.currentHitPoints + hitPoints < 0) {
+            this.currentHitPoints = 0;
+        } else {
+            this.currentHitPoints += hitPoints;
+        }
+    }
+
     public int takeDamage(int damage) {
-        this.hitPoints -= damage;
-        return this.hitPoints;
+        modifyHitPoints(-damage);
+        return this.currentHitPoints;
+    }
+
+    public int heal(int healing) {
+        modifyHitPoints(healing);
+        return this.currentHitPoints;
     }
 
     public boolean isAlive() {
-        return this.hitPoints > 0;
+        return this.currentHitPoints > 0;
     }
 
     public int armorClass() {
@@ -70,10 +87,29 @@ public class Creature {
     }
 
     public int hitPoints() {
-        return hitPoints;
+        return currentHitPoints;
     }
 
     public int initiativeModifier() {
         return initiativeModifier;
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + name + ", Hit points: (" + maxHitPoints + "/" + currentHitPoints + "), Armor class: " + armorClass + ", Initiative modifier: " + getSignedModifierString(initiativeModifier)
+                + "\n[STR: " + abilityScore(STRENGTH).score() + " (" + getSignedModifierString(abilityScore(STRENGTH).modifier())
+                + ") | DEX: " + abilityScore(DEXTERITY).score() + " (" + getSignedModifierString(abilityScore(DEXTERITY).modifier())
+                + ") | CON: " + abilityScore(CONSTITUTION).score() + " (" + getSignedModifierString(abilityScore(CONSTITUTION).modifier())
+                + ") | INT: " + abilityScore(INTELLIGENCE).score() + " (" + getSignedModifierString(abilityScore(INTELLIGENCE).modifier())
+                + ") | WIS: " + abilityScore(WISDOM).score() + " (" + getSignedModifierString(abilityScore(WISDOM).modifier())
+                + ") | CHA: " + abilityScore(CHARISMA).score() + " (" + getSignedModifierString(abilityScore(CHARISMA).modifier()) + ")]";
+    }
+
+    private String getSignedModifierString(int modifier) {
+        if (modifier >= 0) {
+            return "+" + modifier;
+        } else {
+            return Integer.toString(modifier);
+        }
     }
 }

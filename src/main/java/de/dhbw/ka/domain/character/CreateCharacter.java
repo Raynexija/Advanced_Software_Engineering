@@ -149,7 +149,7 @@ public final class CreateCharacter {
     private Character build() {
         Character character = new Character(this.race, this.characterClass, this.strength, this.dexterity, this.constitution, this.intelligence, this.wisdom, this.charisma);
         character.setName(this.name);
-        character.setHitPoints(this.hitPoints);
+        character.setMaxHitPoints(this.hitPoints);
 
         if (this.level < 0) {
             this.level = 1;

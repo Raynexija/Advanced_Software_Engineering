@@ -19,7 +19,8 @@ public class Character {
     private int armorClass;
     private int initiativeBonus;
     private int speed;
-    private int hitPoints;
+    private int maxHitPoints;
+    private int currentHitPoints;
 
     private int passivePerception;
     private int passiveInvestigation;
@@ -324,7 +325,17 @@ public class Character {
      * @return the hit points of the character
      */
     public int getHitPoints() {
-        return hitPoints;
+        return currentHitPoints;
+    }
+
+    /**
+     * Metod to ste MaxHitPoints, automatically sets currentHitPoints to maxHitPoints
+     *
+     * @param maxHitPoints the maxHitPoints to be set
+     */
+    public void setMaxHitPoints(int maxHitPoints) {
+        this.maxHitPoints = maxHitPoints;
+        this.currentHitPoints = maxHitPoints;
     }
 
     /**
@@ -333,7 +344,41 @@ public class Character {
      * @param hitPoints the hit points to be set
      */
     public void setHitPoints(int hitPoints) {
-        this.hitPoints = hitPoints;
+        if (hitPoints > this.maxHitPoints) {
+            this.currentHitPoints = this.maxHitPoints;
+        } else this.currentHitPoints = Math.max(hitPoints, 0);
+    }
+
+    private void modifyHitPoints(int hitPoints) {
+        if (this.currentHitPoints + hitPoints > this.maxHitPoints) {
+            this.currentHitPoints = this.maxHitPoints;
+        } else if (this.currentHitPoints + hitPoints < 0) {
+            this.currentHitPoints = 0;
+        } else {
+            this.currentHitPoints += hitPoints;
+        }
+    }
+
+    /**
+     * Subtracts damage taken from the character's hit points
+     *
+     * @param damage the damage sustained
+     * @return the remaining hit points
+     */
+    public int takeDamage(int damage) {
+        modifyHitPoints(-damage);
+        return this.currentHitPoints;
+    }
+
+    /**
+     * Heals the character by a given amount
+     *
+     * @param healing the amount of healing
+     * @return the current hit points of the character
+     */
+    public int heal(int healing) {
+        modifyHitPoints(healing);
+        return this.currentHitPoints;
     }
 
     /**
@@ -383,23 +428,12 @@ public class Character {
     }
 
     /**
-     * Subtracts damage taken from the character's hit points
-     *
-     * @param damage the damage sustained
-     * @return the remaining hit points
-     */
-    public int takeDamage(int damage) {
-        this.hitPoints -= damage;
-        return this.hitPoints;
-    }
-
-    /**
      * Checks if the character is alive
      *
      * @return true if the character is alive, false otherwise
      */
     public boolean isAlive() {
-        return this.hitPoints > 0;
+        return this.currentHitPoints > 0;
     }
 
     @Override
@@ -413,7 +447,7 @@ public class Character {
                 "Armor Class: " + this.armorClass + "\n" +
                 "Initiative Bonus: " + this.initiativeBonus + "\n" +
                 "Speed: " + this.speed + "\n" +
-                "Hit Points: " + this.hitPoints + "\n" +
+                "Hit Points: (" + this.currentHitPoints + "/" + this.currentHitPoints + ")\n" +
                 "Passive Perception: " + this.passivePerception + "\n" +
                 "Passive Investigation: " + this.passiveInvestigation + "\n" +
                 "Passive Insight: " + this.passiveInsight + "\n" +

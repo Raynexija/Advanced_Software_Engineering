@@ -131,4 +131,11 @@ public class CharacterTest {
     public void testGetArmorClass() {
         assertEquals(12, character.getArmorClass());
     }
+
+    @Test
+    public void testHeal() {
+        character.takeDamage(3);
+        assertEquals(7, character.getHitPoints());
+        assertEquals(9, character.heal(2));
+    }
 }
