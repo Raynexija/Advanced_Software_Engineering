@@ -27,6 +27,14 @@ public class CreateEncounterCommand extends Command {
     public void execute(InputService input, OutputService output) {
         Encounter encounter = new Encounter(input.requestString("What is the name of the encounter?"));
 
+        creatureAddition(input, encounter);
+        characterAddition(input, output, encounter);
+
+        encounters.add(encounter);
+        output.displayMessage("Encounter: " + encounter.getName() + " created.");
+    }
+
+    private void creatureAddition(InputService input, Encounter encounter) {
         boolean createCreatures = true;
         while (createCreatures) {
             switch (input.requestSelection("Do you want to add a creature?", new String[]{"Yes", "No"})) {
@@ -48,10 +56,6 @@ public class CreateEncounterCommand extends Command {
                 case "No" -> createCreatures = false;
             }
         }
-        characterAddition(input, output, encounter);
-
-        encounters.add(encounter);
-        output.displayMessage("Encounter: " + encounter.getName() + " created.");
     }
 
     private void characterAddition(InputService input, OutputService output, Encounter encounter) {

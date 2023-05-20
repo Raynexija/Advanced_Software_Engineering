@@ -87,13 +87,31 @@ public class Application {
                 case "deselect" -> deselect();
                 case "deselect_character" -> deselectCharacter();
                 case "deselect_encounter" -> deselectEncounter();
-                case "modify_character", "modify" -> modifyCharacter(command);
-                case "get_Stat", "get" -> singleStatCommand(command);
+                case "modify_character", "modify_char" -> modifyCharacter(command);
+                case "modify_encounter", "modify_enc" -> modifyEncounter(command);
+                case "get_Stat_Character", "getC" -> singleStatCommandCharacter(command);
+                case "get_Stat_Encounter", "getE" -> singleStatCommandEncounter(command);
                 case "create_encounter", "ce" -> createEncounter();
                 case "start_encounter", "start" -> startEncounter();
                 default -> output.displayError("Unknown command");
             }
             controller.executeCommands();
+        }
+    }
+
+    private void singleStatCommandEncounter(String command) {
+        if (command.contains("-help")) {
+            output.displayMessage(GetStatsForEmcounterCommand.help());
+        } else if (checkEncounterSelected()) {
+            controller.enqueueCommand(new GetStatsForEmcounterCommand(currentEncounter));
+        }
+    }
+
+    private void modifyEncounter(String command) {
+        if (command.contains("-help")) {
+            output.displayMessage(ModifyEncounterCommand.help());
+        } else if (checkEncounterSelected()) {
+            controller.enqueueCommand(new ModifyEncounterCommand(currentEncounter, characters));
         }
     }
 
@@ -177,7 +195,7 @@ public class Application {
         }
     }
 
-    private void singleStatCommand(String command) {
+    private void singleStatCommandCharacter(String command) {
         if (checkCharacterSelected()) {
             if (command.contains("-help")) {
                 output.displayMessage(GetSingleCharacterStatCommand.help());
@@ -204,12 +222,10 @@ public class Application {
     }
 
     private void modifyCharacter(String command) {
-        if (checkCharacterSelected()) {
-            if (command.contains("-help")) {
-                output.displayMessage(ModifyCharacterCommand.help());
-                return;
-            }
-            controller.enqueueCommand(new ModifyCharacterCommand(command, currentCharacter));
+        if (command.contains("-help")) {
+            output.displayMessage(ModifyCharacterCommand.help());
+        } else if (checkCharacterSelected()) {
+            controller.enqueueCommand(new ModifyCharacterCommand(currentCharacter));
         }
     }
 

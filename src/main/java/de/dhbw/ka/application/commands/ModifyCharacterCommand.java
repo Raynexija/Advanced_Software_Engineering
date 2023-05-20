@@ -9,7 +9,6 @@ import de.dhbw.ka.domain.character.Skills;
 
 public class ModifyCharacterCommand extends Command {
 
-    private final String commandMessage;
     private final Character character;
 
     public static String[] availableOptions = {
@@ -17,8 +16,7 @@ public class ModifyCharacterCommand extends Command {
             "Set armor class", "Set flat armor class", "Set initiative bonus", "Set hit points", "Set level",
             "Add ability bonus"};
 
-    public ModifyCharacterCommand(String commandMessage, Character character) {
-        this.commandMessage = commandMessage;
+    public ModifyCharacterCommand(Character character) {
         this.character = character;
     }
 
@@ -26,7 +24,7 @@ public class ModifyCharacterCommand extends Command {
         return """
                 Modifies a character.
                 When a character is selected you can modify all available stats.
-                Usage: modify
+                Usage: modify_character
                 You then have to select the stat you want to modify.""";
     }
 
