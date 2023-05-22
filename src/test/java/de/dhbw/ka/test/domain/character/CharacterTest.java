@@ -64,6 +64,7 @@ public class CharacterTest {
     public void testDamageTaken() {
         assertEquals(7, character.takeDamage(3));
         assertEquals(7, character.getHitPoints());
+        assertEquals(0, character.takeDamage(10));
     }
 
     @Test
@@ -82,6 +83,12 @@ public class CharacterTest {
         character.removeEquipment("Dagger");
         expectedEquipment.remove("Dagger");
         assertEquals(expectedEquipment.size(), character.getEquipment().size());
+        assertEquals(expectedEquipment, character.getEquipment());
+
+        character.addEquipment("Dagger");
+        expectedEquipment.add("Dagger");
+        assertEquals(expectedEquipment.size(), character.getEquipment().size());
+        expectedEquipment.sort(String::compareTo);
         assertEquals(expectedEquipment, character.getEquipment());
     }
 
@@ -137,5 +144,6 @@ public class CharacterTest {
         character.takeDamage(3);
         assertEquals(7, character.getHitPoints());
         assertEquals(9, character.heal(2));
+        assertEquals(10, character.heal(3));
     }
 }
