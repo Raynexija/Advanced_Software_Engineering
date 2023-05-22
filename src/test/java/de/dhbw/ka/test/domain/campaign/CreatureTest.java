@@ -4,8 +4,7 @@ import de.dhbw.ka.domain.campaign.encounter.Creature;
 import org.junit.jupiter.api.Test;
 
 import static de.dhbw.ka.domain.character.AbilityScores.STRENGTH;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class CreatureTest {
 
@@ -33,6 +32,7 @@ public class CreatureTest {
 
     @Test
     public void testIsAlive() {
+        assertTrue(creature.isAlive());
         creature.takeDamage(25);
         assertFalse(creature.isAlive());
     }
