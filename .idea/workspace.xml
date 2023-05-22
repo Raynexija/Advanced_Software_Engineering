@@ -8,14 +8,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: Quest Object">
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/CreateQuestCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/GetStatsForQuestCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/ModifyQuestCommand.java" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: finish quest command">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/GetSingleCharacterStatCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/GetSingleCharacterStatCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/GetStatsForEmcounterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/GetStatsForEncounterCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="feat/campaign" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -96,7 +90,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -130,7 +124,7 @@
       <command value="mvn clean test " />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.All in Advanced_Software_Engineering">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.Main" />
       <module name="Advanced_Software_Engineering" />
@@ -144,7 +138,47 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QuestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="All in Advanced_Software_Engineering" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Advanced_Software_Engineering" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CharacterTest.testEquipment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Advanced_Software_Engineering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.dhbw.ka.test.domain.character.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.character" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.character.CharacterTest" />
+      <option name="METHOD_NAME" value="testEquipment" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CharacterTest.testSkillModifier" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Advanced_Software_Engineering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.dhbw.ka.test.domain.character.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.character" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.character.CharacterTest" />
+      <option name="METHOD_NAME" value="testSkillModifier" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EncounterTest.testGetParticipants" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
@@ -153,83 +187,35 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.QuestTest" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.EncounterTest" />
+      <option name="METHOD_NAME" value="testGetParticipants" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RandomNumberGeneratorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Advanced_Software_Engineering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.dhbw.ka.test.rng.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.rng" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.rng.RandomNumberGeneratorTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QuestTest.testQuestAssignedCharacters" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Advanced_Software_Engineering" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.domain.campaign.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.QuestTest" />
-      <option name="METHOD_NAME" value="testQuestAssignedCharacters" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QuestTest.testQuestCompleted" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Advanced_Software_Engineering" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.domain.campaign.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.QuestTest" />
-      <option name="METHOD_NAME" value="testQuestCompleted" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QuestTest.testQuestEncounters" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Advanced_Software_Engineering" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.domain.campaign.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.QuestTest" />
-      <option name="METHOD_NAME" value="testQuestEncounters" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QuestTest.testReward" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Advanced_Software_Engineering" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.domain.campaign.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.campaign" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.campaign.QuestTest" />
-      <option name="METHOD_NAME" value="testReward" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.QuestTest.testReward" />
-        <item itemvalue="JUnit.QuestTest.testQuestCompleted" />
-        <item itemvalue="JUnit.QuestTest" />
-        <item itemvalue="JUnit.QuestTest.testQuestEncounters" />
-        <item itemvalue="JUnit.QuestTest.testQuestAssignedCharacters" />
+        <item itemvalue="JUnit.All in Advanced_Software_Engineering" />
+        <item itemvalue="JUnit.RandomNumberGeneratorTest" />
+        <item itemvalue="JUnit.EncounterTest.testGetParticipants" />
+        <item itemvalue="JUnit.CharacterTest.testSkillModifier" />
+        <item itemvalue="JUnit.CharacterTest.testEquipment" />
       </list>
     </recent_temporary>
   </component>
@@ -262,7 +248,11 @@
       <workItem from="1684525078225" duration="8099000" />
       <workItem from="1684535170093" duration="831000" />
       <workItem from="1684571516958" duration="17521000" />
-      <workItem from="1684591921691" duration="9078000" />
+      <workItem from="1684591921691" duration="11061000" />
+      <workItem from="1684677552451" duration="769000" />
+      <workItem from="1684678330255" duration="124000" />
+      <workItem from="1684678463405" duration="1013000" />
+      <workItem from="1684752199461" duration="932000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1667035767397</created>
@@ -579,7 +569,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684598574647</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="add: Create, Modify and Stat commands for Quest">
+      <created>1684603337324</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1684603337324</updated>
+    </task>
+    <task id="LOCAL-00047" summary="add: finish quest command">
+      <created>1684603707030</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1684603707030</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -609,8 +613,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add: dice and Application class" />
-    <MESSAGE value="feat: dice roll command" />
     <MESSAGE value="feat: start of create character command" />
     <MESSAGE value="feat: create character command can be canceled after all necessary Parameters are set" />
     <MESSAGE value="feat: rolls for character" />
@@ -634,14 +636,16 @@
     <MESSAGE value="add: commands to start Encounter" />
     <MESSAGE value="add: commands to modify and get Stats for Encounter" />
     <MESSAGE value="add: Quest Object" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: Quest Object" />
+    <MESSAGE value="add: Create, Modify and Stat commands for Quest" />
+    <MESSAGE value="add: finish quest command" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: finish quest command" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Advanced_Software_Engineering$All_in_Advanced_Software_Engineering.ic" NAME="All in Advanced_Software_Engineering Coverage Results" MODIFIED="1684591803479" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Advanced_Software_Engineering$All_in_Advanced_Software_Engineering.ic" NAME="All in Advanced_Software_Engineering Coverage Results" MODIFIED="1684603792677" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/Advanced_Software_Engineering$de_dhbw_ka_test_in_Advanced_Software_Engineering.ic" NAME="de.dhbw.ka.test in Advanced_Software_Engineering Coverage Results" MODIFIED="1684533032786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>de.dhbw.ka.test.*</FILTER>
     </SUITE>
