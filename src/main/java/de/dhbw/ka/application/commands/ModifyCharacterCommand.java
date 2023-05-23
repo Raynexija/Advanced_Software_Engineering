@@ -13,8 +13,8 @@ public class ModifyCharacterCommand extends Command {
 
     public static final String[] availableOptions = {
             "Add equipment", "Remove equipment", "Add language", "Add a skill proficiency", "Set speed",
-            "Set armor class", "Set flat armor class", "Set initiative bonus", "Set hit points", "Set level",
-            "Add ability bonus"};
+            "Set armor class", "Set flat armor class", "Set initiative bonus", "Set current hit points",
+            "Set maximum hit points", "Set level", "Add ability bonus"};
 
     public ModifyCharacterCommand(Character character) {
         this.character = character;
@@ -74,9 +74,14 @@ public class ModifyCharacterCommand extends Command {
                 character.setInitiativeBonus(initiativeBonus);
                 output.displayMessage("You set your initiative bonus to " + initiativeBonus + ".");
             }
-            case "Set hit points" -> {
-                int hitPoints = input.requestInt("What hit points do you want to set?");
-                character.setHitPoints(hitPoints);
+            case "Set current hit points" -> {
+                int hitPoints = input.requestInt("How many hit points does the character have currently?");
+                character.setCurrentHitPoints(hitPoints);
+                output.displayMessage("You set your hit points to " + hitPoints + ".");
+            }
+            case "Set maximum hit points" -> {
+                int hitPoints = input.requestInt("How many hit points does the character have maximum?");
+                character.setMaxHitPoints(hitPoints);
                 output.displayMessage("You set your hit points to " + hitPoints + ".");
             }
             case "Set level" -> {

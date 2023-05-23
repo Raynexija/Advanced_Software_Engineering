@@ -343,7 +343,7 @@ public class Character {
      *
      * @param hitPoints the hit points to be set
      */
-    public void setHitPoints(int hitPoints) {
+    public void setCurrentHitPoints(int hitPoints) {
         if (hitPoints > this.maxHitPoints) {
             this.currentHitPoints = this.maxHitPoints;
         } else this.currentHitPoints = Math.max(hitPoints, 0);

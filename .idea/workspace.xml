@@ -8,7 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="refactor: extreact method">
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: missing output messages">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -272,14 +272,7 @@
       <workItem from="1684678330255" duration="124000" />
       <workItem from="1684678463405" duration="1013000" />
       <workItem from="1684752199461" duration="14930000" />
-      <workItem from="1684832173626" duration="20549000" />
-    </task>
-    <task id="LOCAL-00007" summary="Project structure">
-      <created>1679992466691</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1679992466691</updated>
+      <workItem from="1684832173626" duration="22080000" />
     </task>
     <task id="LOCAL-00008" summary="remove main class">
       <created>1679992510552</created>
@@ -617,7 +610,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684856962718</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="add: missing output messages">
+      <created>1684857734975</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1684857734975</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -647,7 +647,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: removed maven artifacts" />
     <MESSAGE value="refactor: changed variable visibility" />
     <MESSAGE value="add: Encounter and Creature" />
     <MESSAGE value="bug: test run config noe works properly" />
@@ -672,7 +671,8 @@
     <MESSAGE value="refactor: commented the test variables for the application" />
     <MESSAGE value="refactor: Rename Method" />
     <MESSAGE value="refactor: extreact method" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: extreact method" />
+    <MESSAGE value="add: missing output messages" />
+    <option name="LAST_COMMIT_MESSAGE" value="add: missing output messages" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
