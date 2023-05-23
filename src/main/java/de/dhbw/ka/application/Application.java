@@ -40,34 +40,28 @@ public class Application {
     private final List<Quest> quests = new ArrayList<>();
     private Quest currentQuest;
     private boolean questSelected = false;
-
-    //TODO: Remove test data
-    private final Character testChar = CreateCharacter.named("TestChar")
-            .ofRace(new Human())
-            .isA(new Fighter())
-            .withStrength(15)
-            .withDexterity(14)
-            .withConstitution(13)
-            .withIntelligence(12)
-            .withWisdom(10)
-            .withCharisma(8)
-            .maxHitPoints(10)
-            .currentLevel(1)
-            .speaking(new String[]{"Celestial", "Elvish"})
-            .equippedWith(new String[]{"Leather Armor", "Longsword", "Dagger"})
-            .build();
-    private final Encounter testEncounter = new Encounter("Test");
-
+//    private final Character testChar = CreateCharacter.named("TestChar")
+//            .ofRace(new Human())
+//            .isA(new Fighter())
+//            .withStrength(15)
+//            .withDexterity(14)
+//            .withConstitution(13)
+//            .withIntelligence(12)
+//            .withWisdom(10)
+//            .withCharisma(8)
+//            .maxHitPoints(10)
+//            .currentLevel(1)
+//            .speaking(new String[]{"Celestial", "Elvish"})
+//            .equippedWith(new String[]{"Leather Armor", "Longsword", "Dagger"})
+//            .build();
+//    private final Encounter testEncounter = new Encounter("Test");
 
     public void main() {
-
-        //TODO: Remove test data
-        characters.add(testChar);
-        testEncounter.addPlayerCharacter(testChar);
-        testEncounter.addCreature(
-                new Creature("TestCreature", 15, 25, 0, 15, 11, 10, 1, 3, 2));
-        encounters.add(testEncounter);
-
+//        characters.add(testChar);
+//        testEncounter.addPlayerCharacter(testChar);
+//        testEncounter.addCreature(
+//                new Creature("TestCreature", 15, 25, 0, 15, 11, 10, 1, 3, 2));
+//        encounters.add(testEncounter);
 
         //noinspection InfiniteLoopStatement
         while (true) {

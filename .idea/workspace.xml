@@ -8,26 +8,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="add: All standard races and classes of DnD 5e">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="refactor: removed Problems">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/CharacterRollCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/CharacterRollCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/CreateCharacterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/CreateCharacterCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/CreateEncounterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/CreateEncounterCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/GetSingleCharacterStatCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/GetSingleCharacterStatCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/ModifyCharacterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/ModifyCharacterCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/ModifyEncounterCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/application/commands/ModifyEncounterCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/campaign/encounter/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/campaign/encounter/Creature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/CharacterClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/CharacterClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Gnome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Gnome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/HalfElf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/HalfElf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Tiefling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Tiefling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/CommandControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/CommandControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/campaign/QuestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/campaign/QuestTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +90,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2GnsKbrYjPuZ8wKRpEkbOsyH2Vf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -290,14 +272,7 @@
       <workItem from="1684678330255" duration="124000" />
       <workItem from="1684678463405" duration="1013000" />
       <workItem from="1684752199461" duration="14930000" />
-      <workItem from="1684832173626" duration="11788000" />
-    </task>
-    <task id="LOCAL-00003" summary="initial commit">
-      <created>1667036281580</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1667036281580</updated>
+      <workItem from="1684832173626" duration="15090000" />
     </task>
     <task id="LOCAL-00004" summary="initial commit">
       <created>1667041097128</created>
@@ -635,7 +610,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684844150080</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="refactor: removed Problems">
+      <created>1684846526760</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1684846526760</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -665,7 +647,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: moved commands to methods and added switch for determining the current case" />
     <MESSAGE value="feat: ability to roll normal while a character is selected" />
     <MESSAGE value="feat: one can now see the roll and the modifier in addition to just the sum" />
     <MESSAGE value="add: modify character command" />
@@ -690,7 +671,8 @@
     <MESSAGE value="refactor: remove duplicate Code" />
     <MESSAGE value="test: modified some tests" />
     <MESSAGE value="add: All standard races and classes of DnD 5e" />
-    <option name="LAST_COMMIT_MESSAGE" value="add: All standard races and classes of DnD 5e" />
+    <MESSAGE value="refactor: removed Problems" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: removed Problems" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
