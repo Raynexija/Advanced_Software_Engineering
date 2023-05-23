@@ -29,11 +29,11 @@ public class Encounter {
         StringBuilder sb = new StringBuilder();
         sb.append("Creatures:\n");
         for (Creature creature : creatures) {
-            sb.append(creature.name()).append(": ").append(creature.hitPoints()).append("\n");
+            sb.append(creature.name()).append(": ").append(creature.currentHitPoints()).append("\n");
         }
         sb.append("Player Characters:\n");
         for (Character character : playerCharacters) {
-            sb.append(character.getName()).append(": ").append(character.getHitPoints()).append("\n");
+            sb.append(character.getName()).append(": ").append(character.getCurrentHitPoints()).append("\n");
         }
         return sb.toString();
     }

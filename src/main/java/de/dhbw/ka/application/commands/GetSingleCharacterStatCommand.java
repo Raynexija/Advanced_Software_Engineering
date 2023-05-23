@@ -38,7 +38,7 @@ public class GetSingleCharacterStatCommand extends Command {
             case "Get initiative bonus" ->
                     output.displayMessage("Your initiative bonus is: " + character.getInitiativeBonus());
             case "Get hit points" ->
-                    output.displayMessage("Your hit points are: (" + character.getHitPoints() + "/" + character.getMaxHitPoints() + ")");
+                    output.displayMessage("Your hit points are: (" + character.getCurrentHitPoints() + "/" + character.getMaxHitPoints() + ")");
             case "Get level" -> output.displayMessage("Your level is: " + character.getLevel());
             case "Get ability scores" ->
                     output.displayMessage("Your ability scores are: " + character.getAllAbilityScores().toString());

@@ -85,8 +85,12 @@ public class Creature {
         return armorClass;
     }
 
-    public int hitPoints() {
+    public int currentHitPoints() {
         return currentHitPoints;
+    }
+
+    public int maxHitPoints() {
+        return maxHitPoints;
     }
 
     public int initiativeModifier() {

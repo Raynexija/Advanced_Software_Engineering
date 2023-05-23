@@ -324,7 +324,7 @@ public class Character {
      *
      * @return the hit points of the character
      */
-    public int getHitPoints() {
+    public int getCurrentHitPoints() {
         return currentHitPoints;
     }
 

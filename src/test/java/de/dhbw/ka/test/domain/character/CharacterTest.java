@@ -57,13 +57,13 @@ public class CharacterTest {
 
     @Test
     public void testHitPoints() {
-        assertEquals(10, character.getHitPoints());
+        assertEquals(10, character.getCurrentHitPoints());
     }
 
     @Test
     public void testDamageTaken() {
         assertEquals(7, character.takeDamage(3));
-        assertEquals(7, character.getHitPoints());
+        assertEquals(7, character.getCurrentHitPoints());
         assertEquals(0, character.takeDamage(10));
     }
 
@@ -142,7 +142,7 @@ public class CharacterTest {
     @Test
     public void testHeal() {
         character.takeDamage(3);
-        assertEquals(7, character.getHitPoints());
+        assertEquals(7, character.getCurrentHitPoints());
         assertEquals(9, character.heal(2));
         assertEquals(10, character.heal(3));
     }

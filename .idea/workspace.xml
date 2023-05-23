@@ -8,7 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="refactor: removed Problems">
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="refactor: commented the test variables for the application">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -272,14 +272,7 @@
       <workItem from="1684678330255" duration="124000" />
       <workItem from="1684678463405" duration="1013000" />
       <workItem from="1684752199461" duration="14930000" />
-      <workItem from="1684832173626" duration="15090000" />
-    </task>
-    <task id="LOCAL-00004" summary="initial commit">
-      <created>1667041097128</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1667041097128</updated>
+      <workItem from="1684832173626" duration="19083000" />
     </task>
     <task id="LOCAL-00005" summary="start od character development">
       <created>1678129060523</created>
@@ -617,7 +610,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684846526760</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="refactor: commented the test variables for the application">
+      <created>1684850714402</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1684850714402</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -647,7 +647,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat: ability to roll normal while a character is selected" />
     <MESSAGE value="feat: one can now see the roll and the modifier in addition to just the sum" />
     <MESSAGE value="add: modify character command" />
     <MESSAGE value="refactor: removed maven artifacts" />
@@ -672,7 +671,8 @@
     <MESSAGE value="test: modified some tests" />
     <MESSAGE value="add: All standard races and classes of DnD 5e" />
     <MESSAGE value="refactor: removed Problems" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: removed Problems" />
+    <MESSAGE value="refactor: commented the test variables for the application" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: commented the test variables for the application" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

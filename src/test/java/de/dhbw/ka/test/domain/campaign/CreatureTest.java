@@ -27,7 +27,7 @@ public class CreatureTest {
     @Test
     public void testTakeDamage() {
         assertEquals(15, creature.takeDamage(10));
-        assertEquals(15, creature.hitPoints());
+        assertEquals(15, creature.currentHitPoints());
     }
 
     @Test
