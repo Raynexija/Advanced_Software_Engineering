@@ -33,7 +33,12 @@ public class CreateQuestCommand extends Command {
         String name = input.requestString("What is the name of the quest?");
         String description = input.requestString("What is the description of the quest?");
         Quest quest = new Quest(name, description);
+        continuesAdditionToQuest(input, output, quest);
+        output.displayMessage("You created a quest with the name " + name + " and the description " + description + ".");
+        quests.add(quest);
+    }
 
+    private void continuesAdditionToQuest(InputService input, OutputService output, Quest quest) {
         boolean stillCreating = true;
         while (stillCreating) {
             String[] availableOptions = new String[]{"Add an Encounter", "Add a Character", "Add a Reward", "Finish"};
@@ -68,9 +73,5 @@ public class CreateQuestCommand extends Command {
                 case "Finish" -> stillCreating = false;
             }
         }
-
-        output.displayMessage("You created a quest with the name " + name + " and the description " + description + ".");
-        quests.add(quest);
-
     }
 }
