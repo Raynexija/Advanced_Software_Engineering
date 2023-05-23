@@ -12,7 +12,7 @@ public class ModifyEncounterCommand extends Command {
     private final Encounter encounter;
     private final List<Character> characters;
 
-    public static String[] availableOptions = {"Add Creature", "Add Character", "Remove Creature", "Remove Character", "Back"};
+    public static final String[] availableOptions = {"Add Creature", "Add Character", "Remove Creature", "Remove Character", "Back"};
 
     public ModifyEncounterCommand(Encounter encounter, List<Character> characters) {
         this.encounter = encounter;
@@ -31,12 +31,8 @@ public class ModifyEncounterCommand extends Command {
         String toModify = input.requestSelection("What do you want to do?", availableOptions);
 
         switch (toModify) {
-            case "Add Creature" -> {
-                CreateEncounterCommand.createAndAddCreatureToEncounter(input, encounter);
-            }
-            case "Add Character" -> {
-                CreateEncounterCommand.addCharacterToEncounter(input, output, characters, encounter);
-            }
+            case "Add Creature" -> CreateEncounterCommand.createAndAddCreatureToEncounter(input, encounter);
+            case "Add Character" -> CreateEncounterCommand.addCharacterToEncounter(input, output, characters, encounter);
             case "Remove Creature" -> {
                 String[] remainingCreatures = encounter.getCreatures().stream()
                         .map(Creature::name)

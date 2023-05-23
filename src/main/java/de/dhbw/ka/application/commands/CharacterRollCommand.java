@@ -29,7 +29,7 @@ public class CharacterRollCommand extends Command {
                 You then have to select the stat you want to roll for.""";
     }
 
-    public String[] availableStatForRolling = {"strength", "dexterity", "constitution", "intelligence", "wisdom",
+    public final String[] availableStatForRolling = {"strength", "dexterity", "constitution", "intelligence", "wisdom",
             "charisma", "acrobatics", "animal_handling", "arcana", "athletics", "deception", "history", "insight",
             "intimidation", "investigation", "medicine", "nature", "perception", "performance", "persuasion", "religion",
             "sleight_of_hand", "stealth", "survival", "initiative", "speed"};

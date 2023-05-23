@@ -6,7 +6,7 @@ import java.util.List;
 
 public abstract class CharacterClass {
 
-    private int[] proficiencyBonus = {2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6};
+    private final int[] proficiencyBonus = {2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6};
 
     public abstract List<AbilityScores> getAbilityProficiencies();
 

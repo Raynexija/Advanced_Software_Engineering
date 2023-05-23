@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Tiefling implements Race {
 
-    private List<String> features = new ArrayList<>(List.of(new String[]{"Darkvision", "Hellish Resistance", "Infernal Legacy"}));
+    private final List<String> features = new ArrayList<>(List.of(new String[]{"Darkvision", "Hellish Resistance", "Infernal Legacy"}));
 
     @Override
     public int getRacialBonus(AbilityScores abilityScore) {

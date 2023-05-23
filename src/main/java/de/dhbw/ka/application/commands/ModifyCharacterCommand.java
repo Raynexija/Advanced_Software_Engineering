@@ -11,7 +11,7 @@ public class ModifyCharacterCommand extends Command {
 
     private final Character character;
 
-    public static String[] availableOptions = {
+    public static final String[] availableOptions = {
             "Add equipment", "Remove equipment", "Add language", "Add a skill proficiency", "Set speed",
             "Set armor class", "Set flat armor class", "Set initiative bonus", "Set hit points", "Set level",
             "Add ability bonus"};

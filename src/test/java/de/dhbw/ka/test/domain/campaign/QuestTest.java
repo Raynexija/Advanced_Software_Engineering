@@ -10,19 +10,18 @@ import de.dhbw.ka.domain.character.races.Human;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class QuestTest {
 
     private static Quest testQuest;
-    private static Creature testCreature;
     private static Character testCharacter;
     private static Encounter testEncounter;
 
     @BeforeAll
     public static void init() {
         testQuest = new Quest("TestQuest", "TestDescription");
-        testCreature = new Creature("Test", 15, 25, 0, 15, 11, 10, 1, 3, 2);
+        Creature testCreature = new Creature("Test", 15, 25, 0, 15, 11, 10, 1, 3, 2);
         testCharacter = CreateCharacter.named("Test Character")
                 .ofRace(new Human())
                 .isA(new Fighter())
@@ -71,9 +70,9 @@ public class QuestTest {
 
     @Test
     public void testQuestCompleted() {
-        assertEquals(false, testQuest.completed());
+        assertFalse(testQuest.completed());
         testQuest = testQuest.markCompleted();
-        assertEquals(true, testQuest.completed());
+        assertTrue(testQuest.completed());
     }
 
     @Test

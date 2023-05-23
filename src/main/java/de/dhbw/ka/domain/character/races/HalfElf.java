@@ -11,7 +11,7 @@ public class HalfElf implements Race {
     private final List<String> features = List.of("Darkvision", "Fey Ancestry", "Skill Versatility");
     private final AbilityScores[] abilityScorePlusOne = new AbilityScores[2];
 
-    public static final AbilityScores getAlredyIncreaedAbility() {
+    public static AbilityScores getAlreadyIncreasedAbility() {
         return CHARISMA;
     }
 

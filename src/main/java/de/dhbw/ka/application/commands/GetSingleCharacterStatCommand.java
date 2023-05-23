@@ -5,16 +5,14 @@ import de.dhbw.ka.application.interfaces.OutputService;
 import de.dhbw.ka.domain.character.Character;
 
 public class GetSingleCharacterStatCommand extends Command {
-    private final String commandMessage;
     private final Character character;
 
-    public static String[] availableOptions = {
+    public static final String[] availableOptions = {
             "Get equipment", "Get languages", "Get skill proficiencies", "Get speed",
             "Get armor class", "Get initiative bonus", "Get hit points", "Get level",
             "Get ability scores", "Get racial traits", "Get class traits", "Get hit dice"};
 
-    public GetSingleCharacterStatCommand(String commandMessage, Character character) {
-        this.commandMessage = commandMessage;
+    public GetSingleCharacterStatCommand(Character character) {
         this.character = character;
     }
 

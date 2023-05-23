@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class CreateCharacterCommand extends Command {
-    private List<Character> characters;
+    private final List<Character> characters;
     private String[] skills = new String[]{"Acrobatics", "Animal_Handling", "Arcana", "Athletics", "Deception", "History", "Insight", "Intimidation", "Investigation", "Medicine", "Nature", "Perception", "Performance", "Persuasion", "Religion", "Sleight_of_Hand", "Stealth", "Survival"};
 
     public CreateCharacterCommand(List<Character> characters) {
@@ -170,7 +170,7 @@ public class CreateCharacterCommand extends Command {
 
         switch (chosenRace) {
             case "Half-Elf" -> {
-                abilityToChose = Arrays.stream(abilityToChose).filter(s -> !s.equalsIgnoreCase(HalfElf.getAlredyIncreaedAbility().toString())).toArray(String[]::new);
+                abilityToChose = Arrays.stream(abilityToChose).filter(s -> !s.equalsIgnoreCase(HalfElf.getAlreadyIncreasedAbility().toString())).toArray(String[]::new);
                 for (int i = 0; i < 2; i++) {
                     String ability = input.requestSelection("Chose an ability to increase by one:", abilityToChose);
                     abilityToChose = Arrays.stream(abilityToChose).filter(s -> !s.equalsIgnoreCase(ability)).toArray(String[]::new);

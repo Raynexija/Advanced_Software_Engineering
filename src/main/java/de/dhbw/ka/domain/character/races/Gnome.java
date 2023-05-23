@@ -9,7 +9,7 @@ import java.util.List;
 
 public class Gnome implements Race {
 
-    private List<String> features = new ArrayList<>(List.of(new String[]{"Darkvision", "Gnome Cunning"}));
+    private final List<String> features = new ArrayList<>(List.of(new String[]{"Darkvision", "Gnome Cunning"}));
 
     @Override
     public int getRacialBonus(AbilityScores abilityScore) {

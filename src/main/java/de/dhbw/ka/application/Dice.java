@@ -4,7 +4,7 @@ import de.dhbw.ka.application.interfaces.RandomNumberService;
 
 public class Dice {
 
-    private RandomNumberService randomNumberGenerator;
+    private final RandomNumberService randomNumberGenerator;
 
     public Dice(RandomNumberService randomNumberGenerator) {
         this.randomNumberGenerator = randomNumberGenerator;

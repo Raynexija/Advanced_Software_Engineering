@@ -6,7 +6,6 @@ import de.dhbw.ka.domain.character.AbilityScores;
 import java.util.HashMap;
 
 import static de.dhbw.ka.domain.character.AbilityScores.*;
-import static de.dhbw.ka.domain.character.AbilityScores.CHARISMA;
 
 public class Creature {
 

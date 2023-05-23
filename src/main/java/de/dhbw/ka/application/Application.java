@@ -310,7 +310,7 @@ public class Application {
                 output.displayMessage(GetSingleCharacterStatCommand.help());
                 return;
             }
-            controller.enqueueCommand(new GetSingleCharacterStatCommand(command, currentCharacter));
+            controller.enqueueCommand(new GetSingleCharacterStatCommand(currentCharacter));
         }
     }
 

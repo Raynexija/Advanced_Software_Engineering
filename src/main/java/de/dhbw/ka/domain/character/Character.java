@@ -329,7 +329,7 @@ public class Character {
     }
 
     /**
-     * Metod to ste MaxHitPoints, automatically sets currentHitPoints to maxHitPoints
+     * Method to ste MaxHitPoints, automatically sets currentHitPoints to maxHitPoints
      *
      * @param maxHitPoints the maxHitPoints to be set
      */

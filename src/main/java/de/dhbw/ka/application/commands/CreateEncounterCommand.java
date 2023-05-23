@@ -38,9 +38,7 @@ public class CreateEncounterCommand extends Command {
         boolean createCreatures = true;
         while (createCreatures) {
             switch (input.requestSelection("Do you want to add a creature?", new String[]{"Yes", "No"})) {
-                case "Yes" -> {
-                    createAndAddCreatureToEncounter(input, encounter);
-                }
+                case "Yes" -> createAndAddCreatureToEncounter(input, encounter);
                 case "No" -> createCreatures = false;
             }
         }
@@ -50,9 +48,7 @@ public class CreateEncounterCommand extends Command {
         boolean addCharacters = true;
         while (addCharacters) {
             switch (input.requestSelection("Do you want to add a character?", new String[]{"Yes", "No"})) {
-                case "Yes" -> {
-                    addCharacterToEncounter(input, output, characters, encounter);
-                }
+                case "Yes" -> addCharacterToEncounter(input, output, characters, encounter);
                 case "No" -> addCharacters = false;
             }
         }

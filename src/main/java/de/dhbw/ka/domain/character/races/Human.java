@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Human implements Race {
 
-    private List<String> features = new ArrayList<>(List.of(new String[]{"Extra Language"}));
+    private final List<String> features = new ArrayList<>(List.of(new String[]{"Extra Language"}));
 
     @Override
     public int getRacialBonus(AbilityScores abilityScore) {
