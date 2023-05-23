@@ -142,20 +142,23 @@ public class CreateCharacterCommand extends Command {
                 return new Dwarf();
             }
             case "Halfling" -> {
-                output.displayMessage("");
+                output.displayMessage("You chose Halfling as your race");
                 return new Halfling();
             }
             case "Gnome" -> {
-
+                output.displayMessage("You chose Gnome as your race");
                 return new Gnome();
             }
             case "Half-Elf" -> {
+                output.displayMessage("You chose Half-Elf as your race");
                 return new HalfElf(getAbilitiesToIncrease("Half-Elf", input, output));
             }
             case "Half-Orc" -> {
+                output.displayMessage("You chose Half-Orc as your race");
                 return new HalfOrc();
             }
             case "Tiefling" -> {
+                output.displayMessage("You chose Tiefling as your race");
                 return new Tiefling();
             }
             default -> {

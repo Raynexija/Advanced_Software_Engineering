@@ -8,7 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="refactor: Rename Method">
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="refactor: extreact method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -272,14 +272,7 @@
       <workItem from="1684678330255" duration="124000" />
       <workItem from="1684678463405" duration="1013000" />
       <workItem from="1684752199461" duration="14930000" />
-      <workItem from="1684832173626" duration="19813000" />
-    </task>
-    <task id="LOCAL-00006" summary="AbilityScore is now implemented and test covered">
-      <created>1679992425693</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1679992425693</updated>
+      <workItem from="1684832173626" duration="20549000" />
     </task>
     <task id="LOCAL-00007" summary="Project structure">
       <created>1679992466691</created>
@@ -617,7 +610,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684856225227</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="refactor: extreact method">
+      <created>1684856962718</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1684856962718</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -647,7 +647,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add: modify character command" />
     <MESSAGE value="refactor: removed maven artifacts" />
     <MESSAGE value="refactor: changed variable visibility" />
     <MESSAGE value="add: Encounter and Creature" />
@@ -672,7 +671,8 @@
     <MESSAGE value="refactor: removed Problems" />
     <MESSAGE value="refactor: commented the test variables for the application" />
     <MESSAGE value="refactor: Rename Method" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: Rename Method" />
+    <MESSAGE value="refactor: extreact method" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: extreact method" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
