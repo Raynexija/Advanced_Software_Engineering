@@ -11,7 +11,7 @@ public class GetSingleCharacterStatCommand extends Command {
     public static String[] availableOptions = {
             "Get equipment", "Get languages", "Get skill proficiencies", "Get speed",
             "Get armor class", "Get initiative bonus", "Get hit points", "Get level",
-            "Get ability scores"};
+            "Get ability scores", "Get racial traits", "Get class traits", "Get hit dice"};
 
     public GetSingleCharacterStatCommand(String commandMessage, Character character) {
         this.commandMessage = commandMessage;
@@ -44,6 +44,12 @@ public class GetSingleCharacterStatCommand extends Command {
             case "Get level" -> output.displayMessage("Your level is: " + character.getLevel());
             case "Get ability scores" ->
                     output.displayMessage("Your ability scores are: " + character.getAllAbilityScores().toString());
+            case "Get racial traits" ->
+                    output.displayMessage("Your racial traits are: " + character.getRace().getFeatures().toString());
+            case "Get class traits" ->
+                    output.displayMessage("Your class traits are: " + character.getCharacterClass().getFeatures(character.getLevel()).toString());
+            case "Get hit dice" ->
+                    output.displayMessage("Your hit dice are: " + character.getCharacterClass().getHitDice());
         }
     }
 }

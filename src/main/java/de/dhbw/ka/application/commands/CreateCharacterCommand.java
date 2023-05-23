@@ -1,5 +1,6 @@
 package de.dhbw.ka.application.commands;
 
+import de.dhbw.ka.domain.character.AbilityScores;
 import de.dhbw.ka.domain.character.Character;
 import de.dhbw.ka.domain.character.CreateCharacter;
 import de.dhbw.ka.domain.character.Skills;
@@ -40,7 +41,7 @@ public class CreateCharacterCommand extends Command {
             String choice = input.requestSelection("What do you want to do?", optionalParameters);
             switch (choice) {
                 case "Add skill proficiency" ->
-                        character.proficientInOne(getSkillFromSkin(input.requestSelection("Chose a skill:", skills)));
+                        character.proficientInOne(getSkillFromString(input.requestSelection("Chose a skill:", skills)));
                 case "Add language (Common is assigned automatically" ->
                         character.speakingOne(input.requestString("Enter one language: "));
                 case "Add equipment" ->
@@ -71,55 +72,55 @@ public class CreateCharacterCommand extends Command {
                 output.displayMessage("You chose Fighter");
                 return new Fighter();
             }
-//            case "Rogue" -> {
-//                output.displayMessage("You chose Rogue");
-//                return new Rogue();
-//            }
-//            case "Wizard" -> {
-//                output.displayMessage("You chose Wizard");
-//                return new Wizard();
-//            }
-//            case "Cleric" -> {
-//                output.displayMessage("You chose Cleric");
-//                return Cleric();
-//            }
-//            case "Barbarian" -> {
-//                output.displayMessage("You chose Barbarian");
-//                return new Barbarian();
-//            }
-//            case "Bard" -> {
-//                output.displayMessage("You chose Bard");
-//                return new Bard();
-//            }
-//            case "Druid" -> {
-//                output.displayMessage("You chose Druid");
-//                return new Druid();
-//            }
-//            case "Monk" -> {
-//                output.displayMessage("You chose Monk");
-//                return new Monk();
-//            }
-//            case "Paladin" -> {
-//                output.displayMessage("You chose Paladin");
-//                return new Paladin();
-//            }
-//            case "Ranger" -> {
-//                output.displayMessage("You chose Ranger");
-//                return new Ranger();
-//            }
-//            case "Sorcerer" -> {
-//                output.displayMessage("You chose Sorcerer");
-//                return new Sorcerer();
-//            }
-//            case "Warlock" -> {
-//                output.displayMessage("You chose Warlock");
-//                return new Warlock();
-//            }
+            case "Rogue" -> {
+                output.displayMessage("You chose Rogue");
+                return new Rogue();
+            }
+            case "Wizard" -> {
+                output.displayMessage("You chose Wizard");
+                return new Wizard();
+            }
+            case "Cleric" -> {
+                output.displayMessage("You chose Cleric");
+                return new Cleric();
+            }
+            case "Barbarian" -> {
+                output.displayMessage("You chose Barbarian");
+                return new Barbarian();
+            }
+            case "Bard" -> {
+                output.displayMessage("You chose Bard");
+                return new Bard();
+            }
+            case "Druid" -> {
+                output.displayMessage("You chose Druid");
+                return new Druid();
+            }
+            case "Monk" -> {
+                output.displayMessage("You chose Monk");
+                return new Monk();
+            }
+            case "Paladin" -> {
+                output.displayMessage("You chose Paladin");
+                return new Paladin();
+            }
+            case "Ranger" -> {
+                output.displayMessage("You chose Ranger");
+                return new Ranger();
+            }
+            case "Sorcerer" -> {
+                output.displayMessage("You chose Sorcerer");
+                return new Sorcerer();
+            }
+            case "Warlock" -> {
+                output.displayMessage("You chose Warlock");
+                return new Warlock();
+            }
         }
         return null;
     }
 
-    private Skills getSkillFromSkin(String skill) {
+    private Skills getSkillFromString(String skill) {
         this.skills = Arrays.stream(this.skills).filter(s -> !s.equals(skill)).toArray(String[]::new);
         return Skills.valueOf(skill);
     }
@@ -128,25 +129,58 @@ public class CreateCharacterCommand extends Command {
         String race = input.requestSelection("Chose a race:", new String[]{"Human", "Elf", "Dwarf", "Halfling", "Gnome", "Half-Elf", "Half-Orc", "Tiefling"});
 
         switch (race) {
-            case "Human":
-                output.displayMessage("You chose Human");
+            case "Human" -> {
+                output.displayMessage("You chose Human as your race");
                 return new Human();
-//            case "Elf":
-//                return new Elf();
-//            case "Dwarf":
-//                return new Dwarf();
-//            case "Halfling":
-//                return new Halfling();
-//            case "Gnome":
-//                return new Gnome();
-//            case "Half-Elf":
-//                return new HalfElf();
-//            case "Half-Orc":
-//                return new HalfOrc();
-//            case "Tiefling":
-//                return new Tiefling();
-            default:
+            }
+            case "Elf" -> {
+                output.displayMessage("You chose Elf as your race");
+                return new Elf();
+            }
+            case "Dwarf" -> {
+                output.displayMessage("You chose Dwarf as your race");
+                return new Dwarf();
+            }
+            case "Halfling" -> {
+                output.displayMessage("");
+                return new Halfling();
+            }
+            case "Gnome" -> {
+
+                return new Gnome();
+            }
+            case "Half-Elf" -> {
+                return new HalfElf(getAbilitiesToIncrease("Half-Elf", input, output));
+            }
+            case "Half-Orc" -> {
+                return new HalfOrc();
+            }
+            case "Tiefling" -> {
+                return new Tiefling();
+            }
+            default -> {
                 return null;
+            }
         }
+    }
+
+    private AbilityScores[] getAbilitiesToIncrease(String chosenRace, InputService input, OutputService output) {
+        String[] abilityToChose = new String[]{"Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"};
+        AbilityScores[] abilitiesToIncrease = new AbilityScores[2];
+
+        switch (chosenRace) {
+            case "Half-Elf" -> {
+                abilityToChose = Arrays.stream(abilityToChose).filter(s -> !s.equalsIgnoreCase(HalfElf.getAlredyIncreaedAbility().toString())).toArray(String[]::new);
+                for (int i = 0; i < 2; i++) {
+                    String ability = input.requestSelection("Chose an ability to increase by one:", abilityToChose);
+                    abilityToChose = Arrays.stream(abilityToChose).filter(s -> !s.equalsIgnoreCase(ability)).toArray(String[]::new);
+                    abilitiesToIncrease[i] = AbilityScores.valueOf(ability);
+                }
+            }
+            case "TBD" -> {
+                //Here to provided easy extendability If more races are added, which get to Choose their ability scores
+            }
+        }
+        return abilitiesToIncrease;
     }
 }

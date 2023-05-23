@@ -32,7 +32,6 @@ public class CommandController {
         while (!commandQueue.isEmpty()) {
             Command currentCommand = commandQueue.peek();
             try {
-                // currentState.executeCommand(currentCommand, inputService, outputService);
                 currentCommand.execute(inputService, outputService);
                 commandQueue.poll();
             } catch (Exception e) {

@@ -2,39 +2,37 @@ package de.dhbw.ka.domain.character.characterClasses;
 
 import de.dhbw.ka.domain.character.AbilityScores;
 
-import static de.dhbw.ka.domain.character.AbilityScores.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Fighter extends CharacterClass {
+public class Paladin extends CharacterClass {
 
     private final String[] featuresByLevel = new String[]{
-            "Fighting Style, Second Wind",
-            "Action Surge (one use)",
-            "Martial Archetype",
+            "Divine Sense, Lay on Hands",
+            "Fighting Style, Spellcasting, Divine Smite",
+            "Divine Health, Sacred Oath",
             "Ability Score Improvement",
             "Extra Attack",
+            "Aura of Protection",
+            "Sacred Oath feature",
             "Ability Score Improvement",
-            "Martial Archetype Feature",
+            "-",
+            "Aura of Courage",
+            "Improved Divine Smite",
             "Ability Score Improvement",
-            "Indomitable (one use)",
-            "Martial Archetype Feature",
-            "Extra Attack (2)",
+            "-",
+            "Cleansing Touch",
+            "Sacred Oath feature",
             "Ability Score Improvement",
-            "Indomitable (two uses)",
+            "-",
+            "Aura improvements",
             "Ability Score Improvement",
-            "Martial Archetype Feature",
-            "Ability Score Improvement",
-            "Action Surge (two uses), Indomitable (three uses)",
-            "Martial Archetype Feature",
-            "Ability Score Improvement",
-            "Extra Attack (3)"
+            "Sacred Oath feature"
     };
 
     @Override
     public List<AbilityScores> getAbilityProficiencies() {
-        return new ArrayList<>(List.of(STRENGTH, CONSTITUTION));
+        return new ArrayList<>(List.of(AbilityScores.WISDOM, AbilityScores.CHARISMA));
     }
 
     @Override

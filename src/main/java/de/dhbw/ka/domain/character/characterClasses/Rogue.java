@@ -2,44 +2,42 @@ package de.dhbw.ka.domain.character.characterClasses;
 
 import de.dhbw.ka.domain.character.AbilityScores;
 
-import static de.dhbw.ka.domain.character.AbilityScores.*;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Fighter extends CharacterClass {
+public class Rogue extends CharacterClass {
 
     private final String[] featuresByLevel = new String[]{
-            "Fighting Style, Second Wind",
-            "Action Surge (one use)",
-            "Martial Archetype",
+            "Expertise, Sneak Attack, Thieves' Cant",
+            "Cunning Action",
+            "Roguish Archetype",
             "Ability Score Improvement",
-            "Extra Attack",
+            "Uncanny Dodge",
+            "Expertise",
+            "Evasion",
             "Ability Score Improvement",
-            "Martial Archetype Feature",
+            "Roguish Archetype feature",
             "Ability Score Improvement",
-            "Indomitable (one use)",
-            "Martial Archetype Feature",
-            "Extra Attack (2)",
+            "Reliable Talent",
             "Ability Score Improvement",
-            "Indomitable (two uses)",
+            "Roguish Archetype feature",
+            "Blindsense",
+            "Slippery Mind",
             "Ability Score Improvement",
-            "Martial Archetype Feature",
+            "Roguish Archetype feature",
+            "Elusive",
             "Ability Score Improvement",
-            "Action Surge (two uses), Indomitable (three uses)",
-            "Martial Archetype Feature",
-            "Ability Score Improvement",
-            "Extra Attack (3)"
+            "Stroke of Luck"
     };
 
     @Override
     public List<AbilityScores> getAbilityProficiencies() {
-        return new ArrayList<>(List.of(STRENGTH, CONSTITUTION));
+        return new ArrayList<>(List.of(AbilityScores.DEXTERITY, AbilityScores.INTELLIGENCE));
     }
 
     @Override
     public String getHitDice() {
-        return "d10";
+        return "d8";
     }
 
     @Override

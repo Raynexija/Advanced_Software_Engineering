@@ -2,16 +2,19 @@ package de.dhbw.ka.domain.character.races;
 
 import de.dhbw.ka.domain.character.AbilityScores;
 
-import java.util.ArrayList;
+import static de.dhbw.ka.domain.character.AbilityScores.*;
+
 import java.util.List;
 
-public class Human implements Race {
+public class Elf implements Race {
 
-    private List<String> features = new ArrayList<>(List.of(new String[]{"Extra Language"}));
+    private final List<String> features = List.of("Darkvision", "Keen Senses", "Fey Ancestry", "Trance");
 
     @Override
     public int getRacialBonus(AbilityScores abilityScore) {
-        return 1;
+        if (abilityScore.equals(DEXTERITY)) {
+            return 2;
+        } else return 0;
     }
 
     @Override
