@@ -8,33 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="refactor: removed Mockito">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/Character.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Barbarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Barbarian.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Bard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Bard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/CharacterClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/CharacterClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Cleric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Cleric.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Druid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Druid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Fighter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Fighter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Monk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Monk.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Paladin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Paladin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Ranger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Ranger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Rogue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Sorcerer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Sorcerer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Warlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Warlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Wizard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Dwarf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Dwarf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Elf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Elf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Gnome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Gnome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/HalfElf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/HalfElf.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/HalfOrc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/HalfOrc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Halfling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Halfling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Human.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Race.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Tiefling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Tiefling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/character/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/character/CharacterTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="fix: added missing toUpperCase to get valueOf AbilityScores Enum" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -299,21 +273,7 @@
       <workItem from="1684832173626" duration="24333000" />
       <workItem from="1684861960859" duration="1232000" />
       <workItem from="1684926849105" duration="5162000" />
-      <workItem from="1684940969719" duration="350000" />
-    </task>
-    <task id="LOCAL-00011" summary="feat: added command logic">
-      <created>1681503653397</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1681503653397</updated>
-    </task>
-    <task id="LOCAL-00012" summary="feat: added command logic">
-      <created>1681503689540</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1681503689540</updated>
+      <workItem from="1684940969719" duration="660000" />
     </task>
     <task id="LOCAL-00013" summary="feat: added command logic">
       <created>1681503826931</created>
@@ -644,7 +604,21 @@
       <option name="project" value="LOCAL" />
       <updated>1684930614671</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="add: getName() methods for all CharacterClasses and Races">
+      <created>1684941370790</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1684941370790</updated>
+    </task>
+    <task id="LOCAL-00061" summary="fix: added missing toUpperCase to get valueOf AbilityScores Enum">
+      <created>1684941598734</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1684941598734</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -674,8 +648,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactor: pom: plugin version updated" />
-    <MESSAGE value="add: Creature now can Take Damage" />
     <MESSAGE value="add: Character now can Take Damage" />
     <MESSAGE value="add: check if Character or Creature is still alive" />
     <MESSAGE value="fixed: warnings" />
@@ -699,7 +671,9 @@
     <MESSAGE value="refactor: renamed hit points commend to current hit points" />
     <MESSAGE value="fix: typo" />
     <MESSAGE value="refactor: removed Mockito" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: removed Mockito" />
+    <MESSAGE value="add: getName() methods for all CharacterClasses and Races" />
+    <MESSAGE value="fix: added missing toUpperCase to get valueOf AbilityScores Enum" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: added missing toUpperCase to get valueOf AbilityScores Enum" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
