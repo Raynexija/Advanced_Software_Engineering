@@ -8,7 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="fix: added missing toUpperCase to get valueOf AbilityScores Enum" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="handover preparation" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,6 +112,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\DH\Advanced_Software_Engineering\Handover" />
       <recent name="E:\DH\Advanced_Software_Engineering\Application\src\main\java\de\dhbw\ka" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -273,14 +274,7 @@
       <workItem from="1684832173626" duration="24333000" />
       <workItem from="1684861960859" duration="1232000" />
       <workItem from="1684926849105" duration="5162000" />
-      <workItem from="1684940969719" duration="660000" />
-    </task>
-    <task id="LOCAL-00013" summary="feat: added command logic">
-      <created>1681503826931</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1681503826931</updated>
+      <workItem from="1684940969719" duration="1353000" />
     </task>
     <task id="LOCAL-00014" summary="feat: added command logic">
       <created>1681503879949</created>
@@ -618,7 +612,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684941598734</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="handover preparation">
+      <created>1684941905165</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1684941905165</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -648,7 +649,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add: Character now can Take Damage" />
     <MESSAGE value="add: check if Character or Creature is still alive" />
     <MESSAGE value="fixed: warnings" />
     <MESSAGE value="add: initiative order to encounter" />
@@ -673,7 +673,8 @@
     <MESSAGE value="refactor: removed Mockito" />
     <MESSAGE value="add: getName() methods for all CharacterClasses and Races" />
     <MESSAGE value="fix: added missing toUpperCase to get valueOf AbilityScores Enum" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: added missing toUpperCase to get valueOf AbilityScores Enum" />
+    <MESSAGE value="handover preparation" />
+    <option name="LAST_COMMIT_MESSAGE" value="handover preparation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
