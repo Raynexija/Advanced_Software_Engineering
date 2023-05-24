@@ -45,4 +45,9 @@ public class Druid extends CharacterClass {
     public List<String> getFeatures(int level) {
         return new ArrayList<>(List.of(featuresByLevel).subList(0, level));
     }
+
+    @Override
+    public String getClassName() {
+        return "Druid";
+    }
 }

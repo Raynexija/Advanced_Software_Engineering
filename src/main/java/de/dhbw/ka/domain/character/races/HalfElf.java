@@ -40,4 +40,9 @@ public class HalfElf implements Race {
     public List<String> getFeatures() {
         return features;
     }
+
+    @Override
+    public String getRaceName() {
+        return "Half-Elf";
+    }
 }

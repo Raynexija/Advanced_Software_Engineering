@@ -26,4 +26,9 @@ public class Dwarf implements Race {
     public List<String> getFeatures() {
         return features;
     }
+
+    @Override
+    public String getRaceName() {
+        return "Dwarf";
+    }
 }

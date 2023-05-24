@@ -26,4 +26,9 @@ public class Halfling implements Race {
     public List<String> getFeatures() {
         return features;
     }
+
+    @Override
+    public String getRaceName() {
+        return "Halfling";
+    }
 }

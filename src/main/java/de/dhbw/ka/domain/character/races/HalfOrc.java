@@ -30,4 +30,9 @@ public class HalfOrc implements Race {
     public List<String> getFeatures() {
         return features;
     }
+
+    @Override
+    public String getRaceName() {
+        return "Half-Orc";
+    }
 }

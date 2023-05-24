@@ -10,4 +10,6 @@ public interface Race {
     int getWalkingSpeed();
 
     List<String> getFeatures();
+
+    String getRaceName();
 }

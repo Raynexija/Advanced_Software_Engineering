@@ -17,4 +17,6 @@ public abstract class CharacterClass {
     public abstract String getHitDice();
 
     public abstract List<String> getFeatures(int level);
+
+    public abstract String getClassName();
 }

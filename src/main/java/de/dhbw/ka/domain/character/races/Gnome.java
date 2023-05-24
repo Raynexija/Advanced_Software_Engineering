@@ -27,4 +27,9 @@ public class Gnome implements Race {
     public List<String> getFeatures() {
         return features;
     }
+
+    @Override
+    public String getRaceName() {
+        return "Gnome";
+    }
 }

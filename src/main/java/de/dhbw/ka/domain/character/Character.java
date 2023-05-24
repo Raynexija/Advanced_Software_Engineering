@@ -441,8 +441,8 @@ public class Character {
         String stillAlive = isAlive() ? "" : "[Dead]\n";
         return stillAlive +
                 "Name: " + this.name + "\n" +
-                "Race: " + this.race.getClass().toString() + "\n" +
-                "Class: " + this.characterClass.getClass().toString() + "\n" +
+                "Race: " + this.race.getRaceName() + "\n" +
+                "Class: " + this.characterClass.getClassName() + "\n" +
                 "Level: " + this.level + "\n" +
                 "Armor Class: " + this.armorClass + "\n" +
                 "Initiative Bonus: " + this.initiativeBonus + "\n" +

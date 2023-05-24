@@ -8,8 +8,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="fix: typo">
-      <change beforePath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/CommandControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/CommandControllerTest.java" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="refactor: removed Mockito">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/Character.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Barbarian.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Barbarian.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Bard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Bard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/CharacterClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/CharacterClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Cleric.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Cleric.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Druid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Druid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Fighter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Fighter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Monk.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Monk.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Paladin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Paladin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Ranger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Ranger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Rogue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Rogue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Sorcerer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Sorcerer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Warlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Warlock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/characterClasses/Wizard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Dwarf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Dwarf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Elf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Elf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Gnome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Gnome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/HalfElf.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/HalfElf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/HalfOrc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/HalfOrc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Halfling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Halfling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Human.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Human.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Race.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Race.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Tiefling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/dhbw/ka/domain/character/races/Tiefling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/character/CharacterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/domain/character/CharacterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +166,7 @@
       <command value="mvn clean test " />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CommandControllerTest.testEnqueueCommand">
+  <component name="RunManager" selected="JUnit.CharacterTest.temp">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.Main" />
       <module name="Advanced_Software_Engineering" />
@@ -164,7 +188,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CharacterTest.testEquipment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CharacterTest.temp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
         <pattern>
@@ -174,7 +198,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.character" />
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.character.CharacterTest" />
-      <option name="METHOD_NAME" value="testEquipment" />
+      <option name="METHOD_NAME" value="temp" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -230,11 +254,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CharacterTest.temp" />
         <item itemvalue="JUnit.CommandControllerTest.testEnqueueCommand" />
         <item itemvalue="JUnit.All in Advanced_Software_Engineering" />
         <item itemvalue="JUnit.CharacterTest.tmpTest" />
         <item itemvalue="JUnit.CreatureTest.testIsAlive" />
-        <item itemvalue="JUnit.CharacterTest.testEquipment" />
       </list>
     </recent_temporary>
   </component>
@@ -274,14 +298,8 @@
       <workItem from="1684752199461" duration="14930000" />
       <workItem from="1684832173626" duration="24333000" />
       <workItem from="1684861960859" duration="1232000" />
-      <workItem from="1684926849105" duration="931000" />
-    </task>
-    <task id="LOCAL-00010" summary="feat: added command logic">
-      <created>1681503478078</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1681503478078</updated>
+      <workItem from="1684926849105" duration="5162000" />
+      <workItem from="1684940969719" duration="350000" />
     </task>
     <task id="LOCAL-00011" summary="feat: added command logic">
       <created>1681503653397</created>
@@ -619,7 +637,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684926883921</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="refactor: removed Mockito">
+      <created>1684930614671</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1684930614671</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -649,7 +674,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="bug: test run config noe works properly" />
     <MESSAGE value="refactor: pom: plugin version updated" />
     <MESSAGE value="add: Creature now can Take Damage" />
     <MESSAGE value="add: Character now can Take Damage" />
@@ -674,7 +698,8 @@
     <MESSAGE value="add: missing output messages" />
     <MESSAGE value="refactor: renamed hit points commend to current hit points" />
     <MESSAGE value="fix: typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: typo" />
+    <MESSAGE value="refactor: removed Mockito" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: removed Mockito" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

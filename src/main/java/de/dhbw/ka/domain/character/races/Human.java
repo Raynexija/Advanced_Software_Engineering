@@ -23,4 +23,9 @@ public class Human implements Race {
     public List<String> getFeatures() {
         return features;
     }
+
+    @Override
+    public String getRaceName() {
+        return "Human";
+    }
 }
