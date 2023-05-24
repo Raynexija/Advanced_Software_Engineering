@@ -8,8 +8,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="refactor: renamed hit points commend to current hit points">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="35dff4fa-2281-4906-b695-e9544e4613ef" name="Changes" comment="fix: typo">
+      <change beforePath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/CommandControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/de/dhbw/ka/test/CommandControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,7 +142,7 @@
       <command value="mvn clean test " />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.All in Advanced_Software_Engineering">
+  <component name="RunManager" selected="JUnit.CommandControllerTest.testEnqueueCommand">
     <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.Main" />
       <module name="Advanced_Software_Engineering" />
@@ -160,22 +160,6 @@
       <module name="Advanced_Software_Engineering" />
       <option name="PACKAGE_NAME" value="" />
       <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CharacterTest.testDamageTaken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Advanced_Software_Engineering" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="de.dhbw.ka.test.domain.character.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="de.dhbw.ka.test.domain.character" />
-      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.domain.character.CharacterTest" />
-      <option name="METHOD_NAME" value="testDamageTaken" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -212,6 +196,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CommandControllerTest.testEnqueueCommand" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Advanced_Software_Engineering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="de.dhbw.ka.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="de.dhbw.ka.test" />
+      <option name="MAIN_CLASS_NAME" value="de.dhbw.ka.test.CommandControllerTest" />
+      <option name="METHOD_NAME" value="testEnqueueCommand" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CreatureTest.testIsAlive" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Advanced_Software_Engineering" />
       <extension name="coverage">
@@ -230,11 +230,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CommandControllerTest.testEnqueueCommand" />
         <item itemvalue="JUnit.All in Advanced_Software_Engineering" />
         <item itemvalue="JUnit.CharacterTest.tmpTest" />
         <item itemvalue="JUnit.CreatureTest.testIsAlive" />
         <item itemvalue="JUnit.CharacterTest.testEquipment" />
-        <item itemvalue="JUnit.CharacterTest.testDamageTaken" />
       </list>
     </recent_temporary>
   </component>
@@ -274,13 +274,7 @@
       <workItem from="1684752199461" duration="14930000" />
       <workItem from="1684832173626" duration="24333000" />
       <workItem from="1684861960859" duration="1232000" />
-    </task>
-    <task id="LOCAL-00009" summary="feat: added i/o console functionality">
-      <created>1681294223703</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1681294223703</updated>
+      <workItem from="1684926849105" duration="931000" />
     </task>
     <task id="LOCAL-00010" summary="feat: added command logic">
       <created>1681503478078</created>
@@ -618,7 +612,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684859485897</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="fix: typo">
+      <created>1684926883921</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1684926883921</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -648,7 +649,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add: Encounter and Creature" />
     <MESSAGE value="bug: test run config noe works properly" />
     <MESSAGE value="refactor: pom: plugin version updated" />
     <MESSAGE value="add: Creature now can Take Damage" />
@@ -673,7 +673,8 @@
     <MESSAGE value="refactor: extreact method" />
     <MESSAGE value="add: missing output messages" />
     <MESSAGE value="refactor: renamed hit points commend to current hit points" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: renamed hit points commend to current hit points" />
+    <MESSAGE value="fix: typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: typo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
