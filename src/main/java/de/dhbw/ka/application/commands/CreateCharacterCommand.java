@@ -177,7 +177,7 @@ public class CreateCharacterCommand extends Command {
                 for (int i = 0; i < 2; i++) {
                     String ability = input.requestSelection("Chose an ability to increase by one:", abilityToChose);
                     abilityToChose = Arrays.stream(abilityToChose).filter(s -> !s.equalsIgnoreCase(ability)).toArray(String[]::new);
-                    abilitiesToIncrease[i] = AbilityScores.valueOf(ability);
+                    abilitiesToIncrease[i] = AbilityScores.valueOf(ability.toUpperCase());
                 }
             }
             case "TBD" -> {
