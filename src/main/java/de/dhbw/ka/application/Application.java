@@ -84,7 +84,7 @@ public class Application {
                 case "select" -> select();
                 case "select_character", "sc" -> selectCharacter(command);
                 case "select_encounter", "se" -> selectEncounter(command);
-                case "Select_quest", "sq" -> selectQuest(command);
+                case "select_quest", "sq" -> selectQuest(command);
 
                 case "selected", "current", "curr" -> selected();
                 case "selected_character", "selected_char" -> selectedCharacter();
